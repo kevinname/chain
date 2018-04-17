@@ -4,8 +4,8 @@
 #include <iostream>
 #include <time.h>
 
-BytomMatList* matList_int8;
-BytomMatListGpu* matListGpu_int8;
+BytomMatList* matList_int8 = NULL;
+BytomMatListGpu* matListGpu_int8 = NULL;
 
 #define TEST_NUM 5
 static uint8_t g_nonces[ TEST_NUM][ 8] = {
@@ -168,6 +168,94 @@ void print_u8s( const char *info, uint8_t buf[ ], int n)
     printf( "0x%02x, ", (uint8_t)buf[ i]);
   }
   printf( "\n\n");
+}
+
+
+typedef union {
+  uint64_t  u64Val;
+  uint8_t   u8Val;
+} u64tou8_t;
+
+u64tou8_t g_nonce;
+uint8_t   g_u8Msg[136];
+uint32_t  g_u32Diff = 8;
+
+static int _get_leadingZeroCnt(u8 *result) {
+
+  int count = 0;
+
+  for (int i = __RESULT_LENGTH - 1; i >= 0; i--) {
+
+    if (result[ i] < 1)        {count += 8;}
+    else if (result[ i] < 2)   {count += 7; break;}
+    else if (result[ i] < 4)   {count += 6; break;}
+    else if (result[ i] < 8)   {count += 5; break;}
+    else if (result[ i] < 16)  {count += 4; break;}
+    else if (result[ i] < 32)  {count += 3; break;}
+    else if (result[ i] < 64)  {count += 2; break;}
+    else if (result[ i] < 128) {count += 1; break;}
+    else break;
+  }
+
+  return count;
+}
+
+void btm_generateMatrix(uint8_t *u8Seed) {
+  Words32 seed;
+  uint32_t exted[32];
+
+  extend(exted, u8Seed);
+  init_seed(seed, exted);
+  if (!matList) matList_int8=new BytomMatList;
+  initMatVec(matList_int8->matVec, seed);
+
+  if (!matListGpu_int8) matListGpu_int8=new BytomMatListGpu;
+  initMatVecGpu(matListGpu_int8, matList_int8);
+}
+
+void btm_setMsg(uint8_t *u8Header) {
+  memcpy(g_u8Msg, u8Header, 136);
+  memcpy(g_nonce.u8Val, u8Header+128, 8);
+}
+
+void btm_setDiff(uint32_t diff) {
+  g_u32Diff = diff;
+}
+
+int btm_mine(uint8_t *u8Nonce) {
+  sha3_ctx ctx;
+  uint8_t u8MsgTmp[52] = {
+    0x65, 0x6e, 0x74, 0x72, 0x79, 0x69, 0x64, 0x3a,
+    0x62, 0x6c, 0x6f, 0x63, 0x6b, 0x68, 0x65, 0x61,
+    0x64, 0x65, 0x72, 0x3a,
+  };
+  uint8_t u8Msg[32];
+  uint8_t u8Res[32];
+
+  do {
+    memcpy(g_u8Msg + 128, g_nonce.u8Val, 8);
+
+    rhash_sha3_256_init(&ctx);
+    rhash_sha3_update(&ctx, g_u8Msg, 136);
+    rhash_sha3_final(&ctx, u8MsgTmp + 20);
+
+    print_u8s("first hash result", u8MsgTmp, 52);
+
+    rhash_sha3_256_init(&ctx);
+    rhash_sha3_update(&ctx, u8MsgTmp, 52);
+    rhash_sha3_final(&ctx, u8Msg);
+
+    iter_mineBytom(u8Msg, 32, u8Nonce, u8Res, true, handle);
+    int diff = _get_leadingZeroCnt(u8Res);
+    if (diff >= g_u32Diff) {
+      memcpy(u8Nonce, g_nonce.u8Val, 8);
+      return 1;
+    }
+
+    g_nonce.u64Val += 1;
+  } while(1);
+
+  return 0;
 }
 
 void test_hashProcess(uint8_t *u8Header, uint8_t *u8Seed, uint8_t *u8Res) {

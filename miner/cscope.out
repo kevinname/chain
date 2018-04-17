@@ -1,4 +1,4 @@
-cscope 15 $HOME/work/git/btm/docs/cgminer-gitlab               0001028521
+cscope 15 $HOME/work/pingping.wu/github/chain/miner               0000987968
 	@A1-board-selector.h
 
 1 #i‚de‡
@@ -77359,13 +77359,23 @@ which_chaö
 UPGRADE
 
 
-1391 
+1391 
+	`≠∂og
+(
+LOG_WARNING
+, "%†%d: bu∫ög fœsh", 
+__FUNCTION__
+, 
+__LINE__
+);
+
+1392 
 which_chaö
 =0; which_chaö<
 BITMAIN_MAX_CHAIN_NUM
 ; which_chain++)
 
-1393 if(
+1394 if(
 dev
 .
 chaö_exi°
@@ -77375,81 +77385,81 @@ which_chaö
 £nd_hóπ
 )
 
-1395 
+1396 
 	`BM1680_upgøde
 (
 which_chaö
 ,0);
 
-1396 
+1397 
 	`cg¶ìp_ms
 (10);
 
-1397 
+1398 
 	`BM1680_upgøde
 (
 which_chaö
 ,1);
 
-1398 
+1399 
 	`cg¶ìp_ms
 (10);
 
-1401 
+1402 
 	`cg¶ìp_ms
 (500);
 
-1402 
+1403 
 	`wrôe_axi_Âga
 (
 SOCKET_ID
 , 0);
 
-1403 
+1404 
 	`ª£t_Æl_hash_bﬂrd_low
 ();
 
-1404 
+1405 
 	`cg¶ìp_ms
 (500);
 
-1405 
+1406 
 	`wrôe_axi_Âga
 (
 SOCKET_ID
 , 7);
 
-1406 
+1407 
 	`cg¶ìp_ms
 (500);
 
-1407 
+1408 
 	`ª£t_Æl_hash_bﬂrd_high
 ();
 
-1408 
-	`cg¶ìp_ms
-(100);
-
-1410 
+1409 
 	`cg¶ìp_ms
 (100);
 
 1411 
-	`˛ór_ªgi°î_vÆue_buf
-();
-
-1412 
 	`cg¶ìp_ms
 (100);
 
-1415 
+1412 
+	`˛ór_ªgi°î_vÆue_buf
+();
+
+1413 
+	`cg¶ìp_ms
+(100);
+
+1416 
 which_chaö
 =0; which_chaö<
 BITMAIN_MAX_CHAIN_NUM
 ; which_chain++)
 
-1417 if(
+1418 if(
 dev
 .
 chaö_exi°
@@ -77458,30 +77468,30 @@ which_chaö
 ] && 
 £nd_hóπ
 )
-
-1419 
-	`BM1680_£nd_öô
-(
-which_chaö
-,0);
 
 1420 
 	`BM1680_£nd_öô
 (
 which_chaö
+,0);
+
+1421 
+	`BM1680_£nd_öô
+(
+which_chaö
 ,1);
 
-1423 
+1424 
 	`¶ìp
 (10);
 
-1427 
+1428 
 which_chaö
 =0; which_chaö<
 BITMAIN_MAX_CHAIN_NUM
 ; which_chain++)
 
-1429 if(
+1430 if(
 dev
 .
 chaö_exi°
@@ -77491,7 +77501,7 @@ which_chaö
 £nd_hóπ
 )
 
-1431 
+1432 
 	`BM1680_£t_n⁄˚_diff
 (
 which_chaö
@@ -77499,7 +77509,7 @@ which_chaö
 TM
 );
 
-1432 
+1433 
 	`BM1680_£t_n⁄˚_diff
 (
 which_chaö
@@ -77507,13 +77517,13 @@ which_chaö
 TM
 );
 
-1436 
+1437 
 which_chaö
 =0; which_chaö<
 BITMAIN_MAX_CHAIN_NUM
 ; which_chain++)
 
-1438 if(
+1439 if(
 dev
 .
 chaö_exi°
@@ -77523,19 +77533,19 @@ which_chaö
 £nd_hóπ
 )
 
-1440 
+1441 
 	`BM1680_£t_n⁄˚_öãrvÆ
 (
 which_chaö
 , 0, 0, 0xffffffff);
 
-1441 
+1442 
 	`BM1680_£t_n⁄˚_öãrvÆ
 (
 which_chaö
 , 1, 0, 0xffffffff);
 
-1445 
+1446 
 dev
 .
 Án_e·
@@ -77543,7 +77553,7 @@ dev
 ›t_bômaö_Án_˘æ
 ;
 
-1446 
+1447 
 dev
 .
 Án_pwm
@@ -77551,7 +77561,7 @@ dev
 ›t_bômaö_Án_pwm
 ;
 
-1447 
+1448 
 	`≠∂og
 (
 LOG_NOTICE
@@ -77565,19 +77575,19 @@ dev
 Án_pwm
 );
 
-1448 if(
+1449 if(
 dev
 .
 Án_e·
 )
 
-1450 if((
+1451 if((
 dev
 .
 Án_pwm
  >= 0) && (dev.fan_pwm <= 100))
 
-1452 
+1453 
 	`£t_PWM
 (
 dev
@@ -77585,15 +77595,15 @@ dev
 Án_pwm
 );
 
-1456 
+1457 
 	`£t_PWM_acc‹dög_to_ãm≥øtuª
 ();
 
-1461 
+1462 
 	`£t_PWM_acc‹dög_to_ãm≥øtuª
 ();
 
-1465 
+1466 
 ªt
  = 
 	`¸óã_bômaö_check_möî_°©us_±hªad
@@ -77601,93 +77611,93 @@ dev
 öfo
 );
 
-1466 if(
+1467 if(
 ªt
  == -5)
 
-1468  
+1469  
 ªt
 ;
 
-1471 
+1472 
 ªt
  = 
 	`¸óã_bômaö_gë_hash_øã_±hªad
 ();
 
-1472 if(
+1473 if(
 ªt
  == -6)
 
-1474  
+1475  
 ªt
 ;
 
-1477 
+1478 
 ªt
  = 
 	`¸óã_bômaö_ªad_ãmp_±hªad
 ();
 
-1478 if(
+1479 if(
 ªt
  == -7)
 
-1480  
+1481  
 ªt
 ;
 
-1483 
+1484 
 ªt
  = 
 	`¸óã_bômaö_check_Án_±hªad
 ();
 
-1484 if(
+1485 if(
 ªt
  == -8)
 
-1486  
+1487  
 ªt
 ;
 
-1489 
+1490 
 ªt
  = 
 	`¸óã_bômaö_check_°©us_±hªad
 ();
 
-1490 if(
+1491 if(
 ªt
  == -9)
 
-1492  
+1493  
 ªt
 ;
 
-1494 
+1495 
 	`cg¶ìp_ms
 (
 FANINT
  * 1000);
 
-1495 
+1496 
 	`≠∂og
 (
 LOG_NOTICE
 ,"INIT DONE!");
 
-1497 
+1498 
 	`öô_asic_di•œy_°©us
 ();
 
-1499 
+1500 
 i
 =0; i < 
 BITMAIN_MAX_CHAIN_NUM
 ; i++)
 
-1500 
+1501 
 °¨t_£nd
 [
 i
@@ -77695,29 +77705,29 @@ i
 åue
 ;
 
-1502 
+1503 
 	}
 }
 
-1504 * 
+1505 * 
 	$bômaö_B3_ªöô_chaö
 (* 
 u§d©a
 )
 
-1506 
+1507 
 	`±hªad_dëach
 (
 	`±hªad_£lf
 ());
 
-1507 
+1508 
 	`±hªad_muãx_lock
 (&
 ªöô_muãx
 );
 
-1508 
+1509 
 bômün_B3_öfo_wôh_ödex
  *
 öfo_wôh_chaö
@@ -77725,7 +77735,7 @@ bômün_B3_öfo_wôh_ödex
 u§d©a
 ;
 
-1509 
+1510 
 bômaö_B3_öfo
  *
 öfo
@@ -77733,7 +77743,7 @@ bômaö_B3_öfo
 öfo_wôh_chaö
 ->info;
 
-1510 
+1511 
 uöt8_t
  
 chaö
@@ -77743,7 +77753,7 @@ chaö
 chaö_ödex
 ;
 
-1512 
+1513 
 °¨t_£nd
 [
 chaö
@@ -77751,7 +77761,7 @@ chaö
 Ál£
 ;
 
-1513 
+1514 
 °¨t_ªcv
 [
 chaö
@@ -77759,7 +77769,7 @@ chaö
 Ál£
 ;
 
-1514 
+1515 
 ªöôög
 [
 chaö
@@ -77767,7 +77777,7 @@ chaö
 åue
 ;
 
-1516 
+1517 
 	`thr_öfo_joö
 (&
 öfo
@@ -77777,7 +77787,7 @@ u¨t_tx_t
 chaö
 ]);
 
-1517 
+1518 
 	`thr_öfo_joö
 (&
 öfo
@@ -77787,23 +77797,23 @@ u¨t_rx_t
 chaö
 ]);
 
-1518 
+1519 
 	`ª£t_hash_bﬂrd_low
 (
 chaö
 );
 
-1519 
+1520 
 	`cg¶ìp_ms
 (100);
 
-1520 
+1521 
 	`ª£t_hash_bﬂrd_high
 (
 chaö
 );
 
-1521 
+1522 
 	`ây_öô_chaö
 (
 chaö
@@ -77811,23 +77821,23 @@ chaö
 öfo
 );
 
-1523 
+1524 
 	`BM1680_£nd_öô
 (
 chaö
 ,0);
 
-1524 
+1525 
 	`BM1680_£nd_öô
 (
 chaö
 ,1);
 
-1526 
+1527 
 	`¶ìp
 (10);
 
-1528 
+1529 
 	`BM1680_£t_n⁄˚_diff
 (
 chaö
@@ -77835,7 +77845,7 @@ chaö
 TM
 );
 
-1529 
+1530 
 	`BM1680_£t_n⁄˚_diff
 (
 chaö
@@ -77843,19 +77853,19 @@ chaö
 TM
 );
 
-1531 
+1532 
 	`BM1680_£t_n⁄˚_öãrvÆ
 (
 chaö
 , 0, 0, 0xffffffff);
 
-1532 
+1533 
 	`BM1680_£t_n⁄˚_öãrvÆ
 (
 chaö
 , 1, 0, 0xffffffff);
 
-1535 
+1536 
 ªöôög
 [
 chaö
@@ -77863,7 +77873,7 @@ chaö
 åue
 ;
 
-1536 
+1537 
 °¨t_£nd
 [
 chaö
@@ -77871,29 +77881,29 @@ chaö
 åue
 ;
 
-1537 
+1538 
 	`±hªad_muãx_u∆ock
 (&
 ªöô_muãx
 );
 
-1539 
+1540 
 	}
 }
 
-1543 
+1544 
 	#TEMPERATURE_SENSOR
 
 
 	)
 
-1547 
+1548 
 	#ABOUT_OTHER_FUNCTIONS
 
 
 	)
 
-1550 
+1551 
 	$suffix_°rög_B3
 (
 uöt64_t
@@ -77913,33 +77923,33 @@ boﬁ
 di•œy
 )
 
-1552 c⁄° 
+1553 c⁄° 
 dkûo
  = 1000.0;
 
-1553 c⁄° 
+1554 c⁄° 
 uöt64_t
  
 kûo
  = 1000ull;
 
-1554 c⁄° 
+1555 c⁄° 
 uöt64_t
  
 mega
  = 1000000ull;
 
-1555 c⁄° 
+1556 c⁄° 
 uöt64_t
  
 giga
  = 1000000000ull;
 
-1556 
+1557 
 suffix
 [2] = "";
 
-1557 
+1558 
 boﬁ
  
 decimÆ
@@ -77947,31 +77957,31 @@ decimÆ
 åue
 ;
 
-1558 
+1559 
 dvÆ
 ;
 
-1598 
+1599 
 dvÆ
  = 
 vÆ
 ;
 
-1599 
+1600 
 decimÆ
  = 
 Ál£
 ;
 
-1602 i‡(!
+1603 i‡(!
 sigdigôs
 )
 
-1604 i‡(
+1605 i‡(
 decimÆ
 )
 
-1605 
+1606 
 	`¢¥ötf
 (
 buf
@@ -77983,7 +77993,7 @@ dvÆ
 suffix
 );
 
-1607 
+1608 
 	`¢¥ötf
 (
 buf
@@ -77995,7 +78005,7 @@ dvÆ
 suffix
 );
 
-1613 
+1614 
 ndigôs
  = 
 sigdigôs
@@ -78007,11 +78017,11 @@ dvÆ
 	`log10
 (dval)) : 0);
 
-1614 if(
+1615 if(
 di•œy
 )
 
-1615 
+1616 
 	`¢¥ötf
 (
 buf
@@ -78027,7 +78037,7 @@ dvÆ
 suffix
 );
 
-1617 
+1618 
 	`¢¥ötf
 (
 buf
@@ -78041,103 +78051,103 @@ ndigôs
 dvÆ
 );
 
-1620 
+1621 
 	}
 }
 
-1622 
+1623 
 	$˛ór_ªgi°î_vÆue_buf
 ()
 
-1624 
+1625 
 	`±hªad_muãx_lock
 (&
 ªg_muãx
 );
 
-1625 
-ªg_fifo
-.
-p_wr
- = 0;
-
 1626 
 ªg_fifo
 .
-p_rd
+p_wr
  = 0;
 
 1627 
 ªg_fifo
 .
-ªg_vÆue_num
+p_rd
  = 0;
 
 1628 
+ªg_fifo
+.
+ªg_vÆue_num
+ = 0;
+
+1629 
 	`±hªad_muãx_u∆ock
 (&
 ªg_muãx
 );
 
-1629 
+1630 
 	}
 }
 
-1631 
+1632 
 	$˛ór_n⁄˚_fifo
 ()
 
-1633 
+1634 
 i
  = 0;
 
-1634 
+1635 
 	`±hªad_muãx_lock
 (&
 n⁄˚_muãx
 );
 
-1635 
+1636 
 n⁄˚_fifo
 .
 p_wr
  = 0;
 
-1636 
+1637 
 n⁄˚_fifo
 .
 p_rd
  = 0;
 
-1637 
+1638 
 n⁄˚_fifo
 .
 n⁄˚_num
  = 0;
 
-1638 
+1639 
 i
 =0; i < 
 BITMAIN_MAX_CHAIN_NUM
 ; i++)
 
-1639 
+1640 
 	`˛ór_u¨t_rx_fifo
 (
 i
 );
 
-1640 
+1641 
 	`±hªad_muãx_u∆ock
 (&
 n⁄˚_muãx
 );
 
-1641 
+1642 
 	}
 }
 
-1643 
+1644 
 ölöe
  
 	$my_be32íc
@@ -78149,7 +78159,7 @@ uöt32_t
 x
 )
 
-1645 
+1646 
 uöt8_t
  *
 p
@@ -78157,35 +78167,35 @@ p
 µ
 ;
 
-1646 
+1647 
 p
 [3] = 
 x
  & 0xff;
 
-1647 
+1648 
 p
 [2] = (
 x
  >> 8) & 0xff;
 
-1648 
+1649 
 p
 [1] = (
 x
  >> 16) & 0xff;
 
-1649 
+1650 
 p
 [0] = (
 x
  >> 24) & 0xff;
 
-1650 
+1651 
 	}
 }
 
-1654 
+1655 
 	$BM1680_£nd_öô
 (
 uöt8_t
@@ -78195,7 +78205,7 @@ which_u¨t
 which_BM1680
 )
 
-1656 
+1657 
 uöt8_t
  
 £nd_buf
@@ -78209,7 +78219,7 @@ BM1680_SEND_CMD_HEADER2
 BM1680_INIT_CMD
 , 0x0};
 
-1657 
+1658 
 uöt32_t
  
 ¸c
@@ -78217,7 +78227,7 @@ uöt32_t
 i
  = 0;
 
-1659 
+1660 
 £nd_buf
 [
 BM1680_CHIP_ADDRESS_ADDR
@@ -78225,13 +78235,13 @@ BM1680_CHIP_ADDRESS_ADDR
 which_BM1680
 ;
 
-1661 
+1662 
 i
 =0; i<
 BM1680_INIT_CMD_CMD_LEN
  - 1; i++)
 
-1663 
+1664 
 ¸c
  +
 £nd_buf
@@ -78239,7 +78249,7 @@ BM1680_INIT_CMD_CMD_LEN
 i
 ];
 
-1665 
+1666 
 £nd_buf
 [
 BM1680_INIT_CMD_CMD_LEN
@@ -78249,13 +78259,13 @@ uöt8_t
 ¸c
 ;
 
-1667 * 
+1668 * 
 £ed_hex
  = 
 NULL
 ;
 
-1668 
+1669 
 £ed_hex
  = 
 	`bö2hex
@@ -78263,7 +78273,7 @@ NULL
 £nd_buf
 ,(send_buf));
 
-1669 
+1670 
 	`≠∂og
 (
 LOG_NOTICE
@@ -78275,13 +78285,13 @@ which_BM1680
 £ed_hex
 );
 
-1670 
+1671 
 	`‰ì
 (
 £ed_hex
 );
 
-1672 
+1673 
 	`u¨t_£nd
 (
 which_u¨t
@@ -78291,11 +78301,11 @@ which_u¨t
 BM1680_INIT_CMD_CMD_LEN
 );
 
-1673 
+1674 
 	}
 }
 
-1675 
+1676 
 	$BM1680_£t_n⁄˚_diff
 (
 uöt8_t
@@ -78307,7 +78317,7 @@ which_BM1680
 n⁄˚_diff
 )
 
-1677 
+1678 
 uöt8_t
  
 £nd_buf
@@ -78321,7 +78331,7 @@ BM1680_SEND_CMD_HEADER2
 BM1680_SET_NONCE_DIFF
 , 0x0, 0x0};
 
-1678 
+1679 
 uöt32_t
  
 ¸c
@@ -78329,7 +78339,7 @@ uöt32_t
 i
  = 0;
 
-1680 
+1681 
 £nd_buf
 [
 BM1680_CHIP_ADDRESS_ADDR
@@ -78337,19 +78347,19 @@ BM1680_CHIP_ADDRESS_ADDR
 which_BM1680
 ;
 
-1681 
+1682 
 £nd_buf
 [4] = 
 n⁄˚_diff
 ;
 
-1683 
+1684 
 i
 =0; i<
 BM1680_SET_NONCE_DIFF_CMD_LEN
  - 1; i++)
 
-1685 
+1686 
 ¸c
  +
 £nd_buf
@@ -78357,7 +78367,7 @@ BM1680_SET_NONCE_DIFF_CMD_LEN
 i
 ];
 
-1687 
+1688 
 £nd_buf
 [
 BM1680_SET_NONCE_DIFF_CMD_LEN
@@ -78367,7 +78377,7 @@ uöt8_t
 ¸c
 ;
 
-1689 
+1690 
 	`u¨t_£nd
 (
 which_u¨t
@@ -78377,11 +78387,11 @@ which_u¨t
 BM1680_SET_NONCE_DIFF_CMD_LEN
 );
 
-1690 
+1691 
 	}
 }
 
-1692 
+1693 
 	$BM1680_£t_£ed
 (
 uöt8_t
@@ -78393,13 +78403,13 @@ which_BM1680
 £ed
 )
 
-1695 * 
+1696 * 
 £ed_hex
  = 
 NULL
 ;
 
-1696 
+1697 
 £ed_hex
  = 
 	`bö2hex
@@ -78407,7 +78417,7 @@ NULL
 £ed
 ,32);
 
-1697 
+1698 
 	`≠∂og
 (
 LOG_NOTICE
@@ -78419,13 +78429,13 @@ which_BM1680
 £ed_hex
 );
 
-1698 
+1699 
 	`‰ì
 (
 £ed_hex
 );
 
-1700 
+1701 
 uöt8_t
  
 £nd_buf
@@ -78439,7 +78449,7 @@ BM1680_SEND_CMD_HEADER2
 BM1680_SET_SEED
 };
 
-1701 
+1702 
 uöt32_t
  
 ¸c
@@ -78447,19 +78457,19 @@ uöt32_t
 i
  = 0;
 
-1703 
+1704 
 £nd_buf
 [2] = 
 which_BM1680
 ;
 
-1704 
+1705 
 £nd_buf
 [
 BM1680_SET_SEED_CMD_LEN
  - 1] = 0;
 
-1706 
+1707 
 	`mem˝y
 (
 £nd_buf
@@ -78469,13 +78479,13 @@ BM1680_SET_SEED_CMD_LEN
 BM1680_SET_SEED_DATA_LEN
 );
 
-1708 
+1709 
 i
 =0; i<
 BM1680_SET_SEED_CMD_LEN
  - 1; i++)
 
-1710 
+1711 
 ¸c
  +
 £nd_buf
@@ -78483,7 +78493,7 @@ BM1680_SET_SEED_CMD_LEN
 i
 ];
 
-1712 
+1713 
 £nd_buf
 [
 BM1680_SET_SEED_CMD_LEN
@@ -78493,7 +78503,7 @@ uöt8_t
 ¸c
 ;
 
-1714 
+1715 
 	`u¨t_£nd
 (
 which_u¨t
@@ -78503,11 +78513,11 @@ which_u¨t
 BM1680_SET_SEED_CMD_LEN
 );
 
-1715 
+1716 
 	}
 }
 
-1717 
+1718 
 	$upd©e_£ed_™d_waô_ok
 (
 uöt8_t
@@ -78517,7 +78527,7 @@ which_u¨t
 £ed
 )
 
-1719 
+1720 
 	`BM1680_£t_£ed
 (
 which_u¨t
@@ -78525,7 +78535,7 @@ which_u¨t
 £ed
 );
 
-1720 
+1721 
 	`BM1680_£t_£ed
 (
 which_u¨t
@@ -78533,15 +78543,15 @@ which_u¨t
 £ed
 );
 
-1721 
+1722 
 	`¶ìp
 (15);
 
-1722 
+1723 
 	}
 }
 
-1724 
+1725 
 	$BM1680_£t_mesßge
 (
 uöt8_t
@@ -78553,13 +78563,13 @@ which_BM1680
 mesßge
 )
 
-1727 * 
+1728 * 
 mesßge_hex
  = 
 NULL
 ;
 
-1728 
+1729 
 mesßge_hex
  = 
 	`bö2hex
@@ -78567,7 +78577,7 @@ mesßge_hex
 mesßge
 ,137);
 
-1729 
+1730 
 	`≠∂og
 (
 LOG_NOTICE
@@ -78579,13 +78589,13 @@ which_BM1680
 mesßge_hex
 );
 
-1730 
+1731 
 	`‰ì
 (
 mesßge_hex
 );
 
-1733 
+1734 
 uöt8_t
  
 £nd_buf
@@ -78599,7 +78609,7 @@ BM1680_SEND_CMD_HEADER2
 BM1680_SET_MESSAGE
 };
 
-1734 
+1735 
 uöt32_t
  
 ¸c
@@ -78607,19 +78617,19 @@ uöt32_t
 i
  = 0;
 
-1736 
+1737 
 £nd_buf
 [2] = 
 which_BM1680
 ;
 
-1737 
+1738 
 £nd_buf
 [
 BM1680_SET_MESSAGE_CMD_LEN
  - 1] = 0;
 
-1739 
+1740 
 	`mem˝y
 (
 £nd_buf
@@ -78629,13 +78639,13 @@ mesßge
 BM1680_SET_MESSAGE_DATA_LEN
 );
 
-1741 
+1742 
 i
 =0; i<
 BM1680_SET_MESSAGE_CMD_LEN
  - 1; i++)
 
-1743 
+1744 
 ¸c
  +
 £nd_buf
@@ -78643,7 +78653,7 @@ BM1680_SET_MESSAGE_CMD_LEN
 i
 ];
 
-1745 
+1746 
 £nd_buf
 [
 BM1680_SET_MESSAGE_CMD_LEN
@@ -78653,7 +78663,7 @@ uöt8_t
 ¸c
 ;
 
-1747 
+1748 
 	`u¨t_£nd
 (
 which_u¨t
@@ -78663,11 +78673,11 @@ which_u¨t
 BM1680_SET_MESSAGE_CMD_LEN
 );
 
-1748 
+1749 
 	}
 }
 
-1750 
+1751 
 	$BM1680_check_°©us
 (
 uöt8_t
@@ -78677,7 +78687,7 @@ which_u¨t
 which_BM1680
 )
 
-1752 
+1753 
 uöt8_t
  
 £nd_buf
@@ -78691,7 +78701,7 @@ BM1680_SEND_CMD_HEADER2
 BM1680_CHECK_STATUS
 , 0x0};
 
-1753 
+1754 
 uöt32_t
  
 ¸c
@@ -78699,19 +78709,19 @@ uöt32_t
 i
  = 0;
 
-1755 
+1756 
 £nd_buf
 [2] = 
 which_BM1680
 ;
 
-1756 
+1757 
 i
 =0; i<
 BM1680_CHECK_STATUS_CMD_LEN
  - 1; i++)
 
-1758 
+1759 
 ¸c
  +
 £nd_buf
@@ -78719,7 +78729,7 @@ BM1680_CHECK_STATUS_CMD_LEN
 i
 ];
 
-1760 
+1761 
 £nd_buf
 [
 BM1680_CHECK_STATUS_CMD_LEN
@@ -78729,7 +78739,7 @@ uöt8_t
 ¸c
 ;
 
-1762 
+1763 
 	`u¨t_£nd
 (
 which_u¨t
@@ -78739,11 +78749,45 @@ which_u¨t
 BM1680_CHECK_STATUS_CMD_LEN
 );
 
-1763 
+1766 * 
+°©us_hex
+ = 
+NULL
+;
+
+1767 
+°©us_hex
+ = 
+	`bö2hex
+(
+£nd_buf
+, 
+BM1680_CHECK_STATUS_CMD_LEN
+);
+
+1768 
+	`≠∂og
+(
+LOG_NOTICE
+, "Síd sètu†tÿchaö %dási¯%d %s",
+which_u¨t
+, 
+which_BM1680
+, 
+°©us_hex
+);
+
+1769 
+	`‰ì
+(
+°©us_hex
+);
+
+1771 
 	}
 }
 
-1765 
+1773 
 	$BM1680_£t_n⁄˚_öãrvÆ
 (
 uöt8_t
@@ -78759,7 +78803,7 @@ uöt64_t
 íd_n⁄˚
 )
 
-1767 
+1775 
 uöt8_t
  
 £nd_buf
@@ -78773,7 +78817,7 @@ BM1680_SEND_CMD_HEADER2
 BM1680_SET_NONCE_INTERVAL
 };
 
-1768 
+1776 
 uöt32_t
  
 ¸c
@@ -78781,19 +78825,19 @@ uöt32_t
 i
  = 0;
 
-1770 
+1778 
 £nd_buf
 [2] = 
 which_BM1680
 ;
 
-1771 
+1779 
 £nd_buf
 [
 BM1680_SET_NONCE_INTERVAL_CMD_LEN
  - 1] = 0;
 
-1773 
+1781 
 	`mem˝y
 (
 £nd_buf
@@ -78803,7 +78847,7 @@ BM1680_SET_NONCE_INTERVAL_CMD_LEN
 uöt64_t
 ));
 
-1774 
+1782 
 	`mem˝y
 (
 £nd_buf
@@ -78813,13 +78857,13 @@ uöt64_t
 íd_n⁄˚
 , (uint64_t));
 
-1776 
+1784 
 i
 =0; i<
 BM1680_SET_NONCE_INTERVAL_CMD_LEN
  - 1; i++)
 
-1778 
+1786 
 ¸c
  +
 £nd_buf
@@ -78827,7 +78871,7 @@ BM1680_SET_NONCE_INTERVAL_CMD_LEN
 i
 ];
 
-1780 
+1788 
 £nd_buf
 [
 BM1680_SET_NONCE_INTERVAL_CMD_LEN
@@ -78837,7 +78881,7 @@ uöt8_t
 ¸c
 ;
 
-1782 
+1790 
 	`u¨t_£nd
 (
 which_u¨t
@@ -78847,11 +78891,11 @@ which_u¨t
 BM1680_SET_NONCE_INTERVAL_CMD_LEN
 );
 
-1783 
+1791 
 	}
 }
 
-1785 
+1793 
 	$BM1680_gë_bﬂrd_ãm≥øtuª
 (
 uöt8_t
@@ -78861,7 +78905,7 @@ which_u¨t
 which_BM1680
 )
 
-1787 
+1795 
 uöt8_t
  
 £nd_buf
@@ -78875,7 +78919,7 @@ BM1680_SEND_CMD_HEADER2
 BM1680_GET_BOARD_TEMPERATURE
 , 0x0};
 
-1788 
+1796 
 uöt32_t
  
 ¸c
@@ -78883,19 +78927,19 @@ uöt32_t
 i
  = 0;
 
-1790 
+1798 
 £nd_buf
 [2] = 
 which_BM1680
 ;
 
-1792 
+1800 
 i
 =0; i<
 BM1680_GET_BOARD_TEMPERATURE_CMD_LEN
  - 1; i++)
 
-1794 
+1802 
 ¸c
  +
 £nd_buf
@@ -78903,7 +78947,7 @@ BM1680_GET_BOARD_TEMPERATURE_CMD_LEN
 i
 ];
 
-1796 
+1804 
 £nd_buf
 [
 BM1680_GET_BOARD_TEMPERATURE_CMD_LEN
@@ -78913,13 +78957,13 @@ uöt8_t
 ¸c
 ;
 
-1799 * 
+1807 * 
 mesßge_hex
  = 
 NULL
 ;
 
-1800 
+1808 
 mesßge_hex
  = 
 	`bö2hex
@@ -78927,7 +78971,7 @@ mesßge_hex
 £nd_buf
 ,(send_buf));
 
-1801 
+1809 
 	`≠∂og
 (
 LOG_NOTICE
@@ -78939,13 +78983,13 @@ which_BM1680
 mesßge_hex
 );
 
-1802 
+1810 
 	`‰ì
 (
 mesßge_hex
 );
 
-1805 
+1813 
 	`u¨t_£nd
 (
 which_u¨t
@@ -78955,11 +78999,11 @@ which_u¨t
 BM1680_GET_BOARD_TEMPERATURE_CMD_LEN
 );
 
-1806 
+1814 
 	}
 }
 
-1808 
+1816 
 	$BM1680_gë_asic_ãm≥øtuª
 (
 uöt8_t
@@ -78969,7 +79013,7 @@ which_u¨t
 which_BM1680
 )
 
-1810 
+1818 
 uöt8_t
  
 £nd_buf
@@ -78983,7 +79027,7 @@ BM1680_SEND_CMD_HEADER2
 BM1680_GET_ASIC_TEMPERATURE
 , 0x0};
 
-1811 
+1819 
 uöt32_t
  
 ¸c
@@ -78991,19 +79035,19 @@ uöt32_t
 i
  = 0;
 
-1813 
+1821 
 £nd_buf
 [2] = 
 which_BM1680
 ;
 
-1815 
+1823 
 i
 =0; i<
 BM1680_GET_ASIC_TEMPERATURE_CMD_LEN
  - 1; i++)
 
-1817 
+1825 
 ¸c
  +
 £nd_buf
@@ -79011,7 +79055,7 @@ BM1680_GET_ASIC_TEMPERATURE_CMD_LEN
 i
 ];
 
-1819 
+1827 
 £nd_buf
 [
 BM1680_GET_ASIC_TEMPERATURE_CMD_LEN
@@ -79021,13 +79065,13 @@ uöt8_t
 ¸c
 ;
 
-1821 * 
+1829 * 
 mesßge_hex
  = 
 NULL
 ;
 
-1822 
+1830 
 mesßge_hex
  = 
 	`bö2hex
@@ -79035,7 +79079,7 @@ mesßge_hex
 £nd_buf
 ,(send_buf));
 
-1823 
+1831 
 	`≠∂og
 (
 LOG_NOTICE
@@ -79047,13 +79091,13 @@ which_BM1680
 mesßge_hex
 );
 
-1824 
+1832 
 	`‰ì
 (
 mesßge_hex
 );
 
-1828 
+1836 
 	`u¨t_£nd
 (
 which_u¨t
@@ -79063,11 +79107,11 @@ which_u¨t
 BM1680_GET_ASIC_TEMPERATURE_CMD_LEN
 );
 
-1829 
+1837 
 	}
 }
 
-1831 
+1839 
 	$BM1680_upgøde_bö_fûe_wôhout_ídög
 (
 which_u¨t
@@ -79077,7 +79121,7 @@ which_BM1680
 d©a
 )
 
-1833 
+1841 
 £nd_buf
 [
 BM1680_UPGRADE_BIN_FILE_WITHOUT_ENDING_CMD_LEN
@@ -79089,13 +79133,13 @@ BM1680_SEND_CMD_HEADER2
 BM1680_UPGRADE_BIN_FILE_WITHOUT_ENDING
 };
 
-1834 *
+1842 *
 ª˚ive_buf
  = 
 NULL
 ;
 
-1835 
+1843 
 ¸c
  = 0, 
 ª˚ive_d©a_Àn
@@ -79103,31 +79147,31 @@ NULL
 i
  = 0;
 
-1836 
+1844 
 ª˚ive_d©a_hódî_poöãr
  = 0, 
 ªt
  = 0;
 
-1838 
+1846 
 £nd_buf
 [2] = 
 which_BM1680
 ;
 
-1839 
+1847 
 £nd_buf
 [
 BM1680_UPGRADE_BIN_FILE_WITHOUT_ENDING_CMD_LEN
  - 1] = 0;
 
-1841 
+1849 
 i
 =0; i<
 BM1680_UPGRADE_BIN_FILE_WITHOUT_ENDING_DATA_LEN
 ; i++)
 
-1843 
+1851 
 £nd_buf
 [4 + 
 i
@@ -79135,13 +79179,13 @@ i
 d©a
 [i];
 
-1846 
+1854 
 i
 =0; i<
 BM1680_UPGRADE_BIN_FILE_WITHOUT_ENDING_CMD_LEN
  - 1; i++)
 
-1848 
+1856 
 ¸c
  +
 £nd_buf
@@ -79149,7 +79193,7 @@ BM1680_UPGRADE_BIN_FILE_WITHOUT_ENDING_CMD_LEN
 i
 ];
 
-1850 
+1858 
 £nd_buf
 [
 BM1680_UPGRADE_BIN_FILE_WITHOUT_ENDING_CMD_LEN
@@ -79157,11 +79201,11 @@ BM1680_UPGRADE_BIN_FILE_WITHOUT_ENDING_CMD_LEN
 ¸c
 ;
 
-1852 
+1860 
 	`cg¶ìp_ms
 (5);
 
-1853 
+1861 
 	`u¨t_£nd
 (
 which_u¨t
@@ -79171,11 +79215,11 @@ which_u¨t
 BM1680_UPGRADE_BIN_FILE_WITHOUT_ENDING_CMD_LEN
 /2);
 
-1854 
+1862 
 	`cg¶ìp_ms
 (5);
 
-1855 
+1863 
 	`u¨t_£nd
 (
 which_u¨t
@@ -79185,11 +79229,11 @@ which_u¨t
 BM1680_UPGRADE_BIN_FILE_WITHOUT_ENDING_CMD_LEN
 /2, BM1680_UPGRADE_BIN_FILE_WITHOUT_ENDING_CMD_LEN - BM1680_UPGRADE_BIN_FILE_WITHOUT_ENDING_CMD_LEN/2);
 
-1856 
+1864 
 	}
 }
 
-1858 
+1866 
 	$BM1680_upgøde_bö_fûe_wôh_ídög
 (
 which_u¨t
@@ -79201,7 +79245,7 @@ d©a
 d©a_Àn
 )
 
-1860 
+1868 
 £nd_buf
 [
 BM1680_UPGRADE_BIN_FILE_WITH_ENDING_CMD_LEN
@@ -79213,13 +79257,13 @@ BM1680_SEND_CMD_HEADER2
 BM1680_UPGRADE_BIN_FILE_WITH_ENDING
 };
 
-1861 *
+1869 *
 ª˚ive_buf
  = 
 NULL
 ;
 
-1862 
+1870 
 ¸c
  = 0, 
 ª˚ive_d©a_Àn
@@ -79227,13 +79271,13 @@ NULL
 i
  = 0;
 
-1863 
+1871 
 ª˚ive_d©a_hódî_poöãr
  = 0, 
 ªt
  = 0;
 
-1866 
+1874 
 	`mem£t
 (
 £nd_buf
@@ -79241,43 +79285,43 @@ i
 BM1680_UPGRADE_BIN_FILE_WITH_ENDING_CMD_LEN
 );
 
-1867 
+1875 
 £nd_buf
 [0] = 
 BM1680_SEND_CMD_HEADER1
 ;
 
-1868 
+1876 
 £nd_buf
 [1] = 
 BM1680_SEND_CMD_HEADER2
 ;
 
-1869 
+1877 
 £nd_buf
 [2] = 
 which_BM1680
 ;
 
-1870 
+1878 
 £nd_buf
 [3] = 
 BM1680_UPGRADE_BIN_FILE_WITH_ENDING
 ;
 
-1871 
+1879 
 £nd_buf
 [
 BM1680_UPGRADE_BIN_FILE_WITH_ENDING_CMD_LEN
  - 1] = 0;
 
-1873 
+1881 
 i
 =0; i<
 d©a_Àn
 ; i++)
 
-1875 
+1883 
 £nd_buf
 [4 + 
 i
@@ -79285,13 +79329,13 @@ i
 d©a
 [i];
 
-1878 
+1886 
 i
 =0; i<
 BM1680_UPGRADE_BIN_FILE_WITH_ENDING_CMD_LEN
  - 1; i++)
 
-1880 
+1888 
 ¸c
  +
 £nd_buf
@@ -79299,7 +79343,7 @@ BM1680_UPGRADE_BIN_FILE_WITH_ENDING_CMD_LEN
 i
 ];
 
-1882 
+1890 
 £nd_buf
 [
 BM1680_UPGRADE_BIN_FILE_WITH_ENDING_CMD_LEN
@@ -79307,11 +79351,11 @@ BM1680_UPGRADE_BIN_FILE_WITH_ENDING_CMD_LEN
 ¸c
 ;
 
-1884 
+1892 
 	`cg¶ìp_ms
 (5);
 
-1885 
+1893 
 	`u¨t_£nd
 (
 which_u¨t
@@ -79321,11 +79365,11 @@ which_u¨t
 BM1680_UPGRADE_BIN_FILE_WITH_ENDING_CMD_LEN
 /2);
 
-1886 
+1894 
 	`cg¶ìp_ms
 (5);
 
-1887 
+1895 
 	`u¨t_£nd
 (
 which_u¨t
@@ -79335,11 +79379,11 @@ which_u¨t
 BM1680_UPGRADE_BIN_FILE_WITH_ENDING_CMD_LEN
 /2, BM1680_UPGRADE_BIN_FILE_WITH_ENDING_CMD_LEN - BM1680_UPGRADE_BIN_FILE_WITH_ENDING_CMD_LEN/2);
 
-1889 
+1897 
 	}
 }
 
-1892 
+1900 
 	$BM1680_upgøde
 (
 which_u¨t
@@ -79347,39 +79391,39 @@ which_u¨t
 which_BM1680
 )
 
-1894 
+1902 
 i
 =0, 
 îr‹_cou¡î
  = 0;
 
-1895 
+1903 
 upgøde_fûe_size
  = 0;
 
-1896 
+1904 
 ªt
  = 0;
 
-1897 *
+1905 *
 upgøde_fûe_buf
  = 
 NULL
 ;
 
-1898 
+1906 
 FILE
  *
 upgøde_fûe
 ;
 
-1899 
+1907 
 °©
  
 °©buf
 ;
 
-1900 
+1908 
 	`≠∂og
 (
 LOG_NOTICE
@@ -79389,7 +79433,7 @@ which_u¨t
 which_BM1680
 );
 
-1901 
+1909 
 	`°©
 (
 BM1680_UPGRADE_FILE
@@ -79397,7 +79441,7 @@ BM1680_UPGRADE_FILE
 °©buf
 );
 
-1902 
+1910 
 upgøde_fûe_size
  = 
 °©buf
@@ -79405,7 +79449,7 @@ upgøde_fûe_size
 °_size
 ;
 
-1904 
+1912 
 upgøde_fûe_buf
  = 
 	`mÆloc
@@ -79413,17 +79457,17 @@ upgøde_fûe_buf
 upgøde_fûe_size
 +1);
 
-1905 if(!
+1913 if(!
 upgøde_fûe_buf
 )
 
-1907 
+1915 
 	`¥ötf
 ("\n!!! %s: mÆlo¯upgøde_fûe_bu‡Áûed!\n\n", 
 __FUNCTION__
 );
 
-1911 
+1919 
 upgøde_fûe
  = 
 	`f›í
@@ -79431,29 +79475,29 @@ upgøde_fûe
 BM1680_UPGRADE_FILE
 , "r");
 
-1912 if(!
+1920 if(!
 upgøde_fûe
 )
 
-1914 
+1922 
 	`¥ötf
 ("\n!!! %s: o≥¿BM1680_UPGRADE_FILE faûed\n\n", 
 __FUNCTION__
 );
 
-1915 
+1923 
 	`f˛o£
 (
 upgøde_fûe
 );
 
-1916 
+1924 
 	`‰ì
 (
 upgøde_fûe_buf
 );
 
-1920 
+1928 
 	`f£ek
 (
 upgøde_fûe
@@ -79461,7 +79505,7 @@ upgøde_fûe
 SEEK_SET
 );
 
-1921 
+1929 
 	`‰ód
 (
 upgøde_fûe_buf
@@ -79471,7 +79515,7 @@ upgøde_fûe_size
 upgøde_fûe
 );
 
-1923 
+1931 
 i
 =0; i<
 upgøde_fûe_size
@@ -79479,7 +79523,7 @@ upgøde_fûe_size
 BM1680_UPGRADE_BIN_FILE_WITHOUT_ENDING_DATA_LEN
 ; i++)
 
-1925 
+1933 
 	`BM1680_upgøde_bö_fûe_wôhout_ídög
 (
 which_u¨t
@@ -79493,13 +79537,13 @@ BM1680_UPGRADE_BIN_FILE_WITHOUT_ENDING_DATA_LEN
 i
 );
 
-1928 if(
+1936 if(
 upgøde_fûe_size
  % 
 BM1680_UPGRADE_BIN_FILE_WITHOUT_ENDING_DATA_LEN
 )
 
-1930 
+1938 
 	`BM1680_upgøde_bö_fûe_wôh_ídög
 (
 which_u¨t
@@ -79515,7 +79559,7 @@ i
 upgøde_fûe_size
  % BM1680_UPGRADE_BIN_FILE_WITHOUT_ENDING_DATA_LEN);
 
-1932 
+1940 
 	`≠∂og
 (
 LOG_NOTICE
@@ -79525,17 +79569,17 @@ which_u¨t
 which_BM1680
 );
 
-1933 
+1941 
 	`‰ì
 (
 upgøde_fûe_buf
 );
 
-1934 
+1942 
 	}
 }
 
-1943 
+1951 
 __ölöe
  
 	$Êù_swab
@@ -79547,7 +79591,7 @@ de°_p
 Àngth
 )
 
-1945 
+1953 
 uöt32_t
  *
 de°
@@ -79555,7 +79599,7 @@ de°
 de°_p
 ;
 
-1946 c⁄° 
+1954 c⁄° 
 uöt32_t
  *
 §c
@@ -79563,17 +79607,17 @@ uöt32_t
 §c_p
 ;
 
-1947 
+1955 
 i
 ;
 
-1949 
+1957 
 i
  = 0; i < 
 Àngth
 /4; i++)
 
-1950 
+1958 
 de°
 [
 i
@@ -79583,23 +79627,23 @@ i
 §c
 [i]);
 
-1951 
+1959 
 	}
 }
 
-1953 
+1961 
 	#ABOUT_CGMINER_PTHREAD
 
 
 	)
 
-1957 *
+1965 *
 	$bômaö_sˇnhash
 (*
 ¨g
 )
 
-1959 
+1967 
 thr_öfo
  *
 thr
@@ -79607,7 +79651,7 @@ thr
 ¨g
 ;
 
-1960 
+1968 
 cgpu_öfo
  *
 bômaö_B3
@@ -79617,7 +79661,7 @@ thr
 cgpu
 ;
 
-1961 
+1969 
 bômaö_B3_öfo
  *
 öfo
@@ -79627,13 +79671,13 @@ bômaö_B3
 devi˚_d©a
 ;
 
-1962 
+1970 
 timevÆ
  
 cuºít
 ;
 
-1963 
+1971 
 uöt8_t
  
 n⁄˚_bö
@@ -79645,7 +79689,7 @@ which_asic_n⁄˚
 which_c‹e_n⁄˚
 ;
 
-1964 
+1972 
 uöt32_t
  
 i
@@ -79657,17 +79701,17 @@ w‹k_n⁄˚
 NULL
 ;
 
-1965 
+1973 
 uöt64_t
  
 n⁄˚
 ;
 
-1966 
+1974 
 submôfuŒ
  = 0;
 
-1967 
+1975 
 boﬁ
  
 submôn⁄˚ok
@@ -79675,7 +79719,7 @@ submôn⁄˚ok
 åue
 ;
 
-1968 
+1976 
 w‹k_id
  = 0, 
 chaö_id
@@ -79687,51 +79731,51 @@ n⁄˚_¸c5
 tm
  = 0;
 
-1969 
+1977 
 pw‹kd©a
 [128]{0}, 
 hash1
 [32]= {0};
 
-1970 
+1978 
 ídünd©a
 [32]= {0};
 
-1971 *
+1979 *
 ob_hex
 =
 NULL
 ;
 
-1972 
+1980 
 uöt64_t
  
 ªt
  = 0;
 
-1974 
+1982 
 w‹k
  *w‹k = 
 NULL
 ;
 
-1975 
+1983 
 	`cgtime
 (&
 cuºít
 );
 
-1976 
+1984 
 h
  = 0;
 
-1977 
+1985 
 	`±hªad_muãx_lock
 (&
 n⁄˚_muãx
 );
 
-1978 
+1986 
 	`cg_æock
 (&
 öfo
@@ -79739,19 +79783,19 @@ n⁄˚_muãx
 upd©e_lock
 );
 
-1980 
+1988 
 n⁄˚_fifo
 .
 n⁄˚_num
 )
 
-1982 
+1990 
 n⁄˚_fifo
 .
 n⁄˚_num
 --;
 
-1984 
+1992 
 n⁄˚
  = (
 n⁄˚_fifo
@@ -79761,7 +79805,7 @@ n⁄˚_buf„r
 p_rd
 ].nonce);
 
-1985 
+1993 
 w‹k_id
  = 
 n⁄˚_fifo
@@ -79773,7 +79817,7 @@ p_rd
 wc
 ;
 
-1986 
+1994 
 chaö_id
  = 
 n⁄˚_fifo
@@ -79785,7 +79829,7 @@ p_rd
 chaöid
 ;
 
-1987 
+1995 
 tm
  = 
 n⁄˚_fifo
@@ -79795,13 +79839,13 @@ n⁄˚_buf„r
 p_rd
 ].tm;
 
-1988 
+1996 
 	`±hªad_muãx_lock
 (&
 w‹k_queue_muãx
 );
 
-1989 if(
+1997 if(
 öfo
 ->
 w‹k_queue
@@ -79811,7 +79855,7 @@ w‹k_id
 NULL
 )
 
-1990 
+1998 
 w‹k
  = 
 	`c›y_w‹k
@@ -79823,17 +79867,17 @@ w‹k_queue
 w‹k_id
 ]);
 
-1991 
+1999 
 	`±hªad_muãx_u∆ock
 (&
 w‹k_queue_muãx
 );
 
-1992 if(
+2000 if(
 w‹k
 )
 
-1994 if(
+2002 if(
 tm
  >
 w‹k
@@ -79841,7 +79885,7 @@ w‹k
 btm_dff
 )
 
-1996 
+2004 
 	`≠∂og
 (
 LOG_NOTICE
@@ -79853,7 +79897,7 @@ btm_dff
 tm
 );
 
-1997 
+2005 
 	`submô_n⁄˚_dúe˘
 (
 thr
@@ -79863,11 +79907,11 @@ w‹k
 n⁄˚
 );
 
-1999 
+2007 
 h
 ++;
 
-2000 
+2008 
 h_óch_chaö
 [
 chaö_id
@@ -79875,7 +79919,7 @@ chaö_id
 TM
 );
 
-2001 
+2009 
 which_asic_n⁄˚
  = 
 n⁄˚_fifo
@@ -79887,7 +79931,7 @@ p_rd
 which_asic
 ;
 
-2003 
+2011 
 	`≠∂og
 (
 LOG_DEBUG
@@ -79899,7 +79943,7 @@ chaö_id
 which_asic_n⁄˚
 );
 
-2005 i‡(–
+2013 i‡(–
 chaö_id
  > 
 BITMAIN_MAX_CHAIN_NUM
@@ -79909,7 +79953,7 @@ dev
 chaö_exi°
 [chain_id]))
 
-2007 
+2015 
 	`≠∂og
 (
 LOG_ERR
@@ -79917,15 +79961,15 @@ LOG_ERR
 chaö_id
 );
 
-2008 
+2016 
 ¸c_îr‹
 ;
 
-2011 i‡–
+2019 i‡–
 which_asic_n⁄˚
  >= 2)
 
-2013 
+2021 
 	`≠∂og
 (
 LOG_DEBUG
@@ -79935,11 +79979,11 @@ which_asic_n⁄˚
 n⁄˚
 );
 
-2014 
+2022 
 ¸c_îr‹
 ;
 
-2017 
+2025 
 dev
 .
 chaö_asic_n⁄˚
@@ -79949,7 +79993,7 @@ chaö_id
 which_asic_n⁄˚
 ]++;
 
-2019 
+2027 
 	`cg_logw‹k
 (
 w‹k
@@ -79959,13 +80003,13 @@ n⁄˚_bö
 submôn⁄˚ok
 );
 
-2020 
+2028 
 	`‰ì_w‹k
 (
 w‹k
 );
 
-2025 
+2033 
 	`≠∂og
 (
 LOG_ERR
@@ -79981,11 +80025,11 @@ devi˚_id
 w‹k_id
 );
 
-2027 
+2035 
 ¸c_îr‹
 :
 
-2028 if(
+2036 if(
 n⁄˚_fifo
 .
 p_rd
@@ -79993,19 +80037,19 @@ p_rd
 MAX_NONCE_NUMBER_IN_FIFO
 )
 
-2030 
+2038 
 n⁄˚_fifo
 .
 p_rd
 ++;
 
-2034 
+2042 
 n⁄˚_fifo
 .
 p_rd
  = 0;
 
-2038 
+2046 
 	`cg_ru∆ock
 (&
 öfo
@@ -80013,81 +80057,81 @@ p_rd
 upd©e_lock
 );
 
-2039 
+2047 
 	`±hªad_muãx_u∆ock
 (&
 n⁄˚_muãx
 );
 
-2040 
+2048 
 	`cg¶ìp_ms
 (1);
 
-2042 
+2050 
 h
  = h * (1<<
 TM
 );
 
-2043  
+2051  
 h
 ;
 
-2044 
+2052 
 	}
 }
 
-2046 * 
+2054 * 
 	$check_Án_thr
 (*
 ¨g
 )
 
-2049 
+2057 
 i
 =0, 
 j
 =0;
 
-2050 
+2058 
 Án_id
  = 0;
 
-2051 
+2059 
 Án_•ìd
 ;
 
-2055 
+2063 
 dev
 .
 Án_•ìd_t›1
  = 0;
 
-2056 
+2064 
 dev
 .
 Án_•ìd_low1
  = 0;
 
-2057 
+2065 
 j
 =0; j < 2; j++)
 
-2059 
+2067 
 i
 =0; i < 
 BITMAIN_MAX_FAN_NUM
 ; i++)
 
-2061 
+2069 
 Án_•ìd
  = 0;
 
-2062 
+2070 
 Án_id
  = 0;
 
-2063 if(
+2071 if(
 	`gë_Án_•ìd
 (&
 Án_id
@@ -80095,7 +80139,7 @@ BITMAIN_MAX_FAN_NUM
 Án_•ìd
 ) != -1)
 
-2065 
+2073 
 dev
 .
 Án_•ìd_vÆue
@@ -80105,7 +80149,7 @@ dev
 Án_•ìd
  * 60 * 2;
 
-2066 if((
+2074 if((
 Án_•ìd
  > 0Ë&& (
 dev
@@ -80115,7 +80159,7 @@ dev
 Án_id
 ] == 0))
 
-2068 
+2076 
 dev
 .
 Án_exi°
@@ -80123,13 +80167,13 @@ dev
 Án_id
 ] = 1;
 
-2069 
+2077 
 dev
 .
 Án_num
 ++;
 
-2070 
+2078 
 dev
 .
 Án_exi°_m≠
@@ -80137,7 +80181,7 @@ dev
 Án_id
 );
 
-2072 if((
+2080 if((
 Án_•ìd
  =0Ë&& (
 dev
@@ -80147,7 +80191,7 @@ dev
 Án_id
 ] == 1))
 
-2074 
+2082 
 dev
 .
 Án_exi°
@@ -80155,13 +80199,13 @@ dev
 Án_id
 ] = 0;
 
-2075 
+2083 
 dev
 .
 Án_num
 --;
 
-2076 
+2084 
 dev
 .
 Án_exi°_m≠
@@ -80169,7 +80213,7 @@ dev
 Án_id
 );
 
-2078 if(
+2086 if(
 dev
 .
 Án_•ìd_t›1
@@ -80179,7 +80223,7 @@ dev
 Án_id
 ])
 
-2079 
+2087 
 dev
 .
 Án_•ìd_t›1
@@ -80189,7 +80233,7 @@ dev
 Án_id
 ];
 
-2080 if((
+2088 if((
 dev
 .
 Án_•ìd_low1
@@ -80199,7 +80243,7 @@ dev
 Án_id
 ] && dev.fan_speed_value[fan_id] != 0) || dev.fan_speed_low1 == 0)
 
-2081 
+2089 
 dev
 .
 Án_•ìd_low1
@@ -80209,25 +80253,25 @@ dev
 Án_id
 ];
 
-2083 
+2091 
 	`cg¶ìp_ms
 (50);
 
-2088 
+2096 
 	`¶ìp
 (
 FANINT
 );
 
-2090 
+2098 
 	}
 }
 
-2092 
+2100 
 	$¸óã_bômaö_check_Án_±hªad
 ()
 
-2094 
+2102 
 check_Án_id
  = 
 	`ˇŒoc
@@ -80235,7 +80279,7 @@ check_Án_id
 thr_öfo
 ));
 
-2095 if(
+2103 if(
 	`thr_öfo_¸óã
 (
 check_Án_id
@@ -80245,7 +80289,7 @@ NULL
 check_Án_thr
 , NULL))
 
-2097 
+2105 
 	`≠∂og
 (
 LOG_DEBUG
@@ -80253,7 +80297,7 @@ LOG_DEBUG
 __FUNCTION__
 );
 
-2100 
+2108 
 	`±hªad_dëach
 (
 check_Án_id
@@ -80261,29 +80305,29 @@ check_Án_id
 ±h
 );
 
-2101 
+2109 
 	`cg¶ìp_ms
 (500);
 
-2102 
+2110 
 	}
 }
 
-2104 
+2112 
 	gÁn_îr‹_num
  = 0;
 
-2105 
+2113 
 ölöe
  
 	$check_Án_ok
 ()
 
-2107 
+2115 
 ªt
  = 0;
 
-2108 if(
+2116 if(
 dev
 .
 Án_num
@@ -80291,15 +80335,15 @@ dev
 MIN_FAN_NUM
 )
 
-2110 
+2118 
 ªt
  = 1;
 
-2111 
+2119 
 îr
 ;
 
-2113 if(
+2121 if(
 dev
 .
 Án_•ìd_vÆue
@@ -80309,15 +80353,15 @@ FAN1_MAX_SPEED
 Án_pwm
  / 130))
 
-2115 
+2123 
 ªt
  = 2;
 
-2116 
+2124 
 îr
 ;
 
-2118 if(
+2126 if(
 dev
 .
 Án_•ìd_vÆue
@@ -80327,15 +80371,15 @@ FAN2_MAX_SPEED
 Án_pwm
  / 130))
 
-2120 
+2128 
 ªt
  = 3;
 
-2121 
+2129 
 îr
 ;
 
-2123 if((
+2131 if((
 dev
 .
 pwm_≥r˚¡
@@ -80347,27 +80391,27 @@ FAN1_MAX_SPEED
 FAN2_MAX_SPEED
  * 90 / 100)))
 
-2125 
+2133 
 ªt
  = 4;
 
-2126 
+2134 
 îr
 ;
 
-2128 
+2136 
 îr
 :
 
-2129 if(
+2137 if(
 ªt
  != 0)
 
-2131 
+2139 
 Án_îr‹_num
 ++;
 
-2132 
+2140 
 	`≠∂og
 (
 LOG_DEBUG
@@ -80383,31 +80427,31 @@ dev
 Án_•ìd_vÆue
 [0],dev.fan_speed_value[1]);
 
-2133 if(
+2141 if(
 Án_îr‹_num
  > (
 FANINT
  * 10))
 
-2134  
+2142  
 ªt
 ;
 
-2142 
+2150 
 Án_îr‹_num
  = 0;
 
-2145 
+2153 
 	}
 }
 
-2147 *
+2155 *
 	$check_möî_°©us
 (*
 ¨g
 )
 
-2149 
+2157 
 bômaö_B3_öfo
  *
 öfo
@@ -80415,7 +80459,7 @@ bômaö_B3_öfo
 ¨g
 ;
 
-2150 
+2158 
 timevÆ
  
 tv_°¨t
@@ -80427,29 +80471,29 @@ tv_íd
 tv_£nd
 ;
 
-2151 
+2159 
 ghs
  = 0;
 
-2152 
+2160 
 i
  = 0, 
 j
  = 0;
 
-2153 
+2161 
 	`cgtime
 (&
 tv_íd
 );
 
-2154 
+2162 
 	`cgtime
 (&
 tv_£nd
 );
 
-2155 
+2163 
 	`c›y_time
 (&
 tv_°¨t
@@ -80457,7 +80501,7 @@ tv_°¨t
 tv_íd
 );
 
-2156 
+2164 
 	`c›y_time
 (&
 tv_£nd_job
@@ -80465,7 +80509,7 @@ tv_£nd_job
 tv_£nd
 );
 
-2158 
+2166 
 asic_num
  = 0, 
 îr‹_asic
@@ -80473,7 +80517,7 @@ asic_num
 avg_num
  = 0;
 
-2159 
+2167 
 which_chaö
 , 
 which_asic
@@ -80481,19 +80525,19 @@ which_asic
 which_£ns‹
 ;
 
-2160 
+2168 
 off£t
  = 0;
 
-2161 
+2169 
 Án_ªt
  = 0;
 
-2162 
+2170 
 low_hash_times
  = 0;
 
-2163 
+2171 
 bômün_B3_öfo_wôh_ödex
  
 öfo_wôh_ödex
@@ -80501,7 +80545,7 @@ bômün_B3_öfo_wôh_ödex
 BITMAIN_MAX_CHAIN_NUM
 ];
 
-2164 
+2172 
 ±hªad_t
  
 ªöô_id
@@ -80509,25 +80553,25 @@ BITMAIN_MAX_CHAIN_NUM
 BITMAIN_MAX_CHAIN_NUM
 ];
 
-2168 
+2176 
 diff
 .
 tv_£c
  = 0;
 
-2169 
+2177 
 diff
 .
 tv_u£c
  = 0;
 
-2170 
+2178 
 	`cgtime
 (&
 tv_íd
 );
 
-2171 
+2179 
 	`timîsub
 (&
 tv_íd
@@ -80537,13 +80581,13 @@ tv_°¨t
 diff
 );
 
-2174 i‡(
+2182 i‡(
 diff
 .
 tv_£c
  > 120)
 
-2176 
+2184 
 asic_num
  = 0, 
 îr‹_asic
@@ -80551,13 +80595,13 @@ asic_num
 avg_num
  = 0;
 
-2178 
+2186 
 which_chaö
 =0; which_chaö<
 BITMAIN_MAX_CHAIN_NUM
 ; which_chain++)
 
-2180 if(
+2188 if(
 dev
 .
 chaö_exi°
@@ -80565,7 +80609,7 @@ chaö_exi°
 which_chaö
 ])
 
-2182 
+2190 
 asic_num
  +
 dev
@@ -80575,7 +80619,7 @@ chaö_asic_num
 which_chaö
 ];
 
-2183 
+2191 
 which_asic
 =0; which_asic<
 dev
@@ -80585,7 +80629,7 @@ chaö_asic_num
 which_chaö
 ]; which_asic++)
 
-2185 
+2193 
 avg_num
  +
 dev
@@ -80597,7 +80641,7 @@ which_chaö
 which_asic
 ];
 
-2186 
+2194 
 	`≠∂og
 (
 LOG_DEBUG
@@ -80613,11 +80657,11 @@ dev
 chaö_asic_n⁄˚
 [which_chain][which_asic]);
 
-2190 i‡(
+2198 i‡(
 asic_num
  != 0)
 
-2192 
+2200 
 	`≠∂og
 (
 LOG_DEBUG
@@ -80629,23 +80673,23 @@ avg_num
 asic_num
 );
 
-2193 
+2201 
 avg_num
  =ávg_num / 
 asic_num
  / 8;
 
-2197 
+2205 
 avg_num
  = 1;
 
-2200 
+2208 
 which_chaö
 =0; which_chaö<
 BITMAIN_MAX_CHAIN_NUM
 ; which_chain++)
 
-2202 if(
+2210 if(
 dev
 .
 chaö_exi°
@@ -80653,11 +80697,11 @@ chaö_exi°
 which_chaö
 ])
 
-2204 
+2212 
 off£t
  = 0;
 
-2206 
+2214 
 which_asic
 =0; which_asic<
 dev
@@ -80667,59 +80711,13 @@ chaö_asic_num
 which_chaö
 ]; which_asic++)
 
-2208 if(
+2216 if(
 which_asic
  % 8 == 0)
 
-2210 i‡––
-which_asic
- + 
-off£t
- ) > (
-ASIC_NUM_EACH_CHAIN
- + 16) )
-
-2211 
-	`≠∂og
-(
-LOG_ERR
-, "asi¯numÉº![%d]", (
-which_asic
- + 
-off£t
-));
-
-2212 
-dev
-.
-chaö_asic_°©us_°rög
-[
-which_chaö
-][
-which_asic
-+
-off£t
-] = ' ';
-
-2213 
-off£t
-++;
-
-2216 if(
-dev
-.
-chaö_asic_n⁄˚
-[
-which_chaö
-][
-which_asic
-]>
-avg_num
-)
-
 2218 i‡––
 which_asic
- +
+ + 
 off£t
  ) > (
 ASIC_NUM_EACH_CHAIN
@@ -80745,17 +80743,33 @@ which_chaö
 which_asic
 +
 off£t
-] = 'o';
+] = ' ';
 
-2224 i‡––
+2221 
+off£t
+++;
+
+2224 if(
+dev
+.
+chaö_asic_n⁄˚
+[
+which_chaö
+][
 which_asic
- + 
+]>
+avg_num
+)
+
+2226 i‡––
+which_asic
+ +
 off£t
  ) > (
 ASIC_NUM_EACH_CHAIN
  + 16) )
 
-2225 
+2227 
 	`≠∂og
 (
 LOG_ERR
@@ -80765,7 +80779,37 @@ which_asic
 off£t
 ));
 
-2226 
+2228 
+dev
+.
+chaö_asic_°©us_°rög
+[
+which_chaö
+][
+which_asic
++
+off£t
+] = 'o';
+
+2232 i‡––
+which_asic
+ + 
+off£t
+ ) > (
+ASIC_NUM_EACH_CHAIN
+ + 16) )
+
+2233 
+	`≠∂og
+(
+LOG_ERR
+, "asi¯numÉº![%d]", (
+which_asic
+ + 
+off£t
+));
+
+2234 
 dev
 .
 chaö_asic_°©us_°rög
@@ -80777,17 +80821,17 @@ which_asic
 off£t
 ] = 'x';
 
-2227 
+2235 
 îr‹_asic
 ++;
 
-2230 i‡––
+2238 i‡––
 which_asic
  ) > (
 ASIC_NUM_EACH_CHAIN
  + 16) )
 
-2231 
+2239 
 	`≠∂og
 (
 LOG_ERR
@@ -80795,7 +80839,7 @@ LOG_ERR
 which_asic
 ));
 
-2232 
+2240 
 dev
 .
 chaö_asic_n⁄˚
@@ -80805,7 +80849,7 @@ which_chaö
 which_asic
 ] = 0;
 
-2235 i‡––
+2243 i‡––
 which_asic
  + 
 off£t
@@ -80813,7 +80857,7 @@ off£t
 ASIC_NUM_EACH_CHAIN
  + 16) )
 
-2236 
+2244 
 	`≠∂og
 (
 LOG_ERR
@@ -80823,7 +80867,7 @@ which_asic
 off£t
 ));
 
-2237 
+2245 
 dev
 .
 chaö_asic_°©us_°rög
@@ -80835,13 +80879,13 @@ which_asic
 off£t
 ] = '\0';
 
-2238 if(
+2246 if(
 √ed_ªöô
 [
 which_chaö
 ])
 
-2240 
+2248 
 öfo_wôh_ödex
 [
 which_chaö
@@ -80849,7 +80893,7 @@ which_chaö
 öfo
  = info;
 
-2241 
+2249 
 öfo_wôh_ödex
 [
 which_chaö
@@ -80857,7 +80901,7 @@ which_chaö
 chaö_ödex
  = which_chain;
 
-2242 
+2250 
 	`±hªad_¸óã
 (&
 ªöô_id
@@ -80871,19 +80915,19 @@ bômaö_B3_ªöô_chaö
 öfo_wôh_ödex
 [which_chain]));
 
-2243 
+2251 
 gMöîSètus_Low_Hashøã
  = 
 åue
 ;
 
-2247 
+2255 
 gMöîSètus_Low_Hashøã
  = 
 Ál£
 ;
 
-2252 
+2260 
 	`c›y_time
 (&
 tv_°¨t
@@ -80891,7 +80935,7 @@ tv_°¨t
 tv_íd
 );
 
-2256 if(
+2264 if(
 dev
 .
 ãmp_t›1
@@ -80899,21 +80943,21 @@ dev
 MAX_TEMP
 )
 
-2258 
+2266 
 gMöîSètus_High_Temp_Cou¡î
 ++;
 
-2259 if(
+2267 if(
 gMöîSètus_High_Temp_Cou¡î
  > 2)
 
-2261 
+2269 
 gMöîSètus_High_Temp
  = 
 åue
 ;
 
-2262 
+2270 
 	`≠∂og
 (
 LOG_ERR
@@ -80925,7 +80969,7 @@ dev
 ãmp_t›1
 );
 
-2266 
+2274 
 	`≠∂og
 (
 LOG_ERR
@@ -80939,35 +80983,35 @@ gMöîSètus_High_Temp_Cou¡î
 pwm_≥r˚¡
 );
 
-2271 
+2279 
 gMöîSètus_High_Temp_Cou¡î
  = 0;
 
-2272 
+2280 
 gMöîSètus_High_Temp
  = 
 Ál£
 ;
 
-2276 
+2284 
 Án_ªt
  = 0;
 
-2277 if(
+2285 if(
 Án_ªt
  != 0)
 
-2279 
+2287 
 gF™_Eº‹
  = 
 åue
 ;
 
-2280 
+2288 
 Án_ªt
 )
 
-2283 
+2291 
 	`≠∂og
 (
 LOG_ERR
@@ -80977,7 +81021,7 @@ dev
 Án_num
 );
 
-2286 
+2294 
 	`≠∂og
 (
 LOG_ERR
@@ -80989,7 +81033,7 @@ dev
 pwm_≥r˚¡
 );
 
-2289 
+2297 
 	`≠∂og
 (
 LOG_ERR
@@ -81001,7 +81045,7 @@ dev
 pwm_≥r˚¡
 );
 
-2292 
+2300 
 	`≠∂og
 (
 LOG_ERR
@@ -81013,13 +81057,13 @@ dev
 pwm_≥r˚¡
 );
 
-2298 
+2306 
 gF™_Eº‹
  = 
 Ál£
 ;
 
-2301 if(
+2309 if(
 gMöîSètus_Low_Hashøã
  || 
 gMöîSètus_High_Temp
@@ -81029,7 +81073,7 @@ gF™_Eº‹
 gMöîSètus_NŸ_ªad_Æl_£ns‹
 )
 
-2304 if((!
+2312 if((!
 ⁄˚_îr‹
 Ë&& (
 gMöîSètus_High_Temp
@@ -81037,67 +81081,67 @@ gMöîSètus_High_Temp
 gF™_Eº‹
  ))
 
-2306 
+2314 
 °©us_îr‹
  = 
 åue
 ;
 
-2307 
+2315 
 ⁄˚_îr‹
  = 
 åue
 ;
 
-2308 
+2316 
 	`wrôe_axi_Âga
 (
 SOCKET_ID
 , 7);
 
-2313 
+2321 
 °›
  = 
 Ál£
 ;
 
-2314 
+2322 
 °©us_îr‹
  = 
 Ál£
 ;
 
-2315 i‡(
+2323 i‡(
 ⁄˚_îr‹
 )
 
-2317 
+2325 
 °›
  = 
 åue
 ;
 
-2318 
+2326 
 °©us_îr‹
  = 
 åue
 ;
 
-2321 
+2329 
 	`£t_Àd
 (
 °›
 );
 
-2322 
+2330 
 	`cg¶ìp_ms
 (1000);
 
-2324 
+2332 
 	}
 }
 
-2327 
+2335 
 	$¸óã_bômaö_check_möî_°©us_±hªad
 (
 bômaö_B3_öfo
@@ -81105,7 +81149,7 @@ bômaö_B3_öfo
 öfo
 )
 
-2329 
+2337 
 check_möî_°©us_id
  = 
 	`ˇŒoc
@@ -81113,7 +81157,7 @@ check_möî_°©us_id
 thr_öfo
 ));
 
-2330 if(
+2338 if(
 	`thr_öfo_¸óã
 (
 check_möî_°©us_id
@@ -81125,7 +81169,7 @@ check_möî_°©us
 öfo
 ))
 
-2332 
+2340 
 	`≠∂og
 (
 LOG_DEBUG
@@ -81133,7 +81177,7 @@ LOG_DEBUG
 __FUNCTION__
 );
 
-2335 
+2343 
 	`±hªad_dëach
 (
 check_möî_°©us_id
@@ -81141,19 +81185,19 @@ check_möî_°©us_id
 ±h
 );
 
-2336 
+2344 
 	`cg¶ìp_ms
 (500);
 
-2337 
+2345 
 	}
 }
 
-2339 *
+2347 *
 	$gë_hash_øã
 ()
 
-2341 
+2349 
 uöt32_t
  
 which_chaö
@@ -81161,7 +81205,7 @@ which_chaö
 i
  = 0;
 
-2342 
+2350 
 timevÆ
  
 ﬁd_h
@@ -81171,41 +81215,41 @@ timevÆ
 diff
 ;
 
-2343 
+2351 
 óch_chaö_h
 [
 BITMAIN_MAX_CHAIN_NUM
 ][10] = {{0}};
 
-2344 
+2352 
 óch_chaö_h_Æl
  = 0;
 
-2345 
+2353 
 ödex
 [
 BITMAIN_MAX_CHAIN_NUM
 ] = {0};
 
-2346 
+2354 
 	`cgtime
 (&
 ﬁd_h
 );
 
-2347 
+2355 
 	`cgtime
 (&
 √w_h
 );
 
-2351 
+2359 
 	`cgtime
 (&
 √w_h
 );
 
-2352 
+2360 
 	`timîsub
 (&
 √w_h
@@ -81215,17 +81259,17 @@ BITMAIN_MAX_CHAIN_NUM
 diff
 );
 
-2353 
+2361 
 óch_chaö_h_Æl
  = 0;
 
-2354 
+2362 
 which_chaö
  = 0; which_chaö < 
 BITMAIN_MAX_CHAIN_NUM
 ; which_chain++)
 
-2356 if(
+2364 if(
 dev
 .
 chaö_exi°
@@ -81233,7 +81277,7 @@ chaö_exi°
 which_chaö
 ])
 
-2358 
+2366 
 óch_chaö_h
 [
 which_chaö
@@ -81243,13 +81287,13 @@ which_chaö
 h_óch_chaö
 [which_chain] );
 
-2360 
+2368 
 h_óch_chaö
 [
 which_chaö
 ] = 0;
 
-2361 
+2369 
 óch_chaö_h
 [
 which_chaö
@@ -81263,17 +81307,17 @@ tv_£c
 tv_u£c
  + 1) / 1000000));
 
-2362 
+2370 
 óch_chaö_h_avg
 [
 which_chaö
 ] = 0;
 
-2363  
+2371  
 i
  = 0; i < 10; i++)
 
-2365 
+2373 
 óch_chaö_h_avg
 [
 which_chaö
@@ -81283,7 +81327,7 @@ which_chaö
 i
 ];
 
-2368 
+2376 
 	`•rötf
 (
 di•œyed_øã
@@ -81293,7 +81337,7 @@ which_chaö
 óch_chaö_h_avg
 [which_chain]/10);
 
-2369 
+2377 
 óch_chaö_h_Æl
  +
 óch_chaö_h_avg
@@ -81301,25 +81345,25 @@ which_chaö
 which_chaö
 ]/10;
 
-2371 
+2379 
 ödex
 [
 which_chaö
 ]++;
 
-2372 i‡(
+2380 i‡(
 ödex
 [
 which_chaö
 ] >= 10)
 
-2374 
+2382 
 ödex
 [
 which_chaö
 ] = 0;
 
-2378 
+2386 
 	`•rötf
 (
 di•œyed_hash_øã
@@ -81327,13 +81371,13 @@ di•œyed_hash_øã
 óch_chaö_h_Æl
 );
 
-2379 
+2387 
 góch_chaö_h_Æl
  = 
 óch_chaö_h_Æl
 ;
 
-2380 
+2388 
 	`c›y_time
 (&
 ﬁd_h
@@ -81341,21 +81385,21 @@ góch_chaö_h_Æl
 √w_h
 );
 
-2382 
+2390 
 	`¶ìp
 (
 READ_HASH_RATE_TIME_GAP
 );
 
-2384 
+2392 
 	}
 }
 
-2387 
+2395 
 	$¸óã_bômaö_gë_hash_øã_±hªad
 ()
 
-2389 
+2397 
 ªad_hash_øã
  = 
 	`ˇŒoc
@@ -81363,7 +81407,7 @@ READ_HASH_RATE_TIME_GAP
 thr_öfo
 ));
 
-2390 if(
+2398 if(
 	`thr_öfo_¸óã
 (
 ªad_hash_øã
@@ -81373,7 +81417,7 @@ NULL
 gë_hash_øã
 ,Ñead_hash_rate))
 
-2392 
+2400 
 	`≠∂og
 (
 LOG_DEBUG
@@ -81381,7 +81425,7 @@ LOG_DEBUG
 __FUNCTION__
 );
 
-2395 
+2403 
 	`±hªad_dëach
 (
 ªad_hash_øã
@@ -81389,23 +81433,23 @@ __FUNCTION__
 ±h
 );
 
-2396 
+2404 
 	`cg¶ìp_ms
 (500);
 
-2397 
+2405 
 	}
 }
 
-2400 *
+2408 *
 	$check_°©us_func
 ()
 
-2402 
+2410 
 which_chaö
 ;
 
-2404 
+2412 
 	`≠∂og
 (
 LOG_DEBUG
@@ -81413,13 +81457,13 @@ LOG_DEBUG
 __FUNCTION__
 );
 
-2408  
+2416  
 which_chaö
  = 0; which_chaö < 
 BITMAIN_MAX_CHAIN_NUM
 ; which_chain++ )
 
-2410 i‡–
+2418 i‡–
 dev
 .
 chaö_exi°
@@ -81429,47 +81473,47 @@ which_chaö
 gBegö_gë_n⁄˚
 [which_chain])
 
-2412 
+2420 
 	`BM1680_check_°©us
 (
 which_chaö
 ,0);
 
-2413 
+2421 
 	`BM1680_check_°©us
 (
 which_chaö
 ,1);
 
-2416 
+2424 
 	`¶ìp
 (5);
 
-2418 
+2426 
 	}
 }
 
-2421 *
+2429 *
 	$ªad_ãmp_func
 ()
 
-2423 
+2431 
 which_chaö
 ;
 
-2424 
+2432 
 öt16_t
  
 tmpTemp
  = 0;
 
-2425 
+2433 
 uöt8_t
  
 ãmp
  = 0;
 
-2427 
+2435 
 	`≠∂og
 (
 LOG_DEBUG
@@ -81477,17 +81521,17 @@ LOG_DEBUG
 __FUNCTION__
 );
 
-2430 
+2438 
 tmpTemp
  = 0;
 
-2431  
+2439  
 which_chaö
  = 0; which_chaö < 
 BITMAIN_MAX_CHAIN_NUM
 ; which_chain++ )
 
-2433 i‡–
+2441 i‡–
 dev
 .
 chaö_exi°
@@ -81497,43 +81541,43 @@ which_chaö
 °¨t_£nd
 [which_chain])
 
-2435 
+2443 
 	`BM1680_gë_bﬂrd_ãm≥øtuª
 (
 which_chaö
 , 0);
 
-2436 
+2444 
 	`BM1680_gë_asic_ãm≥øtuª
 (
 which_chaö
 , 0);
 
-2437 
+2445 
 	`BM1680_gë_bﬂrd_ãm≥øtuª
 (
 which_chaö
 , 1);
 
-2438 
+2446 
 	`BM1680_gë_asic_ãm≥øtuª
 (
 which_chaö
 , 1);
 
-2442 
+2450 
 	`¶ìp
 (
 READ_TEMPERATURE_TIME_GAP
 );
 
-2443  
+2451  
 which_chaö
  = 0; which_chaö < 
 BITMAIN_MAX_CHAIN_NUM
 ; which_chain++ )
 
-2445 i‡–
+2453 i‡–
 dev
 .
 chaö_asic_ãmp
@@ -81543,7 +81587,7 @@ which_chaö
 tmpTemp
 )
 
-2447 
+2455 
 tmpTemp
  = 
 dev
@@ -81553,7 +81597,7 @@ chaö_asic_ãmp
 which_chaö
 ][0][1];
 
-2450 
+2458 
 dev
 .
 ãmp_t›1
@@ -81561,29 +81605,29 @@ dev
 tmpTemp
 ;
 
-2451 if(
+2459 if(
 °›
 )
 
-2453 
+2461 
 	`£t_PWM
 (
 MAX_PWM_PERCENT
 );
 
-2457 
+2465 
 	`£t_PWM_acc‹dög_to_ãm≥øtuª
 ();
 
-2460 
+2468 
 	}
 }
 
-2462 
+2470 
 	$¸óã_bômaö_check_°©us_±hªad
 ()
 
-2464 
+2472 
 check_°©us_id
  = 
 	`ˇŒoc
@@ -81591,7 +81635,7 @@ check_°©us_id
 thr_öfo
 ));
 
-2465 if(
+2473 if(
 	`thr_öfo_¸óã
 (
 check_°©us_id
@@ -81601,7 +81645,7 @@ NULL
 check_°©us_func
 , check_status_id))
 
-2467 
+2475 
 	`≠∂og
 (
 LOG_DEBUG
@@ -81609,7 +81653,7 @@ LOG_DEBUG
 __FUNCTION__
 );
 
-2470 
+2478 
 	`±hªad_dëach
 (
 check_°©us_id
@@ -81617,19 +81661,19 @@ check_°©us_id
 ±h
 );
 
-2471 
+2479 
 	`cg¶ìp_ms
 (500);
 
-2472 
+2480 
 	}
 }
 
-2475 
+2483 
 	$¸óã_bômaö_ªad_ãmp_±hªad
 ()
 
-2477 
+2485 
 ªad_ãmp_id
  = 
 	`ˇŒoc
@@ -81637,7 +81681,7 @@ check_°©us_id
 thr_öfo
 ));
 
-2478 if(
+2486 if(
 	`thr_öfo_¸óã
 (
 ªad_ãmp_id
@@ -81647,7 +81691,7 @@ NULL
 ªad_ãmp_func
 ,Ñead_temp_id))
 
-2480 
+2488 
 	`≠∂og
 (
 LOG_DEBUG
@@ -81655,7 +81699,7 @@ LOG_DEBUG
 __FUNCTION__
 );
 
-2483 
+2491 
 	`±hªad_dëach
 (
 ªad_ãmp_id
@@ -81663,33 +81707,33 @@ __FUNCTION__
 ±h
 );
 
-2484 
+2492 
 	`cg¶ìp_ms
 (500);
 
-2485 
+2493 
 	}
 }
 
-2487 *
+2495 *
 	$B3_fûl_w‹k
 (*
 u§d©a
 )
 
-2489 
+2497 
 	`±hªad_dëach
 (
 	`±hªad_£lf
 ());
 
-2490 
+2498 
 	`≠∂og
 (
 LOG_DEBUG
 , "Start To Fill Work!");
 
-2491 
+2499 
 bômün_B3_öfo_wôh_ödex
  *
 öfo_wôh_chaö
@@ -81697,7 +81741,7 @@ bômün_B3_öfo_wôh_ödex
 u§d©a
 ;
 
-2492 
+2500 
 bômaö_B3_öfo
  *
 öfo
@@ -81705,7 +81749,7 @@ bômaö_B3_öfo
 öfo_wôh_chaö
 ->info;
 
-2493 
+2501 
 uöt8_t
  
 chaöid
@@ -81715,7 +81759,7 @@ chaöid
 chaö_ödex
 ;
 
-2494 
+2502 
 thr_öfo
  * 
 thr
@@ -81723,7 +81767,7 @@ thr
 öfo
 ->thr;
 
-2495 
+2503 
 timevÆ
  
 £nd_°¨t
@@ -81733,25 +81777,25 @@ timevÆ
 £nd_ñ≠£d
 ;
 
-2496 
+2504 
 w‹k
  *w‹k = 
 NULL
 ;
 
-2497 
+2505 
 poﬁ
  *poﬁ = 
 NULL
 ;
 
-2498 * 
+2506 * 
 cuºít_job_id
  = 
 NULL
 ;
 
-2499 
+2507 
 öt8_t
  
 £ed
@@ -81761,17 +81805,17 @@ w‹kd©a0
 w‹kd©a1
 [137];
 
-2500 
+2508 
 öt8_t
  
 w‹kid
  = 0;
 
-2501 
+2509 
 i
  = 0;
 
-2502 
+2510 
 boﬁ
  
 £nd_tm
@@ -81779,7 +81823,7 @@ boﬁ
 åue
 ;
 
-2504 
+2512 
 	`≠∂og
 (
 LOG_DEBUG
@@ -81787,39 +81831,39 @@ LOG_DEBUG
 chaöid
 );
 
-2506 1 && !
+2514 1 && !
 ªöôög
 [
 chaöid
 ])
 
-2509 if(!
+2517 if(!
 °¨t_£nd
 [
 chaöid
 ])
 
-2511 
+2519 
 	`cg¶ìp_ms
 (10);
 
-2515 
+2523 
 poﬁ
  = 
 	`cuºít_poﬁ
 ();
 
-2516 if(
+2524 if(
 poﬁ
  =
 NULL
 )
 
-2518 
+2526 
 	`cg¶ìp_ms
 (10);
 
-2522 
+2530 
 	`cg_æock
 (&
 poﬁ
@@ -81827,13 +81871,13 @@ poﬁ
 d©a_lock
 );
 
-2523 if(
+2531 if(
 cuºít_job_id
  =
 NULL
 )
 
-2525 if(
+2533 if(
 poﬁ
 ->
 sw‹k
@@ -81843,7 +81887,7 @@ job_id
 NULL
 )
 
-2527 
+2535 
 cuºít_job_id
  = 
 	`°rdup
@@ -81855,7 +81899,7 @@ sw‹k
 job_id
 );
 
-2528 
+2536 
 √w_block
 [
 chaöid
@@ -81863,11 +81907,11 @@ chaöid
 åue
 ;
 
-2532 
+2540 
 	`cg¶ìp_ms
 (10);
 
-2533 
+2541 
 	`cg_ru∆ock
 (&
 poﬁ
@@ -81875,7 +81919,7 @@ poﬁ
 d©a_lock
 );
 
-2537 if(
+2545 if(
 poﬁ
 ->
 sw‹k
@@ -81885,7 +81929,7 @@ job_id
 NULL
 )
 
-2539 if(
+2547 if(
 	`°rcmp
 (
 cuºít_job_id
@@ -81897,13 +81941,13 @@ sw‹k
 job_id
 ) != 0)
 
-2541 
+2549 
 	`‰ì
 (
 cuºít_job_id
 );
 
-2542 
+2550 
 cuºít_job_id
  = 
 	`°rdup
@@ -81915,7 +81959,7 @@ sw‹k
 job_id
 );
 
-2543 
+2551 
 √w_block
 [
 chaöid
@@ -81923,47 +81967,11 @@ chaöid
 åue
 ;
 
-2547 
+2555 
 	`cg¶ìp_ms
 (10);
 
-2548 
-	`cg_ru∆ock
-(&
-poﬁ
-->
-d©a_lock
-);
-
-2552 if(
-poﬁ
-->
-upd©e_£ed
-)
-
-2554 
-i
- = 0; i < 
-BITMAIN_MAX_CHAIN_NUM
-; i++)
-
-2555 
-upd©e_£ed
-[
-i
-] = 
-åue
-;
-
 2556 
-poﬁ
-->
-upd©e_£ed
- = 
-Ál£
-;
-
-2558 
 	`cg_ru∆ock
 (&
 poﬁ
@@ -81972,6 +81980,42 @@ d©a_lock
 );
 
 2560 if(
+poﬁ
+->
+upd©e_£ed
+)
+
+2562 
+i
+ = 0; i < 
+BITMAIN_MAX_CHAIN_NUM
+; i++)
+
+2563 
+upd©e_£ed
+[
+i
+] = 
+åue
+;
+
+2564 
+poﬁ
+->
+upd©e_£ed
+ = 
+Ál£
+;
+
+2566 
+	`cg_ru∆ock
+(&
+poﬁ
+->
+d©a_lock
+);
+
+2568 if(
 upd©e_£ed
 [
 chaöid
@@ -81979,7 +82023,7 @@ chaöid
 åue
 )
 
-2562 
+2570 
 	`upd©e_£ed_™d_waô_ok
 (
 chaöid
@@ -81989,7 +82033,7 @@ poﬁ
 btm_£ed
 );
 
-2563 
+2571 
 upd©e_£ed
 [
 chaöid
@@ -81997,25 +82041,25 @@ chaöid
 Ál£
 ;
 
-2566 if(
+2574 if(
 √w_block
 [
 chaöid
 ])
 
-2568 
+2576 
 	`cgtime
 (&
 œ°_£nd
 );
 
-2569 
+2577 
 w‹k
  = 
 	`make_w‹k
 ();
 
-2570 
+2578 
 	`gí_°øtum_w‹k
 (
 poﬁ
@@ -82023,13 +82067,13 @@ poﬁ
 w‹k
 );
 
-2572 
+2580 
 w‹kid
  = (
 globÆ_w‹kid
 ++) & 0x7f;
 
-2573 
+2581 
 √w_block
 [
 chaöid
@@ -82037,19 +82081,19 @@ chaöid
 Ál£
 ;
 
-2574 
+2582 
 	`mem£t
 (
 w‹kd©a0
 , 0, (workdata0));
 
-2575 
+2583 
 w‹kd©a0
 [0] = 
 w‹kid
 ;
 
-2576 
+2584 
 	`mem˝y
 (
 w‹kd©a0
@@ -82059,25 +82103,25 @@ w‹k
 d©a
 , 136);
 
-2577 
+2585 
 w‹kd©a0
 [129] = 
 chaöid
 ;
 
-2578 
+2586 
 w‹kd©a0
 [132] = 
 chaöid
 ;
 
-2579 
+2587 
 	`±hªad_muãx_lock
 (&
 w‹k_queue_muãx
 );
 
-2580 if(
+2588 if(
 öfo
 ->
 w‹k_queue
@@ -82085,7 +82129,7 @@ w‹k_queue
 w‹kid
 ])
 
-2582 
+2590 
 	`‰ì_w‹k
 (
 öfo
@@ -82095,7 +82139,7 @@ w‹k_queue
 w‹kid
 ]);
 
-2583 
+2591 
 öfo
 ->
 w‹k_queue
@@ -82105,7 +82149,7 @@ w‹kid
 NULL
 ;
 
-2585 
+2593 
 öfo
 ->
 w‹k_queue
@@ -82117,13 +82161,13 @@ w‹kid
 w‹k
 );
 
-2586 
+2594 
 	`±hªad_muãx_u∆ock
 (&
 w‹k_queue_muãx
 );
 
-2587 
+2595 
 	`≠∂og
 (
 LOG_DEBUG
@@ -82133,7 +82177,7 @@ chaöid
 w‹kid
 );
 
-2588 
+2596 
 	`BM1680_£t_mesßge
 (
 chaöid
@@ -82141,25 +82185,25 @@ chaöid
 w‹kd©a0
 );
 
-2591 
+2599 
 w‹kid
  = (
 globÆ_w‹kid
 ++) & 0x7f;
 
-2592 
+2600 
 	`mem£t
 (
 w‹kd©a1
 , 0, (workdata1));
 
-2593 
+2601 
 w‹kd©a1
 [0] = 
 w‹kid
 ;
 
-2594 
+2602 
 	`mem˝y
 (
 w‹kd©a1
@@ -82169,25 +82213,25 @@ w‹k
 d©a
 , 136);
 
-2595 
+2603 
 w‹kd©a1
 [129] = 
 chaöid
  << 4;
 
-2596 
+2604 
 w‹kd©a1
 [132] = 
 chaöid
  << 4;
 
-2597 
+2605 
 	`±hªad_muãx_lock
 (&
 w‹k_queue_muãx
 );
 
-2598 if(
+2606 if(
 öfo
 ->
 w‹k_queue
@@ -82195,7 +82239,7 @@ w‹k_queue
 w‹kid
 ])
 
-2600 
+2608 
 	`‰ì_w‹k
 (
 öfo
@@ -82205,7 +82249,7 @@ w‹k_queue
 w‹kid
 ]);
 
-2601 
+2609 
 öfo
 ->
 w‹k_queue
@@ -82215,7 +82259,7 @@ w‹kid
 NULL
 ;
 
-2603 
+2611 
 öfo
 ->
 w‹k_queue
@@ -82227,13 +82271,13 @@ w‹kid
 w‹k
 );
 
-2604 
+2612 
 	`±hªad_muãx_u∆ock
 (&
 w‹k_queue_muãx
 );
 
-2605 
+2613 
 	`≠∂og
 (
 LOG_DEBUG
@@ -82243,7 +82287,7 @@ chaöid
 w‹kid
 );
 
-2606 
+2614 
 	`BM1680_£t_mesßge
 (
 chaöid
@@ -82251,7 +82295,7 @@ chaöid
 w‹kd©a1
 );
 
-2607 
+2615 
 gBegö_gë_n⁄˚
 [
 chaöid
@@ -82259,41 +82303,39 @@ chaöid
 åue
 ;
 
-2610 
+2618 
 	`cg¶ìp_us
 (500);
 
-2611 if(
+2619 if(
 w‹k
  !
 NULL
 )
 
-2613 
+2621 
 	`‰ì_w‹k
 (
 w‹k
 );
 
-2616 if(
+2624 if(
 cuºít_job_id
  !
 NULL
 )
 
-2617 
+2625 
 	`‰ì
 (
 cuºít_job_id
 );
 
-2618 
+2626 
 	}
 }
 
-2620 
-ölöe
- 
+2628 
 	$add_poöt
 (* 
 poöt
@@ -82301,25 +82343,25 @@ poöt
 MAX_SIZE
 )
 
-2622 (*
+2630 (*
 poöt
 )++;
 
-2623 if((*
+2631 if((*
 poöt
 Ë>
 MAX_SIZE
 )
 
-2624 (*
+2632 (*
 poöt
 ) = 0;
 
-2625 
+2633 
 	}
 }
 
-2627 
+2635 
 ölöe
  
 	$u£_poöt_sub_1
@@ -82329,19 +82371,17 @@ poöt
 MAX_SIZE
 )
 
-2629  (
+2637  (
 poöt
  =0Ë? 
 MAX_SIZE
  -1 :Öoint -1;
 
-2630 
+2638 
 	}
 }
 
-2632 
-ölöe
- 
+2640 
 	$u£_poöt_add_1
 (
 poöt
@@ -82349,17 +82389,17 @@ poöt
 MAX_SIZE
 )
 
-2634  (
+2642  (
 poöt
  >
 MAX_SIZE
  -1) ? 0 : (point + 1) ;
 
-2635 
+2643 
 	}
 }
 
-2637 
+2645 
 	$gë_d©a_Àn
 (
 uöt8_t
@@ -82369,29 +82409,17 @@ cmd
 ack
 )
 
-2639 
+2647 
 d©a_Àn
  = 0;
 
-2640 
+2648 
 cmd
 )
 
-2643 
-d©a_Àn
- = 1;
-
-2648 
-d©a_Àn
- = 0;
-
 2651 
 d©a_Àn
- = (
-ack
- & 0x7fË* 
-BM1680_NONCE_DATA_LEN
- + 1;
+ = 1;
 
 2656 
 d©a_Àn
@@ -82399,21 +82427,33 @@ d©a_Àn
 
 2659 
 d©a_Àn
+ = (
+ack
+ & 0x7fË* 
+BM1680_NONCE_DATA_LEN
+ + 1;
+
+2664 
+d©a_Àn
+ = 0;
+
+2667 
+d©a_Àn
  = 9;
 
-2663 
+2671 
 d©a_Àn
  = 4;
 
-2666  
+2674  
 d©a_Àn
 ;
 
-2667 
+2675 
 	}
 }
 
-2669 
+2677 
 boﬁ
  
 	$is_n⁄˚_‹_ªg_vÆue
@@ -82423,7 +82463,7 @@ uöt8_t
 ack
 )
 
-2671  ((
+2679  ((
 ack
  >> 7Ë> 0Ë? 
 åue
@@ -82431,11 +82471,11 @@ ack
 Ál£
 ;
 
-2672 
+2680 
 	}
 }
 
-2674 
+2682 
 	$¥o˚ss_ack
 (
 uöt8_t
@@ -82447,7 +82487,7 @@ d©a
 chaö_id
 )
 
-2676 
+2684 
 öt8_t
  
 asic
@@ -82457,7 +82497,7 @@ d©a
 BM1680_CHIP_ADDRESS_ADDR
 ];
 
-2677 
+2685 
 öt8_t
  
 ack
@@ -82467,7 +82507,7 @@ d©a
 BM1680_ACK_ADDR
 ];
 
-2678 
+2686 
 öt8_t
  
 cmd
@@ -82477,97 +82517,97 @@ d©a
 BM1680_CMD_ADDR
 ];
 
-2679 
+2687 
 öt8_t
  
 ªt
  = 0;
 
-2680 if((
+2688 if((
 ack
  & 0x80) == 0x0)
 
-2682 
+2690 
 ack
 )
 
-2684 
-BM1680_EXECUTE_OK
-:
-
-2685 
-ªt
- = 
-BM1680_EXECUTE_OK
-;
-
-2688 
-BM1680_RECEIVED_DATA_CRC_ERROR
-:
-
-2689 
-ªt
- = 
-BM1680_RECEIVED_DATA_CRC_ERROR
-;
-
 2692 
-BM1680_NOT_ENOUGH_MEMORY
+BM1680_EXECUTE_OK
 :
 
 2693 
 ªt
  = 
-BM1680_NOT_ENOUGH_MEMORY
+BM1680_EXECUTE_OK
 ;
 
 2696 
-BM1680_LOCAL_MEMORY_NOT_ENOUGH
+BM1680_RECEIVED_DATA_CRC_ERROR
 :
 
 2697 
 ªt
  = 
-BM1680_LOCAL_MEMORY_NOT_ENOUGH
+BM1680_RECEIVED_DATA_CRC_ERROR
 ;
 
 2700 
-BM1680_CMD_PARAMETER_ERROR
+BM1680_NOT_ENOUGH_MEMORY
 :
 
 2701 
 ªt
  = 
-BM1680_CMD_PARAMETER_ERROR
+BM1680_NOT_ENOUGH_MEMORY
 ;
 
 2704 
-BM1680_CMD_INDEX_ERROR
+BM1680_LOCAL_MEMORY_NOT_ENOUGH
 :
 
 2705 
 ªt
  = 
-BM1680_CMD_INDEX_ERROR
+BM1680_LOCAL_MEMORY_NOT_ENOUGH
 ;
 
 2708 
-BM1680_CHECK_STATUS_ERROR
+BM1680_CMD_PARAMETER_ERROR
 :
 
 2709 
 ªt
  = 
+BM1680_CMD_PARAMETER_ERROR
+;
+
+2712 
+BM1680_CMD_INDEX_ERROR
+:
+
+2713 
+ªt
+ = 
+BM1680_CMD_INDEX_ERROR
+;
+
+2716 
+BM1680_CHECK_STATUS_ERROR
+:
+
+2717 
+ªt
+ = 
 BM1680_CHECK_STATUS_ERROR
 ;
 
-2712 
+2720 
 ªt
  = 
 BM1680_NOT_SUPPORT_THIS_CMD
 ;
 
-2716 
+2724 
 BM1680_ack_ªc‹d
 [
 chaö_id
@@ -82579,21 +82619,21 @@ cmd
 ªt
 ;
 
-2717 if(
+2725 if(
 ªt
  =
 BM1680_EXECUTE_OK
 )
 
-2719 
+2727 
 cmd
 )
 
-2721 
+2729 
 BM1680_INIT_CMD
 :
 
-2722 
+2730 
 	`≠∂og
 (
 LOG_NOTICE
@@ -82607,11 +82647,11 @@ d©a
 BM1680_ACK_DATA_BEGIN_ADDR
 ]);
 
-2724 
+2732 
 BM1680_SET_MESSAGE
 :
 
-2725 
+2733 
 	`≠∂og
 (
 LOG_NOTICE
@@ -82621,11 +82661,11 @@ chaö_id
 asic
 );
 
-2727 
+2735 
 BM1680_GET_BOARD_TEMPERATURE
 :
 
-2728 
+2736 
 dev
 .
 ãmp
@@ -82639,7 +82679,7 @@ d©a
 BM1680_ACK_DATA_BEGIN_ADDR
 ];
 
-2729 
+2737 
 	`≠∂og
 (
 LOG_NOTICE
@@ -82653,11 +82693,11 @@ dev
 ãmp
 [chain_id][asic][0]);
 
-2731 
+2739 
 BM1680_GET_ASIC_TEMPERATURE
 :
 
-2732 
+2740 
 dev
 .
 ãmp
@@ -82671,7 +82711,7 @@ d©a
 BM1680_ACK_DATA_BEGIN_ADDR
 ];
 
-2733 
+2741 
 	`≠∂og
 (
 LOG_NOTICE
@@ -82685,7 +82725,7 @@ dev
 ãmp
 [chain_id][asic][1]);
 
-2736 
+2744 
 dev
 .
 chaö_asic_ãmp
@@ -82697,7 +82737,7 @@ chaö_id
 asic
 ][0];
 
-2737 
+2745 
 dev
 .
 chaö_asic_ãmp
@@ -82709,7 +82749,7 @@ chaö_id
 asic
 ][1];
 
-2741 
+2749 
 	`≠∂og
 (
 LOG_NOTICE
@@ -82723,7 +82763,7 @@ cmd
 ªt
 );
 
-2742 if(
+2750 if(
 cmd
  =
 BM1680_CHECK_STATUS
@@ -82739,23 +82779,23 @@ chaö_id
 åue
 ;
 
-2744 
+2752 
 	}
 }
 
-2745 *
+2753 *
 	$gë_asic_ª•⁄£
 (* 
 ¨g
 )
 
-2747 
+2755 
 	`±hªad_dëach
 (
 	`±hªad_£lf
 ());
 
-2749 
+2757 
 uöt32_t
  
 n⁄˚_numbî
@@ -82763,13 +82803,13 @@ n⁄˚_numbî
 ªad_lo›
 ;
 
-2750 
+2758 
 n⁄˚_bö
 [7],
 chaöid
 ;
 
-2752 
+2760 
 dev_öfo
  *
 dev_i
@@ -82777,17 +82817,17 @@ dev_i
 ¨g
 ;
 
-2753 
+2761 
 chaöid
  = 
 dev_i
 ->chainid;
 
-2755 
+2763 
 ª˚ive_buf
 [10 * 100] = {0};
 
-2756 
+2764 
 tmp
 [10 * 
 MAX_NONCE_NUMBER
@@ -82795,43 +82835,43 @@ MAX_NONCE_NUMBER
 BM1680_RECEIVE_CMD_LEN_EXCLUDE_DATA
 ] = {0};
 
-2757 
+2765 
 d©a_buf
 [10 * 512] = {0};
 
-2758 
+2766 
 d©a_buf_Ω
  = 0, 
 d©a_buf_wp
  = 0;
 
-2759 
+2767 
 ssize_t
  
 Àn
  = 0;
 
-2760 
+2768 
 ssize_t
  
 d©a_Àn
  = 0;
 
-2761 
+2769 
 i
  = 0;
 
-2762 
+2770 
 max
  = 10 * 512;
 
-2763 * 
+2771 * 
 hex_buff
  = 
 NULL
 ;
 
-2765 
+2773 
 	`≠∂og
 (
 LOG_NOTICE
@@ -82839,7 +82879,7 @@ LOG_NOTICE
 chaöid
 );
 
-2766 
+2774 
 	`≠∂og
 (
 LOG_DEBUG
@@ -82849,35 +82889,35 @@ __FUNCTION__
 chaöid
 );
 
-2768 
+2776 
 	`˛ór_u¨t_rx_fifo
 (
 chaöid
 );
 
-2769 
+2777 
 	`˛ór_u¨t_rx_fifo
 (
 chaöid
 );
 
-2770 
+2778 
 	`˛ór_u¨t_rx_fifo
 (
 chaöid
 );
 
-2772 
+2780 
 °¨t_ªcv
 [
 chaöid
 ])
 
-2774 
+2782 
 	`cg¶ìp_ms
 (100);
 
-2775 
+2783 
 Àn
  = 
 	`B3_ªad
@@ -82887,17 +82927,17 @@ chaöid
 ª˚ive_buf
 , (receive_buf));
 
-2777 if(
+2785 if(
 Àn
  != 0)
 
-2779 *
+2787 *
 ª˚ive_hex
  = 
 NULL
 ;
 
-2780 
+2788 
 ª˚ive_hex
  = 
 	`bö2hex
@@ -82907,7 +82947,7 @@ NULL
 Àn
 );
 
-2781 
+2789 
 	`≠∂og
 (
 LOG_NOTICE
@@ -82919,19 +82959,19 @@ chaöid
 ª˚ive_hex
 );
 
-2782 
+2790 
 	`‰ì
 (
 ª˚ive_hex
 );
 
-2785 
+2793 
 i
  = 0; i < 
 Àn
 ; i++)
 
-2787 
+2795 
 d©a_buf
 [
 d©a_buf_wp
@@ -82941,7 +82981,7 @@ d©a_buf_wp
 i
 ];
 
-2788 
+2796 
 	`add_poöt
 (&
 d©a_buf_wp
@@ -82949,13 +82989,13 @@ d©a_buf_wp
 max
 );
 
-2791 if(
+2799 if(
 d©a_buf_Ω
  !
 d©a_buf_wp
 )
 
-2793 
+2801 
 Àn
  = (
 d©a_buf_wp
@@ -82965,13 +83005,13 @@ d©a_buf_Ω
 d©a_buf
 ) - data_buf_rp + data_buf_wp);
 
-2799 
+2807 
 Àn
  >
 BM1680_RECEIVE_CMD_LEN_EXCLUDE_DATA
 )
 
-2801 if(
+2809 if(
 d©a_buf
 [
 d©a_buf_Ω
@@ -82985,7 +83025,7 @@ max
 BM1680_RECV_CMD_HEADER2
 )
 
-2807 
+2815 
 	`add_poöt
 (&
 d©a_buf_Ω
@@ -82993,17 +83033,17 @@ d©a_buf_Ω
 max
 );
 
-2808 
+2816 
 Àn
 --;
 
-2812 if(
+2820 if(
 Àn
  >
 BM1680_RECEIVE_CMD_LEN_EXCLUDE_DATA
 )
 
-2813 
+2821 
 d©a_Àn
  = 
 	`gë_d©a_Àn
@@ -83013,7 +83053,7 @@ d©a_buf
 d©a_buf_Ω
  + 3], data_buf[data_buf_rp + 4]);
 
-2815 
+2823 
 Àn
  >(
 BM1680_RECEIVE_CMD_LEN_EXCLUDE_DATA
@@ -83021,7 +83061,7 @@ BM1680_RECEIVE_CMD_LEN_EXCLUDE_DATA
 d©a_Àn
 ))
 
-2817 
+2825 
 i
  = 0; i < 
 BM1680_RECEIVE_CMD_LEN_EXCLUDE_DATA
@@ -83029,7 +83069,7 @@ BM1680_RECEIVE_CMD_LEN_EXCLUDE_DATA
 d©a_Àn
 ; i++)
 
-2819 
+2827 
 tmp
 [
 i
@@ -83039,7 +83079,7 @@ d©a_buf
 d©a_buf_Ω
 ];
 
-2820 
+2828 
 	`add_poöt
 (&
 d©a_buf_Ω
@@ -83047,7 +83087,7 @@ d©a_buf_Ω
 max
 );
 
-2823 
+2831 
 Àn
  =Üí - (
 BM1680_RECEIVE_CMD_LEN_EXCLUDE_DATA
@@ -83055,13 +83095,13 @@ BM1680_RECEIVE_CMD_LEN_EXCLUDE_DATA
 d©a_Àn
 );
 
-2825 * 
+2833 * 
 ªtu∫_d©a
  = 
 NULL
 ;
 
-2826 
+2834 
 ªtu∫_d©a
  = 
 	`bö2hex
@@ -83073,7 +83113,7 @@ BM1680_RECEIVE_CMD_LEN_EXCLUDE_DATA
 d©a_Àn
 );
 
-2827 
+2835 
 	`≠∂og
 (
 LOG_NOTICE
@@ -83081,13 +83121,13 @@ LOG_NOTICE
 ªtu∫_d©a
 );
 
-2828 
+2836 
 	`‰ì
 (
 ªtu∫_d©a
 );
 
-2830 if(
+2838 if(
 	`is_n⁄˚_‹_ªg_vÆue
 (
 tmp
@@ -83095,19 +83135,29 @@ tmp
 BM1680_ACK_ADDR
 ]))
 
-2832 if(
+2840 
+	`≠∂og
+(
+LOG_NOTICE
+,"Chaö %d Asi¯%d gëÇ⁄˚ cou¡ %d", 
+chaöid
+, 
+tmp
+[2],Åmp[4] & 0x7f);
+
+2841 if(
 gBegö_gë_n⁄˚
 [
 chaöid
 ])
 
-2834 
+2843 
 	`±hªad_muãx_lock
 (&
 n⁄˚_muãx
 );
 
-2835 
+2844 
 i
  = 0; i < (
 d©a_Àn
@@ -83115,7 +83165,7 @@ d©a_Àn
 BM1680_NONCE_DATA_LEN
 ; i++)
 
-2837 
+2846 
 	`mem˝y
 ((*)(&
 n⁄˚_fifo
@@ -83133,7 +83183,7 @@ i
 BM1680_NONCE_DATA_LEN
 ], 8);
 
-2838 
+2847 
 n⁄˚_fifo
 .
 n⁄˚_buf„r
@@ -83145,7 +83195,7 @@ wc
 tmp
 [5] & 0x7f;
 
-2839 
+2848 
 n⁄˚_fifo
 .
 n⁄˚_buf„r
@@ -83155,7 +83205,7 @@ p_wr
 chaöid
  = chainid;
 
-2840 
+2849 
 n⁄˚_fifo
 .
 n⁄˚_buf„r
@@ -83171,7 +83221,7 @@ i
 BM1680_NONCE_DATA_LEN
 ];
 
-2841 
+2850 
 n⁄˚_fifo
 .
 n⁄˚_buf„r
@@ -83185,7 +83235,7 @@ tmp
 BM1680_CHIP_ADDRESS_ADDR
 ];
 
-2843 
+2852 
 	`≠∂og
 (
 LOG_NOTICE
@@ -83201,7 +83251,7 @@ n⁄˚
 wc
 ,
 
-2844 
+2853 
 n⁄˚_fifo
 .
 n⁄˚_buf„r
@@ -83215,30 +83265,10 @@ tm
 which_asic
 );
 
-2846 if(
-n⁄˚_fifo
-.
-p_wr
- < 
-MAX_NONCE_NUMBER_IN_FIFO
-)
-
-2848 
-n⁄˚_fifo
-.
-p_wr
-++;
-
-2852 
-n⁄˚_fifo
-.
-p_wr
- = 0;
-
 2855 if(
 n⁄˚_fifo
 .
-n⁄˚_num
+p_wr
  < 
 MAX_NONCE_NUMBER_IN_FIFO
 )
@@ -83246,10 +83276,30 @@ MAX_NONCE_NUMBER_IN_FIFO
 2857 
 n⁄˚_fifo
 .
-n⁄˚_num
+p_wr
 ++;
 
 2861 
+n⁄˚_fifo
+.
+p_wr
+ = 0;
+
+2864 if(
+n⁄˚_fifo
+.
+n⁄˚_num
+ < 
+MAX_NONCE_NUMBER_IN_FIFO
+)
+
+2866 
+n⁄˚_fifo
+.
+n⁄˚_num
+++;
+
+2870 
 n⁄˚_fifo
 .
 n⁄˚_num
@@ -83257,7 +83307,7 @@ n⁄˚_num
 MAX_NONCE_NUMBER_IN_FIFO
 ;
 
-2862 
+2871 
 	`≠∂og
 (
 LOG_WARNING
@@ -83265,13 +83315,13 @@ LOG_WARNING
 __FUNCTION__
 );
 
-2865 
+2874 
 	`±hªad_muãx_u∆ock
 (&
 n⁄˚_muãx
 );
 
-2870 
+2879 
 	`¥o˚ss_ack
 (
 tmp
@@ -83283,13 +83333,13 @@ d©a_Àn
 chaöid
 );
 
-2873 
+2882 
 Àn
  >
 BM1680_RECEIVE_CMD_LEN_EXCLUDE_DATA
 )
 
-2875 if(
+2884 if(
 d©a_buf
 [
 d©a_buf_Ω
@@ -83303,7 +83353,7 @@ max
 BM1680_RECV_CMD_HEADER2
 )
 
-2881 
+2890 
 	`add_poöt
 (&
 d©a_buf_Ω
@@ -83311,11 +83361,11 @@ d©a_buf_Ω
 max
 );
 
-2882 
+2891 
 Àn
 --;
 
-2885 
+2894 
 d©a_Àn
  = 
 	`gë_d©a_Àn
@@ -83325,17 +83375,17 @@ d©a_buf
 d©a_buf_Ω
  + 3], data_buf[data_buf_rp + 4]);
 
-2888 
+2897 
 	}
 }
 
-2894 
+2903 
 	#ABOUT_CGMINER_DRIVER
 
 
 	)
 
-2897 
+2906 
 	$bômaö_B3_dëe˘
 (
 __maybe_unu£d
@@ -83345,7 +83395,7 @@ boﬁ
 hŸ∂ug
 )
 
-2899 
+2908 
 cgpu_öfo
  *
 cgpu
@@ -83353,7 +83403,7 @@ cgpu
 	`ˇŒoc
 (1, (*cgpu));
 
-2900 
+2909 
 devi˚_drv
  *
 drv
@@ -83361,19 +83411,19 @@ drv
 bômaö_B3_drv
 ;
 
-2901 
+2910 
 	`as£π
 (
 cgpu
 );
 
-2902 
+2911 
 cgpu
 ->
 drv
  = drv;
 
-2903 
+2912 
 cgpu
 ->
 deví
@@ -83381,13 +83431,13 @@ deví
 DEV_ENABLED
 ;
 
-2904 
+2913 
 cgpu
 ->
 thªads
  = 1;
 
-2905 
+2914 
 cgpu
 ->
 devi˚_d©a
@@ -83397,7 +83447,7 @@ devi˚_d©a
 bômaö_B3_öfo
 ), 1);
 
-2906 i‡(
+2915 i‡(
 	`u∆ikñy
 (!(
 cgpu
@@ -83405,11 +83455,11 @@ cgpu
 devi˚_d©a
 )))
 
-2907 
+2916 
 	`quô
 (1, "FailedÅo calloc cgpu_info data");
 
-2909 
+2918 
 	`as£π
 (
 	`add_cgpu
@@ -83417,7 +83467,7 @@ devi˚_d©a
 cgpu
 ));
 
-2910 
+2919 
 	`≠∂og
 (
 LOG_DEBUG
@@ -83425,11 +83475,11 @@ LOG_DEBUG
 __FUNCTION__
 );
 
-2911 
+2920 
 	}
 }
 
-2913 
+2922 
 boﬁ
  
 	$bômaö_B3_¥ï¨e
@@ -83439,7 +83489,7 @@ thr_öfo
 thr
 )
 
-2915 
+2924 
 cgpu_öfo
  *
 bômaö_B3
@@ -83449,7 +83499,7 @@ thr
 cgpu
 ;
 
-2916 
+2925 
 bômaö_B3_öfo
  *
 öfo
@@ -83459,13 +83509,13 @@ bômaö_B3
 devi˚_d©a
 ;
 
-2918 
+2927 
 öfo
 ->
 thr
  =Åhr;
 
-2919 
+2928 
 	`muãx_öô
 (&
 öfo
@@ -83473,7 +83523,7 @@ thr
 lock
 );
 
-2920 
+2929 
 	`cglock_öô
 (&
 öfo
@@ -83481,21 +83531,21 @@ lock
 upd©e_lock
 );
 
-2922 
+2931 
 	`bômaö_B3_öô
 (
 öfo
 );
 
-2924  
+2933  
 åue
 ;
 
-2925 
+2934 
 	}
 }
 
-2927 
+2936 
 öt64_t
  
 	$bômaö_B3_sˇnhash
@@ -83505,17 +83555,17 @@ thr_öfo
 thr
 )
 
-2929 
+2938 
 h
  = 0;
 
-2930 
+2939 
 ±hªad_t
  
 £nd_id
 ;
 
-2931 
+2940 
 	`±hªad_¸óã
 (&
 £nd_id
@@ -83527,7 +83577,7 @@ bômaö_sˇnhash
 thr
 );
 
-2932 
+2941 
 	`±hªad_joö
 (
 £nd_id
@@ -83535,15 +83585,15 @@ thr
 NULL
 );
 
-2934  
+2943  
 h
 ;
 
-2935 
+2944 
 	}
 }
 
-2937 
+2946 
 	$bômaö_B3_upd©e
 (
 cgpu_öfo
@@ -83551,23 +83601,23 @@ cgpu_öfo
 bômaö
 )
 
-2939 
+2948 
 i
  = 0;
 
-2940 
+2949 
 	`≠∂og
 (
 LOG_DEBUG
 , "Updated Work!");
 
-2941  ; 
+2950  ; 
 i
  < 
 BITMAIN_MAX_CHAIN_NUM
 ; ++i )
 
-2943 
+2952 
 √w_block
 [
 i
@@ -83575,15 +83625,15 @@ i
 åue
 ;
 
-2945 
+2954 
 	}
 }
 
-2947 
+2956 
 	ghwp
  = 0;
 
-2949 
+2958 
 ≠i_d©a
  *
 	$bômaö_≠i_°©s
@@ -83593,7 +83643,7 @@ cgpu_öfo
 cgpu
 )
 
-2951 
+2960 
 ≠i_d©a
  *
 roŸ
@@ -83601,17 +83651,17 @@ roŸ
 NULL
 ;
 
-2952 
+2961 
 i
  = 0;
 
-2953 
+2962 
 uöt64_t
  
 hash_øã_Æl
  = 0;
 
-2954 
+2963 
 boﬁ
  
 c›y_d©a
@@ -83619,7 +83669,7 @@ c›y_d©a
 Ál£
 ;
 
-2956 
+2965 
 roŸ
  = 
 	`≠i_add_uöt8
@@ -83631,7 +83681,7 @@ chaö_num
 c›y_d©a
 );
 
-2957 
+2966 
 roŸ
  = 
 	`≠i_add_°rög
@@ -83639,7 +83689,7 @@ roŸ
 c›y_d©a
 );
 
-2958 
+2967 
 roŸ
  = 
 	`≠i_add_uöt8
@@ -83651,17 +83701,17 @@ dev
 c›y_d©a
 );
 
-2962 
+2971 
 i
  = 0; i < 
 BITMAIN_MAX_FAN_NUM
 ; i++)
 
-2964 
+2973 
 Án_«me
 [12];
 
-2965 
+2974 
 	`•rötf
 (
 Án_«me
@@ -83669,7 +83719,7 @@ BITMAIN_MAX_FAN_NUM
 i
 +1);
 
-2966 
+2975 
 roŸ
  = 
 	`≠i_add_uöt32
@@ -83685,7 +83735,7 @@ i
 c›y_d©a
 );
 
-2969 
+2978 
 roŸ
  = 
 	`≠i_add_uöt8
@@ -83697,17 +83747,17 @@ chaö_num
 c›y_d©a
 );
 
-2971 
+2980 
 i
  = 0; i < 
 BITMAIN_MAX_CHAIN_NUM
 ; i++)
 
-2973 
+2982 
 ãmp_«me
 [12];
 
-2974 
+2983 
 	`•rötf
 (
 ãmp_«me
@@ -83715,7 +83765,7 @@ BITMAIN_MAX_CHAIN_NUM
 i
 +1);
 
-2975 
+2984 
 roŸ
  = 
 	`≠i_add_öt16
@@ -83731,17 +83781,17 @@ i
 c›y_d©a
 );
 
-2979 
+2988 
 i
  = 0; i < 
 BITMAIN_MAX_CHAIN_NUM
 ; i++)
 
-2981 
+2990 
 ãmp2_«me
 [12];
 
-2982 
+2991 
 	`•rötf
 (
 ãmp2_«me
@@ -83749,7 +83799,7 @@ BITMAIN_MAX_CHAIN_NUM
 i
 +1);
 
-2983 
+2992 
 roŸ
  = 
 	`≠i_add_öt16
@@ -83765,7 +83815,7 @@ i
 c›y_d©a
 );
 
-2986 
+2995 
 roŸ
  = 
 	`≠i_add_uöt32
@@ -83777,7 +83827,7 @@ dev
 c›y_d©a
 );
 
-2988 
+2997 
 tŸÆ_diff1
  = 
 tŸÆ_diff_ac˚±ed
@@ -83787,7 +83837,7 @@ tŸÆ_diff_ªje˘ed
 tŸÆ_diff_°Æe
 ;
 
-2989 
+2998 
 hwp
  = (
 hw_îr‹s
@@ -83795,7 +83845,7 @@ hw_îr‹s
 tŸÆ_diff1
 ) ?
 
-2990 ()(
+2999 ()(
 hw_îr‹s
 Ë/ (
 	`pow
@@ -83803,7 +83853,7 @@ hw_îr‹s
 tŸÆ_diff1
 ) : 0;
 
-2992 
+3001 
 roŸ
  = 
 	`≠i_add_≥r˚¡
@@ -83813,7 +83863,7 @@ hwp
 åue
 );
 
-2993 
+3002 
 roŸ
  = 
 	`≠i_add_öt
@@ -83823,17 +83873,17 @@ hw_îr‹s
 åue
 );
 
-2995 
+3004 
 i
  = 0; i < 
 BITMAIN_MAX_CHAIN_NUM
 ; i++)
 
-2997 
+3006 
 chaö_«me
 [12];
 
-2998 
+3007 
 	`•rötf
 (
 chaö_«me
@@ -83841,7 +83891,7 @@ chaö_«me
 i
 +1);
 
-2999 
+3008 
 roŸ
  = 
 	`≠i_add_uöt8
@@ -83857,17 +83907,17 @@ i
 c›y_d©a
 );
 
-3003 
+3012 
 i
  = 0; i < 
 BITMAIN_MAX_CHAIN_NUM
 ; i++)
 
-3005 
+3014 
 chaö_asic_«me
 [12];
 
-3006 
+3015 
 	`•rötf
 (
 chaö_asic_«me
@@ -83875,7 +83925,7 @@ chaö_asic_«me
 i
 +1);
 
-3007 
+3016 
 roŸ
  = 
 	`≠i_add_°rög
@@ -83891,17 +83941,17 @@ i
 c›y_d©a
 );
 
-3010 
+3019 
 i
  = 0; i < 
 BITMAIN_MAX_CHAIN_NUM
 ; i++)
 
-3012 
+3021 
 chaö_hw
 [16];
 
-3013 
+3022 
 	`•rötf
 (
 chaö_hw
@@ -83909,7 +83959,7 @@ chaö_hw
 i
 +1);
 
-3014 
+3023 
 roŸ
  = 
 	`≠i_add_uöt32
@@ -83923,17 +83973,17 @@ i
 c›y_d©a
 );
 
-3017 
+3026 
 i
  = 0; i < 
 BITMAIN_MAX_CHAIN_NUM
 ; i++)
 
-3019 
+3028 
 chaö_øã
 [16];
 
-3020 
+3029 
 	`•rötf
 (
 chaö_øã
@@ -83941,7 +83991,7 @@ chaö_øã
 i
 +1);
 
-3021 
+3030 
 roŸ
  = 
 	`≠i_add_°rög
@@ -83955,15 +84005,15 @@ i
 c›y_d©a
 );
 
-3024  
+3033  
 roŸ
 ;
 
-3025 
+3034 
 	}
 }
 
-3027 
+3036 
 	$bômaö_B3_ªöô_devi˚
 (
 cgpu_öfo
@@ -83971,19 +84021,19 @@ cgpu_öfo
 bômaö
 )
 
-3029 if(!
+3038 if(!
 °©us_îr‹
 )
 
-3030 
+3039 
 	`sy°em
 ("/etc/init.d/cgminer.shÑestart > /dev/null 2>&1 &");
 
-3031 
+3040 
 	}
 }
 
-3033 
+3042 
 	$gë_bômaö_°©löe_bef‹e
 (*
 buf
@@ -83997,7 +84047,7 @@ cgpu_öfo
 bômaö_B3
 )
 
-3035 
+3044 
 bômaö_B3_öfo
  *
 öfo
@@ -84007,11 +84057,11 @@ bômaö_B3
 devi˚_d©a
 ;
 
-3036 
+3045 
 	}
 }
 
-3038 
+3047 
 	$bômaö_B3_shutdown
 (
 thr_öfo
@@ -84019,103 +84069,103 @@ thr_öfo
 thr
 )
 
-3040 
+3049 
 	`thr_öfo_ˇn˚l
 (
 check_möî_°©us_id
 );
 
-3041 
+3050 
 	`thr_öfo_ˇn˚l
 (
 check_Án_id
 );
 
-3042 
+3051 
 	`thr_öfo_ˇn˚l
 (
 ªad_hash_øã
 );
 
-3043 
+3052 
 	`thr_öfo_ˇn˚l
 (
 ªad_ãmp_id
 );
 
-3044 
+3053 
 	}
 }
 
-3046 
+3055 
 devi˚_drv
  
 	gbômaö_B3_drv
  =
 
-3048 .
+3057 .
 drv_id
  = 
 DRIVER_bômaö_B3
 ,
 
-3049 .
+3058 .
 	gd«me
  = "Bitmain_B3",
 
-3050 .
+3059 .
 	g«me
  = "B3",
 
-3051 .
+3060 .
 	gdrv_dëe˘
  = 
 bômaö_B3_dëe˘
 ,
 
-3052 .
+3061 .
 	gthªad_¥ï¨e
  = 
 bômaö_B3_¥ï¨e
 ,
 
-3053 .
+3062 .
 	ghash_w‹k
  = &
 hash_drivî_w‹k
 ,
 
-3054 .
+3063 .
 	gsˇnw‹k
  = 
 bômaö_B3_sˇnhash
 ,
 
-3055 .
+3064 .
 	gupd©e_w‹k
  = 
 bômaö_B3_upd©e
 ,
 
-3056 .
+3065 .
 	ggë_≠i_°©s
  = 
 bômaö_≠i_°©s
 ,
 
-3057 .
+3066 .
 	gªöô_devi˚
  = 
 bômaö_B3_ªöô_devi˚
 ,
 
-3058 .
+3067 .
 	ggë_°©löe_bef‹e
  = 
 gë_bômaö_°©löe_bef‹e
 ,
 
-3059 .
+3068 .
 	gthªad_shutdown
  = 
 bômaö_B3_shutdown
@@ -135367,6284 +135417,6 @@ l
 __END_DECLS
 
 
-	@/usr/include/curl/curl.h
-
-1 #i‚de‡
-__CURL_CURL_H
-
-
-2 
-	#__CURL_CURL_H
-
-
-	)
-
-33 
-	~"cuævî.h
-"
-
-34 
-	~"cuæbuûd.h
-"
-
-35 
-	~"cuæruÀs.h
-"
-
-41 #i‡(
-deföed
-(
-_WIN32
-Ë|| deföed(
-__WIN32__
-)) && \
-
-42 !
-deföed
-(
-WIN32
-Ë&& !
-	$deföed
-(
-__SYMBIAN32__
-)
-
-43 
-	#WIN32
-
-
-	)
-
-46 
-	~<°dio.h
->
-
-47 
-	~<limôs.h
->
-
-49 #i‡
-	`deföed
-(
-__FªeBSD__
-) && (__FreeBSD__ >= 2)
-
-51 
-	~<o§ñd©e.h
->
-
-55 
-	~<sys/ty≥s.h
->
-
-56 
-	~<time.h
->
-
-58 #i‡
-	`deföed
-(
-WIN32
-Ë&& !deföed(
-_WIN32_WCE
-Ë&& !deföed(
-__CYGWIN__
-)
-
-59 #i‡!(
-	`deföed
-(
-_WINSOCKAPI_
-Ë|| deföed(
-_WINSOCK_H
-) || \
-
-60 
-	`deföed
-(
-__LWIP_OPT_H__
-Ë|| 
-	$deföed
-(
-LWIP_HDR_OPT_H
-))
-
-63 
-	~<wösock2.h
->
-
-64 
-	~<ws2t˝ù.h
->
-
-71 #i‡
-	`deföed
-(
-_AIX
-Ë|| deföed(
-__NOVELL_LIBC__
-Ë|| deföed(
-__NëBSD__
-) || \
-
-72 
-	`deföed
-(
-__möix
-Ë|| deföed(
-__SYMBIAN32__
-Ë|| deföed(
-__INTEGRITY
-) || \
-
-73 
-	`deföed
-(
-ANDROID
-Ë|| deföed(
-__ANDROID__
-Ë|| deföed(
-__O≥nBSD__
-) || \
-
-74 (
-	`deföed
-(
-__FªeBSD_vîsi⁄
-) && (__FreeBSD_version < 800000))
-
-75 
-	~<sys/£À˘.h
->
-
-78 #i‡!
-	`deföed
-(
-WIN32
-Ë&& !deföed(
-_WIN32_WCE
-)
-
-79 
-	~<sys/sockë.h
->
-
-82 #i‡!
-	`deföed
-(
-WIN32
-Ë&& !deföed(
-__WATCOMC__
-Ë&& !deföed(
-__VXWORKS__
-)
-
-83 
-	~<sys/time.h
->
-
-86 #ifde‡
-__BEOS__
-
-
-87 
-	~<suµ‹t/Suµ‹tDefs.h
->
-
-90 #ifde‡ 
-__˝lu•lus
-
-
-94 
-	tCURL
-;
-
-100 #ifde‡
-CURL_STATICLIB
-
-
-101 
-	#CURL_EXTERN
-
-
-	)
-
-102 #ñi‡
-	`deföed
-(
-WIN32
-Ë|| deföed(
-_WIN32
-Ë|| deföed(
-__SYMBIAN32__
-)
-
-103 #i‡
-	`deföed
-(
-BUILDING_LIBCURL
-)
-
-104 
-	#CURL_EXTERN
- 
-	`__de˛•ec
-(
-dŒexp‹t
-)
-
-	)
-
-106 
-	#CURL_EXTERN
- 
-	`__de˛•ec
-(
-dŒimp‹t
-)
-
-	)
-
-108 #ñi‡
-	`deföed
-(
-BUILDING_LIBCURL
-Ë&& deföed(
-CURL_HIDDEN_SYMBOLS
-)
-
-109 
-	#CURL_EXTERN
- 
-CURL_EXTERN_SYMBOL
-
-
-	)
-
-111 
-	#CURL_EXTERN
-
-
-	)
-
-114 #i‚de‡
-cuæ_sockë_ty≥def
-
-
-116 #i‡
-	`deföed
-(
-WIN32
-Ë&& !deföed(
-__LWIP_OPT_H__
-Ë&& !deföed(
-LWIP_HDR_OPT_H
-)
-
-117 
-SOCKET
- 
-	tcuæ_sockë_t
-;
-
-118 
-	#CURL_SOCKET_BAD
- 
-INVALID_SOCKET
-
-
-	)
-
-120 
-	tcuæ_sockë_t
-;
-
-121 
-	#CURL_SOCKET_BAD
- -1
-
-	)
-
-123 
-	#cuæ_sockë_ty≥def
-
-
-	)
-
-126 
-	scuæ_hâµo°
- {
-
-127 
-cuæ_hâµo°
- *
-√xt
-;
-
-128 *
-«me
-;
-
-129 
-«mñígth
-;
-
-130 *
-c⁄ã¡s
-;
-
-131 
-c⁄ã¡¶ígth
-;
-
-133 *
-buf„r
-;
-
-134 
-buf„æígth
-;
-
-135 *
-c⁄ã¡ty≥
-;
-
-136 
-cuæ_¶i°
-* 
-c⁄ã¡hódî
-;
-
-137 
-cuæ_hâµo°
- *
-m‹e
-;
-
-140 
-Êags
-;
-
-143 
-	#CURL_HTTPPOST_FILENAME
- (1<<0)
-
-	)
-
-145 
-	#CURL_HTTPPOST_READFILE
- (1<<1)
-
-	)
-
-147 
-	#CURL_HTTPPOST_PTRNAME
- (1<<2)
-
-	)
-
-149 
-	#CURL_HTTPPOST_PTRCONTENTS
- (1<<3)
-
-	)
-
-151 
-	#CURL_HTTPPOST_BUFFER
- (1<<4)
-
-	)
-
-153 
-	#CURL_HTTPPOST_PTRBUFFER
- (1<<5)
-
-	)
-
-156 
-	#CURL_HTTPPOST_CALLBACK
- (1<<6)
-
-	)
-
-158 
-	#CURL_HTTPPOST_LARGE
- (1<<7)
-
-	)
-
-160 *
-showfûíame
-;
-
-163 *
-u£Ω
-;
-
-165 
-cuæ_off_t
- 
-c⁄ã¡Àn
-;
-
-172 (*
-	tcuæ_¥ogªss_ˇŒback
-)(*
-	t˛õ¡p
-,
-
-173 
-	td…ŸÆ
-,
-
-174 
-	td ow
-,
-
-175 
-	tu…ŸÆ
-,
-
-176 
-	tu ow
-);
-
-180 (*
-	tcuæ_x„röfo_ˇŒback
-)(*
-	t˛õ¡p
-,
-
-181 
-	tcuæ_off_t
- 
-	td…ŸÆ
-,
-
-182 
-	tcuæ_off_t
- 
-	td ow
-,
-
-183 
-	tcuæ_off_t
- 
-	tu…ŸÆ
-,
-
-184 
-	tcuæ_off_t
- 
-	tu ow
-);
-
-186 #i‚de‡
-CURL_MAX_WRITE_SIZE
-
-
-193 
-	#CURL_MAX_WRITE_SIZE
- 16384
-
-	)
-
-196 #i‚de‡
-CURL_MAX_HTTP_HEADER
-
-
-200 
-	#CURL_MAX_HTTP_HEADER
- (100*1024)
-
-	)
-
-205 
-	#CURL_WRITEFUNC_PAUSE
- 0x10000001
-
-	)
-
-207 
-	`size_t
- (*
-	tcuæ_wrôe_ˇŒback
-)(*
-	tbuf„r
-,
-
-208 
-	tsize_t
- 
-	tsize
-,
-
-209 
-	tsize_t
- 
-	tnôems
-,
-
-210 *
-	tout°ªam
-);
-
-216 
-CURLFILETYPE_FILE
- = 0,
-
-217 
-CURLFILETYPE_DIRECTORY
-,
-
-218 
-CURLFILETYPE_SYMLINK
-,
-
-219 
-CURLFILETYPE_DEVICE_BLOCK
-,
-
-220 
-CURLFILETYPE_DEVICE_CHAR
-,
-
-221 
-CURLFILETYPE_NAMEDPIPE
-,
-
-222 
-CURLFILETYPE_SOCKET
-,
-
-223 
-CURLFILETYPE_DOOR
-,
-
-225 
-CURLFILETYPE_UNKNOWN
-
-
-226 } 
-	tcuæfûëy≥
-;
-
-228 
-	#CURLFINFOFLAG_KNOWN_FILENAME
- (1<<0)
-
-	)
-
-229 
-	#CURLFINFOFLAG_KNOWN_FILETYPE
- (1<<1)
-
-	)
-
-230 
-	#CURLFINFOFLAG_KNOWN_TIME
- (1<<2)
-
-	)
-
-231 
-	#CURLFINFOFLAG_KNOWN_PERM
- (1<<3)
-
-	)
-
-232 
-	#CURLFINFOFLAG_KNOWN_UID
- (1<<4)
-
-	)
-
-233 
-	#CURLFINFOFLAG_KNOWN_GID
- (1<<5)
-
-	)
-
-234 
-	#CURLFINFOFLAG_KNOWN_SIZE
- (1<<6)
-
-	)
-
-235 
-	#CURLFINFOFLAG_KNOWN_HLINKCOUNT
- (1<<7)
-
-	)
-
-241 
-	scuæ_fûeöfo
- {
-
-242 *
-fûíame
-;
-
-243 
-cuæfûëy≥
- 
-fûëy≥
-;
-
-244 
-time_t
- 
-time
-;
-
-245 
-≥rm
-;
-
-246 
-uid
-;
-
-247 
-gid
-;
-
-248 
-cuæ_off_t
- 
-size
-;
-
-249 
-h¨dlöks
-;
-
-253 *
-time
-;
-
-254 *
-≥rm
-;
-
-255 *
-u£r
-;
-
-256 *
-group
-;
-
-257 *
-èrgë
-;
-
-258 } 
-°rögs
-;
-
-260 
-Êags
-;
-
-263 * 
-b_d©a
-;
-
-264 
-size_t
- 
-b_size
-;
-
-265 
-size_t
- 
-b_u£d
-;
-
-269 
-	#CURL_CHUNK_BGN_FUNC_OK
- 0
-
-	)
-
-270 
-	#CURL_CHUNK_BGN_FUNC_FAIL
- 1
-
-	)
-
-271 
-	#CURL_CHUNK_BGN_FUNC_SKIP
- 2
-
-	)
-
-276 (*
-	tcuæ_chunk_bgn_ˇŒback
-)(c⁄° *
-	tå™s„r_öfo
-,
-
-277 *
-	t±r
-,
-
-278 
-	tªmaös
-);
-
-281 
-	#CURL_CHUNK_END_FUNC_OK
- 0
-
-	)
-
-282 
-	#CURL_CHUNK_END_FUNC_FAIL
- 1
-
-	)
-
-290 (*
-	tcuæ_chunk_íd_ˇŒback
-)(*
-	t±r
-);
-
-293 
-	#CURL_FNMATCHFUNC_MATCH
- 0
-
-	)
-
-294 
-	#CURL_FNMATCHFUNC_NOMATCH
- 1
-
-	)
-
-295 
-	#CURL_FNMATCHFUNC_FAIL
- 2
-
-	)
-
-299 (*
-	tcuæ_‚m©ch_ˇŒback
-)(*
-	t±r
-,
-
-300 c⁄° *
-	t∑âîn
-,
-
-301 c⁄° *
-	t°rög
-);
-
-304 
-	#CURL_SEEKFUNC_OK
- 0
-
-	)
-
-305 
-	#CURL_SEEKFUNC_FAIL
- 1
-
-	)
-
-306 
-	#CURL_SEEKFUNC_CANTSEEK
- 2
-
-	)
-
-308 (*
-	tcuæ_£ek_ˇŒback
-)(*
-	tö°ªam
-,
-
-309 
-	tcuæ_off_t
- 
-	toff£t
-,
-
-310 
-	t‹igö
-);
-
-314 
-	#CURL_READFUNC_ABORT
- 0x10000000
-
-	)
-
-317 
-	#CURL_READFUNC_PAUSE
- 0x10000001
-
-	)
-
-319 
-	`size_t
- (*
-	tcuæ_ªad_ˇŒback
-)(*
-	tbuf„r
-,
-
-320 
-	tsize_t
- 
-	tsize
-,
-
-321 
-	tsize_t
- 
-	tnôems
-,
-
-322 *
-	tö°ªam
-);
-
-325 
-CURLSOCKTYPE_IPCXN
-,
-
-326 
-CURLSOCKTYPE_ACCEPT
-,
-
-327 
-CURLSOCKTYPE_LAST
-
-
-328 } 
-	tcuæsockty≥
-;
-
-332 
-	#CURL_SOCKOPT_OK
- 0
-
-	)
-
-333 
-	#CURL_SOCKOPT_ERROR
- 1
-
-	)
-
-335 
-	#CURL_SOCKOPT_ALREADY_CONNECTED
- 2
-
-	)
-
-337 (*
-	tcuæ_sock›t_ˇŒback
-)(*
-	t˛õ¡p
-,
-
-338 
-	tcuæ_sockë_t
- 
-	tcuæfd
-,
-
-339 
-	tcuæsockty≥
- 
-	tpuΩo£
-);
-
-341 
-	scuæ_sockaddr
- {
-
-342 
-Ámûy
-;
-
-343 
-sockty≥
-;
-
-344 
-¥Ÿocﬁ
-;
-
-345 
-addæí
-;
-
-348 
-sockaddr
- 
-addr
-;
-
-351 
-cuæ_sockë_t
-
-
-352 (*
-	tcuæ_›ísockë_ˇŒback
-)(*
-	t˛õ¡p
-,
-
-353 
-	tcuæsockty≥
- 
-	tpuΩo£
-,
-
-354 
-	tcuæ_sockaddr
- *
-	taddªss
-);
-
-357 (*
-	tcuæ_˛o£sockë_ˇŒback
-)(*
-	t˛õ¡p
-, 
-	tcuæ_sockë_t
- 
-	tôem
-);
-
-360 
-CURLIOE_OK
-,
-
-361 
-CURLIOE_UNKNOWNCMD
-,
-
-362 
-CURLIOE_FAILRESTART
-,
-
-363 
-CURLIOE_LAST
-
-
-364 } 
-	tcuæi€º
-;
-
-367 
-CURLIOCMD_NOP
-,
-
-368 
-CURLIOCMD_RESTARTREAD
-,
-
-369 
-CURLIOCMD_LAST
-
-
-370 } 
-	tcuæiocmd
-;
-
-372 
-	`cuæi€º
- (*
-	tcuæ_io˘l_ˇŒback
-)(
-	tCURL
- *
-	th™dÀ
-,
-
-373 
-	tcmd
-,
-
-374 *
-	t˛õ¡p
-);
-
-382 *(*
-	tcuæ_mÆloc_ˇŒback
-)(
-	tsize_t
- 
-	tsize
-);
-
-383 (*
-	tcuæ_‰ì_ˇŒback
-)(*
-	t±r
-);
-
-384 *(*
-	tcuæ_ªÆloc_ˇŒback
-)(*
-	t±r
-, 
-	tsize_t
- 
-	tsize
-);
-
-385 *(*
-	tcuæ_°rdup_ˇŒback
-)(c⁄° *
-	t°r
-);
-
-386 *(*
-	tcuæ_ˇŒoc_ˇŒback
-)(
-	tsize_t
- 
-	tnmemb
-, size_à
-	tsize
-);
-
-390 
-CURLINFO_TEXT
- = 0,
-
-391 
-CURLINFO_HEADER_IN
-,
-
-392 
-CURLINFO_HEADER_OUT
-,
-
-393 
-CURLINFO_DATA_IN
-,
-
-394 
-CURLINFO_DATA_OUT
-,
-
-395 
-CURLINFO_SSL_DATA_IN
-,
-
-396 
-CURLINFO_SSL_DATA_OUT
-,
-
-397 
-CURLINFO_END
-
-
-398 } 
-	tcuæ_öfŸy≥
-;
-
-400 (*
-	tcuæ_debug_ˇŒback
-)
-
-401 (
-	tCURL
- *
-	th™dÀ
-,
-
-402 
-	tcuæ_öfŸy≥
- 
-	tty≥
-,
-
-403 *
-	td©a
-,
-
-404 
-	tsize_t
- 
-	tsize
-,
-
-405 *
-	tu£Ωå
-);
-
-415 
-CURLE_OK
- = 0,
-
-416 
-CURLE_UNSUPPORTED_PROTOCOL
-,
-
-417 
-CURLE_FAILED_INIT
-,
-
-418 
-CURLE_URL_MALFORMAT
-,
-
-419 
-CURLE_NOT_BUILT_IN
-,
-
-421 
-CURLE_COULDNT_RESOLVE_PROXY
-,
-
-422 
-CURLE_COULDNT_RESOLVE_HOST
-,
-
-423 
-CURLE_COULDNT_CONNECT
-,
-
-424 
-CURLE_FTP_WEIRD_SERVER_REPLY
-,
-
-425 
-CURLE_REMOTE_ACCESS_DENIED
-,
-
-428 
-CURLE_FTP_ACCEPT_FAILED
-,
-
-430 
-CURLE_FTP_WEIRD_PASS_REPLY
-,
-
-431 
-CURLE_FTP_ACCEPT_TIMEOUT
-,
-
-434 
-CURLE_FTP_WEIRD_PASV_REPLY
-,
-
-435 
-CURLE_FTP_WEIRD_227_FORMAT
-,
-
-436 
-CURLE_FTP_CANT_GET_HOST
-,
-
-437 
-CURLE_HTTP2
-,
-
-440 
-CURLE_FTP_COULDNT_SET_TYPE
-,
-
-441 
-CURLE_PARTIAL_FILE
-,
-
-442 
-CURLE_FTP_COULDNT_RETR_FILE
-,
-
-443 
-CURLE_OBSOLETE20
-,
-
-444 
-CURLE_QUOTE_ERROR
-,
-
-445 
-CURLE_HTTP_RETURNED_ERROR
-,
-
-446 
-CURLE_WRITE_ERROR
-,
-
-447 
-CURLE_OBSOLETE24
-,
-
-448 
-CURLE_UPLOAD_FAILED
-,
-
-449 
-CURLE_READ_ERROR
-,
-
-450 
-CURLE_OUT_OF_MEMORY
-,
-
-455 
-CURLE_OPERATION_TIMEDOUT
-,
-
-456 
-CURLE_OBSOLETE29
-,
-
-457 
-CURLE_FTP_PORT_FAILED
-,
-
-458 
-CURLE_FTP_COULDNT_USE_REST
-,
-
-459 
-CURLE_OBSOLETE32
-,
-
-460 
-CURLE_RANGE_ERROR
-,
-
-461 
-CURLE_HTTP_POST_ERROR
-,
-
-462 
-CURLE_SSL_CONNECT_ERROR
-,
-
-463 
-CURLE_BAD_DOWNLOAD_RESUME
-,
-
-464 
-CURLE_FILE_COULDNT_READ_FILE
-,
-
-465 
-CURLE_LDAP_CANNOT_BIND
-,
-
-466 
-CURLE_LDAP_SEARCH_FAILED
-,
-
-467 
-CURLE_OBSOLETE40
-,
-
-468 
-CURLE_FUNCTION_NOT_FOUND
-,
-
-469 
-CURLE_ABORTED_BY_CALLBACK
-,
-
-470 
-CURLE_BAD_FUNCTION_ARGUMENT
-,
-
-471 
-CURLE_OBSOLETE44
-,
-
-472 
-CURLE_INTERFACE_FAILED
-,
-
-473 
-CURLE_OBSOLETE46
-,
-
-474 
-CURLE_TOO_MANY_REDIRECTS
- ,
-
-475 
-CURLE_UNKNOWN_OPTION
-,
-
-476 
-CURLE_TELNET_OPTION_SYNTAX
- ,
-
-477 
-CURLE_OBSOLETE50
-,
-
-478 
-CURLE_PEER_FAILED_VERIFICATION
-,
-
-480 
-CURLE_GOT_NOTHING
-,
-
-481 
-CURLE_SSL_ENGINE_NOTFOUND
-,
-
-482 
-CURLE_SSL_ENGINE_SETFAILED
-,
-
-484 
-CURLE_SEND_ERROR
-,
-
-485 
-CURLE_RECV_ERROR
-,
-
-486 
-CURLE_OBSOLETE57
-,
-
-487 
-CURLE_SSL_CERTPROBLEM
-,
-
-488 
-CURLE_SSL_CIPHER
-,
-
-489 
-CURLE_SSL_CACERT
-,
-
-490 
-CURLE_BAD_CONTENT_ENCODING
-,
-
-491 
-CURLE_LDAP_INVALID_URL
-,
-
-492 
-CURLE_FILESIZE_EXCEEDED
-,
-
-493 
-CURLE_USE_SSL_FAILED
-,
-
-494 
-CURLE_SEND_FAIL_REWIND
-,
-
-496 
-CURLE_SSL_ENGINE_INITFAILED
-,
-
-497 
-CURLE_LOGIN_DENIED
-,
-
-499 
-CURLE_TFTP_NOTFOUND
-,
-
-500 
-CURLE_TFTP_PERM
-,
-
-501 
-CURLE_REMOTE_DISK_FULL
-,
-
-502 
-CURLE_TFTP_ILLEGAL
-,
-
-503 
-CURLE_TFTP_UNKNOWNID
-,
-
-504 
-CURLE_REMOTE_FILE_EXISTS
-,
-
-505 
-CURLE_TFTP_NOSUCHUSER
-,
-
-506 
-CURLE_CONV_FAILED
-,
-
-507 
-CURLE_CONV_REQD
-,
-
-512 
-CURLE_SSL_CACERT_BADFILE
-,
-
-514 
-CURLE_REMOTE_FILE_NOT_FOUND
-,
-
-515 
-CURLE_SSH
-,
-
-519 
-CURLE_SSL_SHUTDOWN_FAILED
-,
-
-521 
-CURLE_AGAIN
-,
-
-524 
-CURLE_SSL_CRL_BADFILE
-,
-
-526 
-CURLE_SSL_ISSUER_ERROR
-,
-
-528 
-CURLE_FTP_PRET_FAILED
-,
-
-529 
-CURLE_RTSP_CSEQ_ERROR
-,
-
-530 
-CURLE_RTSP_SESSION_ERROR
-,
-
-531 
-CURLE_FTP_BAD_FILE_LIST
-,
-
-532 
-CURLE_CHUNK_FAILED
-,
-
-533 
-CURLE_NO_CONNECTION_AVAILABLE
-,
-
-535 
-CURLE_SSL_PINNEDPUBKEYNOTMATCH
-,
-
-537 
-CURLE_SSL_INVALIDCERTSTATUS
-,
-
-538 
-CURL_LAST
-
-
-539 } 
-	tCURLcode
-;
-
-541 #i‚de‡
-CURL_NO_OLDIES
-
-
-545 
-	#CURLE_OBSOLETE16
- 
-CURLE_HTTP2
-
-
-	)
-
-548 
-	#CURLE_OBSOLETE10
- 
-CURLE_FTP_ACCEPT_FAILED
-
-
-	)
-
-549 
-	#CURLE_OBSOLETE12
- 
-CURLE_FTP_ACCEPT_TIMEOUT
-
-
-	)
-
-552 
-	#CURLOPT_ENCODING
- 
-CURLOPT_ACCEPT_ENCODING
-
-
-	)
-
-555 
-	#CURLE_UNKNOWN_TELNET_OPTION
- 
-CURLE_UNKNOWN_OPTION
-
-
-	)
-
-559 
-	#CURLE_SSL_PEER_CERTIFICATE
- 
-CURLE_PEER_FAILED_VERIFICATION
-
-
-	)
-
-563 
-	#CURLE_OBSOLETE
- 
-CURLE_OBSOLETE50
-
-
-	)
-
-564 
-	#CURLE_BAD_PASSWORD_ENTERED
- 
-CURLE_OBSOLETE46
-
-
-	)
-
-565 
-	#CURLE_BAD_CALLING_ORDER
- 
-CURLE_OBSOLETE44
-
-
-	)
-
-566 
-	#CURLE_FTP_USER_PASSWORD_INCORRECT
- 
-CURLE_OBSOLETE10
-
-
-	)
-
-567 
-	#CURLE_FTP_CANT_RECONNECT
- 
-CURLE_OBSOLETE16
-
-
-	)
-
-568 
-	#CURLE_FTP_COULDNT_GET_SIZE
- 
-CURLE_OBSOLETE32
-
-
-	)
-
-569 
-	#CURLE_FTP_COULDNT_SET_ASCII
- 
-CURLE_OBSOLETE29
-
-
-	)
-
-570 
-	#CURLE_FTP_WEIRD_USER_REPLY
- 
-CURLE_OBSOLETE12
-
-
-	)
-
-571 
-	#CURLE_FTP_WRITE_ERROR
- 
-CURLE_OBSOLETE20
-
-
-	)
-
-572 
-	#CURLE_LIBRARY_NOT_FOUND
- 
-CURLE_OBSOLETE40
-
-
-	)
-
-573 
-	#CURLE_MALFORMAT_USER
- 
-CURLE_OBSOLETE24
-
-
-	)
-
-574 
-	#CURLE_SHARE_IN_USE
- 
-CURLE_OBSOLETE57
-
-
-	)
-
-575 
-	#CURLE_URL_MALFORMAT_USER
- 
-CURLE_NOT_BUILT_IN
-
-
-	)
-
-577 
-	#CURLE_FTP_ACCESS_DENIED
- 
-CURLE_REMOTE_ACCESS_DENIED
-
-
-	)
-
-578 
-	#CURLE_FTP_COULDNT_SET_BINARY
- 
-CURLE_FTP_COULDNT_SET_TYPE
-
-
-	)
-
-579 
-	#CURLE_FTP_QUOTE_ERROR
- 
-CURLE_QUOTE_ERROR
-
-
-	)
-
-580 
-	#CURLE_TFTP_DISKFULL
- 
-CURLE_REMOTE_DISK_FULL
-
-
-	)
-
-581 
-	#CURLE_TFTP_EXISTS
- 
-CURLE_REMOTE_FILE_EXISTS
-
-
-	)
-
-582 
-	#CURLE_HTTP_RANGE_ERROR
- 
-CURLE_RANGE_ERROR
-
-
-	)
-
-583 
-	#CURLE_FTP_SSL_FAILED
- 
-CURLE_USE_SSL_FAILED
-
-
-	)
-
-587 
-	#CURLE_OPERATION_TIMEOUTED
- 
-CURLE_OPERATION_TIMEDOUT
-
-
-	)
-
-589 
-	#CURLE_HTTP_NOT_FOUND
- 
-CURLE_HTTP_RETURNED_ERROR
-
-
-	)
-
-590 
-	#CURLE_HTTP_PORT_FAILED
- 
-CURLE_INTERFACE_FAILED
-
-
-	)
-
-591 
-	#CURLE_FTP_COULDNT_STOR_FILE
- 
-CURLE_UPLOAD_FAILED
-
-
-	)
-
-593 
-	#CURLE_FTP_PARTIAL_FILE
- 
-CURLE_PARTIAL_FILE
-
-
-	)
-
-594 
-	#CURLE_FTP_BAD_DOWNLOAD_RESUME
- 
-CURLE_BAD_DOWNLOAD_RESUME
-
-
-	)
-
-599 
-	#CURLE_ALREADY_COMPLETE
- 99999
-
-	)
-
-602 
-	#CURLOPT_FILE
- 
-CURLOPT_WRITEDATA
-
-
-	)
-
-603 
-	#CURLOPT_INFILE
- 
-CURLOPT_READDATA
-
-
-	)
-
-604 
-	#CURLOPT_WRITEHEADER
- 
-CURLOPT_HEADERDATA
-
-
-	)
-
-608 
-	#CURLOPT_WRITEINFO
- 
-CURLOPT_OBSOLETE40
-
-
-	)
-
-609 
-	#CURLOPT_CLOSEPOLICY
- 
-CURLOPT_OBSOLETE72
-
-
-	)
-
-614 
-	`CURLcode
- (*
-	tcuæ_c⁄v_ˇŒback
-)(*
-	tbuf„r
-, 
-	tsize_t
- 
-	tÀngth
-);
-
-616 
-	`CURLcode
- (*
-	tcuæ_s¶_˘x_ˇŒback
-)(
-	tCURL
- *
-	tcuæ
-,
-
-617 *
-	ts¶_˘x
-,
-
-619 *
-	tu£Ωå
-);
-
-622 
-CURLPROXY_HTTP
- = 0,
-
-624 
-CURLPROXY_HTTP_1_0
- = 1,
-
-626 
-CURLPROXY_SOCKS4
- = 4,
-
-628 
-CURLPROXY_SOCKS5
- = 5,
-
-629 
-CURLPROXY_SOCKS4A
- = 6,
-
-630 
-CURLPROXY_SOCKS5_HOSTNAME
- = 7
-
-633 } 
-	tcuæ_¥oxyty≥
-;
-
-652 
-	#CURLAUTH_NONE
- (()0)
-
-	)
-
-653 
-	#CURLAUTH_BASIC
- ((()1)<<0)
-
-	)
-
-654 
-	#CURLAUTH_DIGEST
- ((()1)<<1)
-
-	)
-
-655 
-	#CURLAUTH_NEGOTIATE
- ((()1)<<2)
-
-	)
-
-657 
-	#CURLAUTH_GSSNEGOTIATE
- 
-CURLAUTH_NEGOTIATE
-
-
-	)
-
-658 
-	#CURLAUTH_NTLM
- ((()1)<<3)
-
-	)
-
-659 
-	#CURLAUTH_DIGEST_IE
- ((()1)<<4)
-
-	)
-
-660 
-	#CURLAUTH_NTLM_WB
- ((()1)<<5)
-
-	)
-
-661 
-	#CURLAUTH_ONLY
- ((()1)<<31)
-
-	)
-
-662 
-	#CURLAUTH_ANY
- (~
-CURLAUTH_DIGEST_IE
-)
-
-	)
-
-663 
-	#CURLAUTH_ANYSAFE
- (~(
-CURLAUTH_BASIC
-|
-CURLAUTH_DIGEST_IE
-))
-
-	)
-
-665 
-	#CURLSSH_AUTH_ANY
- ~0
-
-	)
-
-666 
-	#CURLSSH_AUTH_NONE
- 0
-
-	)
-
-667 
-	#CURLSSH_AUTH_PUBLICKEY
- (1<<0Ë
-
-	)
-
-668 
-	#CURLSSH_AUTH_PASSWORD
- (1<<1Ë
-
-	)
-
-669 
-	#CURLSSH_AUTH_HOST
- (1<<2Ë
-
-	)
-
-670 
-	#CURLSSH_AUTH_KEYBOARD
- (1<<3Ë
-
-	)
-
-671 
-	#CURLSSH_AUTH_AGENT
- (1<<4Ë
-
-	)
-
-672 
-	#CURLSSH_AUTH_DEFAULT
- 
-CURLSSH_AUTH_ANY
-
-
-	)
-
-674 
-	#CURLGSSAPI_DELEGATION_NONE
- 0
-
-	)
-
-675 
-	#CURLGSSAPI_DELEGATION_POLICY_FLAG
- (1<<0Ë
-
-	)
-
-676 
-	#CURLGSSAPI_DELEGATION_FLAG
- (1<<1Ë
-
-	)
-
-678 
-	#CURL_ERROR_SIZE
- 256
-
-	)
-
-680 
-	ecuæ_khty≥
- {
-
-681 
-CURLKHTYPE_UNKNOWN
-,
-
-682 
-CURLKHTYPE_RSA1
-,
-
-683 
-CURLKHTYPE_RSA
-,
-
-684 
-CURLKHTYPE_DSS
-
-
-687 
-	scuæ_khkey
- {
-
-688 c⁄° *
-key
-;
-
-690 
-size_t
- 
-Àn
-;
-
-691 
-cuæ_khty≥
- 
-keyty≥
-;
-
-696 
-	ecuæ_kh°©
- {
-
-697 
-CURLKHSTAT_FINE_ADD_TO_FILE
-,
-
-698 
-CURLKHSTAT_FINE
-,
-
-699 
-CURLKHSTAT_REJECT
-,
-
-700 
-CURLKHSTAT_DEFER
-,
-
-703 
-CURLKHSTAT_LAST
-
-
-707 
-	ecuæ_khm©ch
- {
-
-708 
-CURLKHMATCH_OK
-,
-
-709 
-CURLKHMATCH_MISMATCH
-,
-
-710 
-CURLKHMATCH_MISSING
-,
-
-711 
-CURLKHMATCH_LAST
-
-
-715 (*
-	tcuæ_sshkeyˇŒback
-Ë(
-	tCURL
- *
-	tósy
-,
-
-716 c⁄° 
-	tcuæ_khkey
- *
-	tknownkey
-,
-
-717 c⁄° 
-	tcuæ_khkey
- *
-	tfoundkey
-,
-
-718 
-	tcuæ_khm©ch
-,
-
-719 *
-	t˛õ¡p
-);
-
-723 
-CURLUSESSL_NONE
-,
-
-724 
-CURLUSESSL_TRY
-,
-
-725 
-CURLUSESSL_CONTROL
-,
-
-726 
-CURLUSESSL_ALL
-,
-
-727 
-CURLUSESSL_LAST
-
-
-728 } 
-	tcuæ_u£s¶
-;
-
-737 
-	#CURLSSLOPT_ALLOW_BEAST
- (1<<0)
-
-	)
-
-741 
-	#CURLSSLOPT_NO_REVOKE
- (1<<1)
-
-	)
-
-743 #i‚de‡
-CURL_NO_OLDIES
-
-
-749 
-	#CURLFTPSSL_NONE
- 
-CURLUSESSL_NONE
-
-
-	)
-
-750 
-	#CURLFTPSSL_TRY
- 
-CURLUSESSL_TRY
-
-
-	)
-
-751 
-	#CURLFTPSSL_CONTROL
- 
-CURLUSESSL_CONTROL
-
-
-	)
-
-752 
-	#CURLFTPSSL_ALL
- 
-CURLUSESSL_ALL
-
-
-	)
-
-753 
-	#CURLFTPSSL_LAST
- 
-CURLUSESSL_LAST
-
-
-	)
-
-754 
-	#cuæ_·ps¶
- 
-cuæ_u£s¶
-
-
-	)
-
-759 
-CURLFTPSSL_CCC_NONE
-,
-
-760 
-CURLFTPSSL_CCC_PASSIVE
-,
-
-761 
-CURLFTPSSL_CCC_ACTIVE
-,
-
-762 
-CURLFTPSSL_CCC_LAST
-
-
-763 } 
-	tcuæ_·pccc
-;
-
-767 
-CURLFTPAUTH_DEFAULT
-,
-
-768 
-CURLFTPAUTH_SSL
-,
-
-769 
-CURLFTPAUTH_TLS
-,
-
-770 
-CURLFTPAUTH_LAST
-
-
-771 } 
-	tcuæ_·∑uth
-;
-
-775 
-CURLFTP_CREATE_DIR_NONE
-,
-
-776 
-CURLFTP_CREATE_DIR
-,
-
-779 
-CURLFTP_CREATE_DIR_RETRY
-,
-
-781 
-CURLFTP_CREATE_DIR_LAST
-
-
-782 } 
-	tcuæ_·p¸óãdú
-;
-
-786 
-CURLFTPMETHOD_DEFAULT
-,
-
-787 
-CURLFTPMETHOD_MULTICWD
-,
-
-788 
-CURLFTPMETHOD_NOCWD
-,
-
-789 
-CURLFTPMETHOD_SINGLECWD
-,
-
-790 
-CURLFTPMETHOD_LAST
-
-
-791 } 
-	tcuæ_·pmëhod
-;
-
-794 
-	#CURLHEADER_UNIFIED
- 0
-
-	)
-
-795 
-	#CURLHEADER_SEPARATE
- (1<<0)
-
-	)
-
-798 
-	#CURLPROTO_HTTP
- (1<<0)
-
-	)
-
-799 
-	#CURLPROTO_HTTPS
- (1<<1)
-
-	)
-
-800 
-	#CURLPROTO_FTP
- (1<<2)
-
-	)
-
-801 
-	#CURLPROTO_FTPS
- (1<<3)
-
-	)
-
-802 
-	#CURLPROTO_SCP
- (1<<4)
-
-	)
-
-803 
-	#CURLPROTO_SFTP
- (1<<5)
-
-	)
-
-804 
-	#CURLPROTO_TELNET
- (1<<6)
-
-	)
-
-805 
-	#CURLPROTO_LDAP
- (1<<7)
-
-	)
-
-806 
-	#CURLPROTO_LDAPS
- (1<<8)
-
-	)
-
-807 
-	#CURLPROTO_DICT
- (1<<9)
-
-	)
-
-808 
-	#CURLPROTO_FILE
- (1<<10)
-
-	)
-
-809 
-	#CURLPROTO_TFTP
- (1<<11)
-
-	)
-
-810 
-	#CURLPROTO_IMAP
- (1<<12)
-
-	)
-
-811 
-	#CURLPROTO_IMAPS
- (1<<13)
-
-	)
-
-812 
-	#CURLPROTO_POP3
- (1<<14)
-
-	)
-
-813 
-	#CURLPROTO_POP3S
- (1<<15)
-
-	)
-
-814 
-	#CURLPROTO_SMTP
- (1<<16)
-
-	)
-
-815 
-	#CURLPROTO_SMTPS
- (1<<17)
-
-	)
-
-816 
-	#CURLPROTO_RTSP
- (1<<18)
-
-	)
-
-817 
-	#CURLPROTO_RTMP
- (1<<19)
-
-	)
-
-818 
-	#CURLPROTO_RTMPT
- (1<<20)
-
-	)
-
-819 
-	#CURLPROTO_RTMPE
- (1<<21)
-
-	)
-
-820 
-	#CURLPROTO_RTMPTE
- (1<<22)
-
-	)
-
-821 
-	#CURLPROTO_RTMPS
- (1<<23)
-
-	)
-
-822 
-	#CURLPROTO_RTMPTS
- (1<<24)
-
-	)
-
-823 
-	#CURLPROTO_GOPHER
- (1<<25)
-
-	)
-
-824 
-	#CURLPROTO_SMB
- (1<<26)
-
-	)
-
-825 
-	#CURLPROTO_SMBS
- (1<<27)
-
-	)
-
-826 
-	#CURLPROTO_ALL
- (~0Ë
-
-	)
-
-830 
-	#CURLOPTTYPE_LONG
- 0
-
-	)
-
-831 
-	#CURLOPTTYPE_OBJECTPOINT
- 10000
-
-	)
-
-832 
-	#CURLOPTTYPE_STRINGPOINT
- 10000
-
-	)
-
-833 
-	#CURLOPTTYPE_FUNCTIONPOINT
- 20000
-
-	)
-
-834 
-	#CURLOPTTYPE_OFF_T
- 30000
-
-	)
-
-842 #ifde‡
-CINIT
-
-
-843 #unde‡
-CINIT
-
-
-846 #ifde‡
-CURL_ISOCPP
-
-
-847 
-	#CINIT
-(
-«
-,
-t
-,
-nu
-Ë
-CURLOPT_
- ##Ç®
-CURLOPTTYPE_
- ##Å + 
-	)
-nu
-
-850 
-	#LONG
- 
-CURLOPTTYPE_LONG
-
-
-	)
-
-851 
-	#OBJECTPOINT
- 
-CURLOPTTYPE_OBJECTPOINT
-
-
-	)
-
-852 
-	#STRINGPOINT
- 
-CURLOPTTYPE_OBJECTPOINT
-
-
-	)
-
-853 
-	#FUNCTIONPOINT
- 
-CURLOPTTYPE_FUNCTIONPOINT
-
-
-	)
-
-854 
-	#OFF_T
- 
-CURLOPTTYPE_OFF_T
-
-
-	)
-
-855 
-	#CINIT
-(
-«me
-,
-ty≥
-,
-numbî
-Ë
-CURLOPT_
-Çamêty≥ + 
-	)
-number
-
-866 
-	`CINIT
-(
-WRITEDATA
-, 
-OBJECTPOINT
-, 1),
-
-869 
-	`CINIT
-(
-URL
-, 
-STRINGPOINT
-, 2),
-
-872 
-	`CINIT
-(
-PORT
-, 
-LONG
-, 3),
-
-875 
-	`CINIT
-(
-PROXY
-, 
-STRINGPOINT
-, 4),
-
-878 
-	`CINIT
-(
-USERPWD
-, 
-STRINGPOINT
-, 5),
-
-881 
-	`CINIT
-(
-PROXYUSERPWD
-, 
-STRINGPOINT
-, 6),
-
-884 
-	`CINIT
-(
-RANGE
-, 
-STRINGPOINT
-, 7),
-
-889 
-	`CINIT
-(
-READDATA
-, 
-OBJECTPOINT
-, 9),
-
-893 
-	`CINIT
-(
-ERRORBUFFER
-, 
-OBJECTPOINT
-, 10),
-
-897 
-	`CINIT
-(
-WRITEFUNCTION
-, 
-FUNCTIONPOINT
-, 11),
-
-901 
-	`CINIT
-(
-READFUNCTION
-, 
-FUNCTIONPOINT
-, 12),
-
-904 
-	`CINIT
-(
-TIMEOUT
-, 
-LONG
-, 13),
-
-915 
-	`CINIT
-(
-INFILESIZE
-, 
-LONG
-, 14),
-
-918 
-	`CINIT
-(
-POSTFIELDS
-, 
-OBJECTPOINT
-, 15),
-
-921 
-	`CINIT
-(
-REFERER
-, 
-STRINGPOINT
-, 16),
-
-925 
-	`CINIT
-(
-FTPPORT
-, 
-STRINGPOINT
-, 17),
-
-928 
-	`CINIT
-(
-USERAGENT
-, 
-STRINGPOINT
-, 18),
-
-937 
-	`CINIT
-(
-LOW_SPEED_LIMIT
-, 
-LONG
-, 19),
-
-940 
-	`CINIT
-(
-LOW_SPEED_TIME
-, 
-LONG
-, 20),
-
-948 
-	`CINIT
-(
-RESUME_FROM
-, 
-LONG
-, 21),
-
-951 
-	`CINIT
-(
-COOKIE
-, 
-STRINGPOINT
-, 22),
-
-955 
-	`CINIT
-(
-HTTPHEADER
-, 
-OBJECTPOINT
-, 23),
-
-958 
-	`CINIT
-(
-HTTPPOST
-, 
-OBJECTPOINT
-, 24),
-
-961 
-	`CINIT
-(
-SSLCERT
-, 
-STRINGPOINT
-, 25),
-
-964 
-	`CINIT
-(
-KEYPASSWD
-, 
-STRINGPOINT
-, 26),
-
-967 
-	`CINIT
-(
-CRLF
-, 
-LONG
-, 27),
-
-970 
-	`CINIT
-(
-QUOTE
-, 
-OBJECTPOINT
-, 28),
-
-974 
-	`CINIT
-(
-HEADERDATA
-, 
-OBJECTPOINT
-, 29),
-
-978 
-	`CINIT
-(
-COOKIEFILE
-, 
-STRINGPOINT
-, 31),
-
-982 
-	`CINIT
-(
-SSLVERSION
-, 
-LONG
-, 32),
-
-985 
-	`CINIT
-(
-TIMECONDITION
-, 
-LONG
-, 33),
-
-989 
-	`CINIT
-(
-TIMEVALUE
-, 
-LONG
-, 34),
-
-997 
-	`CINIT
-(
-CUSTOMREQUEST
-, 
-STRINGPOINT
-, 36),
-
-1000 
-	`CINIT
-(
-STDERR
-, 
-OBJECTPOINT
-, 37),
-
-1005 
-	`CINIT
-(
-POSTQUOTE
-, 
-OBJECTPOINT
-, 39),
-
-1007 
-	`CINIT
-(
-OBSOLETE40
-, 
-OBJECTPOINT
-, 40),
-
-1009 
-	`CINIT
-(
-VERBOSE
-, 
-LONG
-, 41),
-
-1010 
-	`CINIT
-(
-HEADER
-, 
-LONG
-, 42),
-
-1011 
-	`CINIT
-(
-NOPROGRESS
-, 
-LONG
-, 43),
-
-1012 
-	`CINIT
-(
-NOBODY
-, 
-LONG
-, 44),
-
-1013 
-	`CINIT
-(
-FAILONERROR
-, 
-LONG
-, 45),
-
-1014 
-	`CINIT
-(
-UPLOAD
-, 
-LONG
-, 46),
-
-1015 
-	`CINIT
-(
-POST
-, 
-LONG
-, 47),
-
-1016 
-	`CINIT
-(
-DIRLISTONLY
-, 
-LONG
-, 48),
-
-1018 
-	`CINIT
-(
-APPEND
-, 
-LONG
-, 50),
-
-1022 
-	`CINIT
-(
-NETRC
-, 
-LONG
-, 51),
-
-1024 
-	`CINIT
-(
-FOLLOWLOCATION
-, 
-LONG
-, 52),
-
-1026 
-	`CINIT
-(
-TRANSFERTEXT
-, 
-LONG
-, 53),
-
-1027 
-	`CINIT
-(
-PUT
-, 
-LONG
-, 54),
-
-1035 
-	`CINIT
-(
-PROGRESSFUNCTION
-, 
-FUNCTIONPOINT
-, 56),
-
-1039 
-	`CINIT
-(
-PROGRESSDATA
-, 
-OBJECTPOINT
-, 57),
-
-1040 
-	#CURLOPT_XFERINFODATA
- 
-CURLOPT_PROGRESSDATA
-
-
-	)
-
-1043 
-	`CINIT
-(
-AUTOREFERER
-, 
-LONG
-, 58),
-
-1047 
-	`CINIT
-(
-PROXYPORT
-, 
-LONG
-, 59),
-
-1050 
-	`CINIT
-(
-POSTFIELDSIZE
-, 
-LONG
-, 60),
-
-1053 
-	`CINIT
-(
-HTTPPROXYTUNNEL
-, 
-LONG
-, 61),
-
-1056 
-	`CINIT
-(
-INTERFACE
-, 
-STRINGPOINT
-, 62),
-
-1061 
-	`CINIT
-(
-KRBLEVEL
-, 
-STRINGPOINT
-, 63),
-
-1064 
-	`CINIT
-(
-SSL_VERIFYPEER
-, 
-LONG
-, 64),
-
-1068 
-	`CINIT
-(
-CAINFO
-, 
-STRINGPOINT
-, 65),
-
-1074 
-	`CINIT
-(
-MAXREDIRS
-, 
-LONG
-, 68),
-
-1078 
-	`CINIT
-(
-FILETIME
-, 
-LONG
-, 69),
-
-1081 
-	`CINIT
-(
-TELNETOPTIONS
-, 
-OBJECTPOINT
-, 70),
-
-1084 
-	`CINIT
-(
-MAXCONNECTS
-, 
-LONG
-, 71),
-
-1086 
-	`CINIT
-(
-OBSOLETE72
-, 
-LONG
-, 72),
-
-1093 
-	`CINIT
-(
-FRESH_CONNECT
-, 
-LONG
-, 74),
-
-1098 
-	`CINIT
-(
-FORBID_REUSE
-, 
-LONG
-, 75),
-
-1102 
-	`CINIT
-(
-RANDOM_FILE
-, 
-STRINGPOINT
-, 76),
-
-1105 
-	`CINIT
-(
-EGDSOCKET
-, 
-STRINGPOINT
-, 77),
-
-1109 
-	`CINIT
-(
-CONNECTTIMEOUT
-, 
-LONG
-, 78),
-
-1113 
-	`CINIT
-(
-HEADERFUNCTION
-, 
-FUNCTIONPOINT
-, 79),
-
-1118 
-	`CINIT
-(
-HTTPGET
-, 
-LONG
-, 80),
-
-1123 
-	`CINIT
-(
-SSL_VERIFYHOST
-, 
-LONG
-, 81),
-
-1127 
-	`CINIT
-(
-COOKIEJAR
-, 
-STRINGPOINT
-, 82),
-
-1130 
-	`CINIT
-(
-SSL_CIPHER_LIST
-, 
-STRINGPOINT
-, 83),
-
-1134 
-	`CINIT
-(
-HTTP_VERSION
-, 
-LONG
-, 84),
-
-1139 
-	`CINIT
-(
-FTP_USE_EPSV
-, 
-LONG
-, 85),
-
-1142 
-	`CINIT
-(
-SSLCERTTYPE
-, 
-STRINGPOINT
-, 86),
-
-1145 
-	`CINIT
-(
-SSLKEY
-, 
-STRINGPOINT
-, 87),
-
-1148 
-	`CINIT
-(
-SSLKEYTYPE
-, 
-STRINGPOINT
-, 88),
-
-1151 
-	`CINIT
-(
-SSLENGINE
-, 
-STRINGPOINT
-, 89),
-
-1156 
-	`CINIT
-(
-SSLENGINE_DEFAULT
-, 
-LONG
-, 90),
-
-1159 
-	`CINIT
-(
-DNS_USE_GLOBAL_CACHE
-, 
-LONG
-, 91),
-
-1162 
-	`CINIT
-(
-DNS_CACHE_TIMEOUT
-, 
-LONG
-, 92),
-
-1165 
-	`CINIT
-(
-PREQUOTE
-, 
-OBJECTPOINT
-, 93),
-
-1168 
-	`CINIT
-(
-DEBUGFUNCTION
-, 
-FUNCTIONPOINT
-, 94),
-
-1171 
-	`CINIT
-(
-DEBUGDATA
-, 
-OBJECTPOINT
-, 95),
-
-1174 
-	`CINIT
-(
-COOKIESESSION
-, 
-LONG
-, 96),
-
-1178 
-	`CINIT
-(
-CAPATH
-, 
-STRINGPOINT
-, 97),
-
-1181 
-	`CINIT
-(
-BUFFERSIZE
-, 
-LONG
-, 98),
-
-1186 
-	`CINIT
-(
-NOSIGNAL
-, 
-LONG
-, 99),
-
-1189 
-	`CINIT
-(
-SHARE
-, 
-OBJECTPOINT
-, 100),
-
-1193 
-	`CINIT
-(
-PROXYTYPE
-, 
-LONG
-, 101),
-
-1198 
-	`CINIT
-(
-ACCEPT_ENCODING
-, 
-STRINGPOINT
-, 102),
-
-1201 
-	`CINIT
-(
-PRIVATE
-, 
-OBJECTPOINT
-, 103),
-
-1204 
-	`CINIT
-(
-HTTP200ALIASES
-, 
-OBJECTPOINT
-, 104),
-
-1209 
-	`CINIT
-(
-UNRESTRICTED_AUTH
-, 
-LONG
-, 105),
-
-1214 
-	`CINIT
-(
-FTP_USE_EPRT
-, 
-LONG
-, 106),
-
-1219 
-	`CINIT
-(
-HTTPAUTH
-, 
-LONG
-, 107),
-
-1224 
-	`CINIT
-(
-SSL_CTX_FUNCTION
-, 
-FUNCTIONPOINT
-, 108),
-
-1228 
-	`CINIT
-(
-SSL_CTX_DATA
-, 
-OBJECTPOINT
-, 109),
-
-1234 
-	`CINIT
-(
-FTP_CREATE_MISSING_DIRS
-, 
-LONG
-, 110),
-
-1239 
-	`CINIT
-(
-PROXYAUTH
-, 
-LONG
-, 111),
-
-1245 
-	`CINIT
-(
-FTP_RESPONSE_TIMEOUT
-, 
-LONG
-, 112),
-
-1246 
-	#CURLOPT_SERVER_RESPONSE_TIMEOUT
- 
-CURLOPT_FTP_RESPONSE_TIMEOUT
-
-
-	)
-
-1251 
-	`CINIT
-(
-IPRESOLVE
-, 
-LONG
-, 113),
-
-1258 
-	`CINIT
-(
-MAXFILESIZE
-, 
-LONG
-, 114),
-
-1263 
-	`CINIT
-(
-INFILESIZE_LARGE
-, 
-OFF_T
-, 115),
-
-1268 
-	`CINIT
-(
-RESUME_FROM_LARGE
-, 
-OFF_T
-, 116),
-
-1273 
-	`CINIT
-(
-MAXFILESIZE_LARGE
-, 
-OFF_T
-, 117),
-
-1279 
-	`CINIT
-(
-NETRC_FILE
-, 
-STRINGPOINT
-, 118),
-
-1286 
-	`CINIT
-(
-USE_SSL
-, 
-LONG
-, 119),
-
-1289 
-	`CINIT
-(
-POSTFIELDSIZE_LARGE
-, 
-OFF_T
-, 120),
-
-1292 
-	`CINIT
-(
-TCP_NODELAY
-, 
-LONG
-, 121),
-
-1312 
-	`CINIT
-(
-FTPSSLAUTH
-, 
-LONG
-, 129),
-
-1314 
-	`CINIT
-(
-IOCTLFUNCTION
-, 
-FUNCTIONPOINT
-, 130),
-
-1315 
-	`CINIT
-(
-IOCTLDATA
-, 
-OBJECTPOINT
-, 131),
-
-1322 
-	`CINIT
-(
-FTP_ACCOUNT
-, 
-STRINGPOINT
-, 134),
-
-1325 
-	`CINIT
-(
-COOKIELIST
-, 
-STRINGPOINT
-, 135),
-
-1328 
-	`CINIT
-(
-IGNORE_CONTENT_LENGTH
-, 
-LONG
-, 136),
-
-1334 
-	`CINIT
-(
-FTP_SKIP_PASV_IP
-, 
-LONG
-, 137),
-
-1338 
-	`CINIT
-(
-FTP_FILEMETHOD
-, 
-LONG
-, 138),
-
-1341 
-	`CINIT
-(
-LOCALPORT
-, 
-LONG
-, 139),
-
-1346 
-	`CINIT
-(
-LOCALPORTRANGE
-, 
-LONG
-, 140),
-
-1350 
-	`CINIT
-(
-CONNECT_ONLY
-, 
-LONG
-, 141),
-
-1354 
-	`CINIT
-(
-CONV_FROM_NETWORK_FUNCTION
-, 
-FUNCTIONPOINT
-, 142),
-
-1358 
-	`CINIT
-(
-CONV_TO_NETWORK_FUNCTION
-, 
-FUNCTIONPOINT
-, 143),
-
-1363 
-	`CINIT
-(
-CONV_FROM_UTF8_FUNCTION
-, 
-FUNCTIONPOINT
-, 144),
-
-1367 
-	`CINIT
-(
-MAX_SEND_SPEED_LARGE
-, 
-OFF_T
-, 145),
-
-1368 
-	`CINIT
-(
-MAX_RECV_SPEED_LARGE
-, 
-OFF_T
-, 146),
-
-1371 
-	`CINIT
-(
-FTP_ALTERNATIVE_TO_USER
-, 
-STRINGPOINT
-, 147),
-
-1374 
-	`CINIT
-(
-SOCKOPTFUNCTION
-, 
-FUNCTIONPOINT
-, 148),
-
-1375 
-	`CINIT
-(
-SOCKOPTDATA
-, 
-OBJECTPOINT
-, 149),
-
-1379 
-	`CINIT
-(
-SSL_SESSIONID_CACHE
-, 
-LONG
-, 150),
-
-1382 
-	`CINIT
-(
-SSH_AUTH_TYPES
-, 
-LONG
-, 151),
-
-1385 
-	`CINIT
-(
-SSH_PUBLIC_KEYFILE
-, 
-STRINGPOINT
-, 152),
-
-1386 
-	`CINIT
-(
-SSH_PRIVATE_KEYFILE
-, 
-STRINGPOINT
-, 153),
-
-1389 
-	`CINIT
-(
-FTP_SSL_CCC
-, 
-LONG
-, 154),
-
-1392 
-	`CINIT
-(
-TIMEOUT_MS
-, 
-LONG
-, 155),
-
-1393 
-	`CINIT
-(
-CONNECTTIMEOUT_MS
-, 
-LONG
-, 156),
-
-1397 
-	`CINIT
-(
-HTTP_TRANSFER_DECODING
-, 
-LONG
-, 157),
-
-1398 
-	`CINIT
-(
-HTTP_CONTENT_DECODING
-, 
-LONG
-, 158),
-
-1402 
-	`CINIT
-(
-NEW_FILE_PERMS
-, 
-LONG
-, 159),
-
-1403 
-	`CINIT
-(
-NEW_DIRECTORY_PERMS
-, 
-LONG
-, 160),
-
-1407 
-	`CINIT
-(
-POSTREDIR
-, 
-LONG
-, 161),
-
-1410 
-	`CINIT
-(
-SSH_HOST_PUBLIC_KEY_MD5
-, 
-STRINGPOINT
-, 162),
-
-1416 
-	`CINIT
-(
-OPENSOCKETFUNCTION
-, 
-FUNCTIONPOINT
-, 163),
-
-1417 
-	`CINIT
-(
-OPENSOCKETDATA
-, 
-OBJECTPOINT
-, 164),
-
-1420 
-	`CINIT
-(
-COPYPOSTFIELDS
-, 
-OBJECTPOINT
-, 165),
-
-1423 
-	`CINIT
-(
-PROXY_TRANSFER_MODE
-, 
-LONG
-, 166),
-
-1426 
-	`CINIT
-(
-SEEKFUNCTION
-, 
-FUNCTIONPOINT
-, 167),
-
-1427 
-	`CINIT
-(
-SEEKDATA
-, 
-OBJECTPOINT
-, 168),
-
-1430 
-	`CINIT
-(
-CRLFILE
-, 
-STRINGPOINT
-, 169),
-
-1433 
-	`CINIT
-(
-ISSUERCERT
-, 
-STRINGPOINT
-, 170),
-
-1436 
-	`CINIT
-(
-ADDRESS_SCOPE
-, 
-LONG
-, 171),
-
-1440 
-	`CINIT
-(
-CERTINFO
-, 
-LONG
-, 172),
-
-1443 
-	`CINIT
-(
-USERNAME
-, 
-STRINGPOINT
-, 173),
-
-1444 
-	`CINIT
-(
-PASSWORD
-, 
-STRINGPOINT
-, 174),
-
-1447 
-	`CINIT
-(
-PROXYUSERNAME
-, 
-STRINGPOINT
-, 175),
-
-1448 
-	`CINIT
-(
-PROXYPASSWORD
-, 
-STRINGPOINT
-, 176),
-
-1457 
-	`CINIT
-(
-NOPROXY
-, 
-STRINGPOINT
-, 177),
-
-1460 
-	`CINIT
-(
-TFTP_BLKSIZE
-, 
-LONG
-, 178),
-
-1463 
-	`CINIT
-(
-SOCKS5_GSSAPI_SERVICE
-, 
-STRINGPOINT
-, 179),
-
-1466 
-	`CINIT
-(
-SOCKS5_GSSAPI_NEC
-, 
-LONG
-, 180),
-
-1472 
-	`CINIT
-(
-PROTOCOLS
-, 
-LONG
-, 181),
-
-1478 
-	`CINIT
-(
-REDIR_PROTOCOLS
-, 
-LONG
-, 182),
-
-1481 
-	`CINIT
-(
-SSH_KNOWNHOSTS
-, 
-STRINGPOINT
-, 183),
-
-1485 
-	`CINIT
-(
-SSH_KEYFUNCTION
-, 
-FUNCTIONPOINT
-, 184),
-
-1488 
-	`CINIT
-(
-SSH_KEYDATA
-, 
-OBJECTPOINT
-, 185),
-
-1491 
-	`CINIT
-(
-MAIL_FROM
-, 
-STRINGPOINT
-, 186),
-
-1494 
-	`CINIT
-(
-MAIL_RCPT
-, 
-OBJECTPOINT
-, 187),
-
-1497 
-	`CINIT
-(
-FTP_USE_PRET
-, 
-LONG
-, 188),
-
-1500 
-	`CINIT
-(
-RTSP_REQUEST
-, 
-LONG
-, 189),
-
-1503 
-	`CINIT
-(
-RTSP_SESSION_ID
-, 
-STRINGPOINT
-, 190),
-
-1506 
-	`CINIT
-(
-RTSP_STREAM_URI
-, 
-STRINGPOINT
-, 191),
-
-1509 
-	`CINIT
-(
-RTSP_TRANSPORT
-, 
-STRINGPOINT
-, 192),
-
-1512 
-	`CINIT
-(
-RTSP_CLIENT_CSEQ
-, 
-LONG
-, 193),
-
-1515 
-	`CINIT
-(
-RTSP_SERVER_CSEQ
-, 
-LONG
-, 194),
-
-1518 
-	`CINIT
-(
-INTERLEAVEDATA
-, 
-OBJECTPOINT
-, 195),
-
-1521 
-	`CINIT
-(
-INTERLEAVEFUNCTION
-, 
-FUNCTIONPOINT
-, 196),
-
-1524 
-	`CINIT
-(
-WILDCARDMATCH
-, 
-LONG
-, 197),
-
-1528 
-	`CINIT
-(
-CHUNK_BGN_FUNCTION
-, 
-FUNCTIONPOINT
-, 198),
-
-1532 
-	`CINIT
-(
-CHUNK_END_FUNCTION
-, 
-FUNCTIONPOINT
-, 199),
-
-1535 
-	`CINIT
-(
-FNMATCH_FUNCTION
-, 
-FUNCTIONPOINT
-, 200),
-
-1538 
-	`CINIT
-(
-CHUNK_DATA
-, 
-OBJECTPOINT
-, 201),
-
-1541 
-	`CINIT
-(
-FNMATCH_DATA
-, 
-OBJECTPOINT
-, 202),
-
-1544 
-	`CINIT
-(
-RESOLVE
-, 
-OBJECTPOINT
-, 203),
-
-1547 
-	`CINIT
-(
-TLSAUTH_USERNAME
-, 
-STRINGPOINT
-, 204),
-
-1550 
-	`CINIT
-(
-TLSAUTH_PASSWORD
-, 
-STRINGPOINT
-, 205),
-
-1553 
-	`CINIT
-(
-TLSAUTH_TYPE
-, 
-STRINGPOINT
-, 206),
-
-1565 
-	`CINIT
-(
-TRANSFER_ENCODING
-, 
-LONG
-, 207),
-
-1569 
-	`CINIT
-(
-CLOSESOCKETFUNCTION
-, 
-FUNCTIONPOINT
-, 208),
-
-1570 
-	`CINIT
-(
-CLOSESOCKETDATA
-, 
-OBJECTPOINT
-, 209),
-
-1573 
-	`CINIT
-(
-GSSAPI_DELEGATION
-, 
-LONG
-, 210),
-
-1576 
-	`CINIT
-(
-DNS_SERVERS
-, 
-STRINGPOINT
-, 211),
-
-1580 
-	`CINIT
-(
-ACCEPTTIMEOUT_MS
-, 
-LONG
-, 212),
-
-1583 
-	`CINIT
-(
-TCP_KEEPALIVE
-, 
-LONG
-, 213),
-
-1586 
-	`CINIT
-(
-TCP_KEEPIDLE
-, 
-LONG
-, 214),
-
-1587 
-	`CINIT
-(
-TCP_KEEPINTVL
-, 
-LONG
-, 215),
-
-1590 
-	`CINIT
-(
-SSL_OPTIONS
-, 
-LONG
-, 216),
-
-1593 
-	`CINIT
-(
-MAIL_AUTH
-, 
-STRINGPOINT
-, 217),
-
-1596 
-	`CINIT
-(
-SASL_IR
-, 
-LONG
-, 218),
-
-1601 
-	`CINIT
-(
-XFERINFOFUNCTION
-, 
-FUNCTIONPOINT
-, 219),
-
-1604 
-	`CINIT
-(
-XOAUTH2_BEARER
-, 
-STRINGPOINT
-, 220),
-
-1609 
-	`CINIT
-(
-DNS_INTERFACE
-, 
-STRINGPOINT
-, 221),
-
-1613 
-	`CINIT
-(
-DNS_LOCAL_IP4
-, 
-STRINGPOINT
-, 222),
-
-1617 
-	`CINIT
-(
-DNS_LOCAL_IP6
-, 
-STRINGPOINT
-, 223),
-
-1620 
-	`CINIT
-(
-LOGIN_OPTIONS
-, 
-STRINGPOINT
-, 224),
-
-1623 
-	`CINIT
-(
-SSL_ENABLE_NPN
-, 
-LONG
-, 225),
-
-1626 
-	`CINIT
-(
-SSL_ENABLE_ALPN
-, 
-LONG
-, 226),
-
-1630 
-	`CINIT
-(
-EXPECT_100_TIMEOUT_MS
-, 
-LONG
-, 227),
-
-1634 
-	`CINIT
-(
-PROXYHEADER
-, 
-OBJECTPOINT
-, 228),
-
-1637 
-	`CINIT
-(
-HEADEROPT
-, 
-LONG
-, 229),
-
-1641 
-	`CINIT
-(
-PINNEDPUBLICKEY
-, 
-STRINGPOINT
-, 230),
-
-1644 
-	`CINIT
-(
-UNIX_SOCKET_PATH
-, 
-STRINGPOINT
-, 231),
-
-1647 
-	`CINIT
-(
-SSL_VERIFYSTATUS
-, 
-LONG
-, 232),
-
-1650 
-	`CINIT
-(
-SSL_FALSESTART
-, 
-LONG
-, 233),
-
-1653 
-	`CINIT
-(
-PATH_AS_IS
-, 
-LONG
-, 234),
-
-1656 
-	`CINIT
-(
-PROXY_SERVICE_NAME
-, 
-STRINGPOINT
-, 235),
-
-1659 
-	`CINIT
-(
-SERVICE_NAME
-, 
-STRINGPOINT
-, 236),
-
-1662 
-	`CINIT
-(
-PIPEWAIT
-, 
-LONG
-, 237),
-
-1665 
-	`CINIT
-(
-DEFAULT_PROTOCOL
-, 
-STRINGPOINT
-, 238),
-
-1668 
-	`CINIT
-(
-STREAM_WEIGHT
-, 
-LONG
-, 239),
-
-1671 
-	`CINIT
-(
-STREAM_DEPENDS
-, 
-OBJECTPOINT
-, 240),
-
-1674 
-	`CINIT
-(
-STREAM_DEPENDS_E
-, 
-OBJECTPOINT
-, 241),
-
-1676 
-CURLOPT_LASTENTRY
-
-
-1677 } 
-	tCURL›ti⁄
-;
-
-1679 #i‚de‡
-CURL_NO_OLDIES
-
-
-1686 
-	#CURLOPT_POST301
- 
-CURLOPT_POSTREDIR
-
-
-	)
-
-1691 
-	#CURLOPT_SSLKEYPASSWD
- 
-CURLOPT_KEYPASSWD
-
-
-	)
-
-1692 
-	#CURLOPT_FTPAPPEND
- 
-CURLOPT_APPEND
-
-
-	)
-
-1693 
-	#CURLOPT_FTPLISTONLY
- 
-CURLOPT_DIRLISTONLY
-
-
-	)
-
-1694 
-	#CURLOPT_FTP_SSL
- 
-CURLOPT_USE_SSL
-
-
-	)
-
-1698 
-	#CURLOPT_SSLCERTPASSWD
- 
-CURLOPT_KEYPASSWD
-
-
-	)
-
-1699 
-	#CURLOPT_KRB4LEVEL
- 
-CURLOPT_KRBLEVEL
-
-
-	)
-
-1703 #unde‡
-CURLOPT_DNS_USE_GLOBAL_CACHE
-
-
-1710 
-	#CURL_IPRESOLVE_WHATEVER
- 0
-
-	)
-
-1712 
-	#CURL_IPRESOLVE_V4
- 1
-
-	)
-
-1713 
-	#CURL_IPRESOLVE_V6
- 2
-
-	)
-
-1716 
-	#CURLOPT_RTSPHEADER
- 
-CURLOPT_HTTPHEADER
-
-
-	)
-
-1720 
-CURL_HTTP_VERSION_NONE
-,
-
-1723 
-CURL_HTTP_VERSION_1_0
-,
-
-1724 
-CURL_HTTP_VERSION_1_1
-,
-
-1725 
-CURL_HTTP_VERSION_2_0
-,
-
-1726 
-CURL_HTTP_VERSION_2TLS
-,
-
-1728 
-CURL_HTTP_VERSION_LAST
-
-
-1734 
-	#CURL_HTTP_VERSION_2
- 
-CURL_HTTP_VERSION_2_0
-
-
-	)
-
-1740 
-CURL_RTSPREQ_NONE
-,
-
-1741 
-CURL_RTSPREQ_OPTIONS
-,
-
-1742 
-CURL_RTSPREQ_DESCRIBE
-,
-
-1743 
-CURL_RTSPREQ_ANNOUNCE
-,
-
-1744 
-CURL_RTSPREQ_SETUP
-,
-
-1745 
-CURL_RTSPREQ_PLAY
-,
-
-1746 
-CURL_RTSPREQ_PAUSE
-,
-
-1747 
-CURL_RTSPREQ_TEARDOWN
-,
-
-1748 
-CURL_RTSPREQ_GET_PARAMETER
-,
-
-1749 
-CURL_RTSPREQ_SET_PARAMETER
-,
-
-1750 
-CURL_RTSPREQ_RECORD
-,
-
-1751 
-CURL_RTSPREQ_RECEIVE
-,
-
-1752 
-CURL_RTSPREQ_LAST
-
-
-1756 
-	eCURL_NETRC_OPTION
- {
-
-1757 
-CURL_NETRC_IGNORED
-,
-
-1759 
-CURL_NETRC_OPTIONAL
-,
-
-1761 
-CURL_NETRC_REQUIRED
-,
-
-1764 
-CURL_NETRC_LAST
-
-
-1768 
-CURL_SSLVERSION_DEFAULT
-,
-
-1769 
-CURL_SSLVERSION_TLSv1
-,
-
-1770 
-CURL_SSLVERSION_SSLv2
-,
-
-1771 
-CURL_SSLVERSION_SSLv3
-,
-
-1772 
-CURL_SSLVERSION_TLSv1_0
-,
-
-1773 
-CURL_SSLVERSION_TLSv1_1
-,
-
-1774 
-CURL_SSLVERSION_TLSv1_2
-,
-
-1776 
-CURL_SSLVERSION_LAST
-
-
-1779 
-	eCURL_TLSAUTH
- {
-
-1780 
-CURL_TLSAUTH_NONE
-,
-
-1781 
-CURL_TLSAUTH_SRP
-,
-
-1782 
-CURL_TLSAUTH_LAST
-
-
-1790 
-	#CURL_REDIR_GET_ALL
- 0
-
-	)
-
-1791 
-	#CURL_REDIR_POST_301
- 1
-
-	)
-
-1792 
-	#CURL_REDIR_POST_302
- 2
-
-	)
-
-1793 
-	#CURL_REDIR_POST_303
- 4
-
-	)
-
-1794 
-	#CURL_REDIR_POST_ALL
- \
-
-1795 (
-CURL_REDIR_POST_301
-|
-CURL_REDIR_POST_302
-|
-CURL_REDIR_POST_303
-)
-
-	)
-
-1798 
-CURL_TIMECOND_NONE
-,
-
-1800 
-CURL_TIMECOND_IFMODSINCE
-,
-
-1801 
-CURL_TIMECOND_IFUNMODSINCE
-,
-
-1802 
-CURL_TIMECOND_LASTMOD
-,
-
-1804 
-CURL_TIMECOND_LAST
-
-
-1805 } 
-	tcuæ_TimeC⁄d
-;
-
-1810 
-CURL_EXTERN
- (
-cuæ_°ªquÆ
-)(c⁄° *
-s1
-, c⁄° *
-s2
-);
-
-1811 
-CURL_EXTERN
- (
-cuæ_°∫equÆ
-)(c⁄° *
-s1
-, c⁄° *
-s2
-, 
-size_t
- 
-n
-);
-
-1814 #ifde‡
-CFINIT
-
-
-1815 #unde‡
-CFINIT
-
-
-1818 #ifde‡
-CURL_ISOCPP
-
-
-1819 
-	#CFINIT
-(
-«me
-Ë
-CURLFORM_
- ## 
-	)
-name
-
-1822 
-	#CFINIT
-(
-«me
-Ë
-CURLFORM_
- 
-	)
-name
-
-1826 
-	`CFINIT
-(
-NOTHING
-),
-
-1829 
-	`CFINIT
-(
-COPYNAME
-),
-
-1830 
-	`CFINIT
-(
-PTRNAME
-),
-
-1831 
-	`CFINIT
-(
-NAMELENGTH
-),
-
-1832 
-	`CFINIT
-(
-COPYCONTENTS
-),
-
-1833 
-	`CFINIT
-(
-PTRCONTENTS
-),
-
-1834 
-	`CFINIT
-(
-CONTENTSLENGTH
-),
-
-1835 
-	`CFINIT
-(
-FILECONTENT
-),
-
-1836 
-	`CFINIT
-(
-ARRAY
-),
-
-1837 
-	`CFINIT
-(
-OBSOLETE
-),
-
-1838 
-	`CFINIT
-(
-FILE
-),
-
-1840 
-	`CFINIT
-(
-BUFFER
-),
-
-1841 
-	`CFINIT
-(
-BUFFERPTR
-),
-
-1842 
-	`CFINIT
-(
-BUFFERLENGTH
-),
-
-1844 
-	`CFINIT
-(
-CONTENTTYPE
-),
-
-1845 
-	`CFINIT
-(
-CONTENTHEADER
-),
-
-1846 
-	`CFINIT
-(
-FILENAME
-),
-
-1847 
-	`CFINIT
-(
-END
-),
-
-1848 
-	`CFINIT
-(
-OBSOLETE2
-),
-
-1850 
-	`CFINIT
-(
-STREAM
-),
-
-1851 
-	`CFINIT
-(
-CONTENTLEN
-),
-
-1853 
-CURLFORM_LASTENTRY
-
-
-1854 } 
-	tCURLf‹m›ti⁄
-;
-
-1856 #unde‡
-CFINIT
-
-
-1859 
-	scuæ_f‹ms
- {
-
-1860 
-CURLf‹m›ti⁄
- 
-›ti⁄
-;
-
-1861 c⁄° *
-vÆue
-;
-
-1881 
-CURL_FORMADD_OK
-,
-
-1883 
-CURL_FORMADD_MEMORY
-,
-
-1884 
-CURL_FORMADD_OPTION_TWICE
-,
-
-1885 
-CURL_FORMADD_NULL
-,
-
-1886 
-CURL_FORMADD_UNKNOWN_OPTION
-,
-
-1887 
-CURL_FORMADD_INCOMPLETE
-,
-
-1888 
-CURL_FORMADD_ILLEGAL_ARRAY
-,
-
-1889 
-CURL_FORMADD_DISABLED
-,
-
-1891 
-CURL_FORMADD_LAST
-
-
-1892 } 
-	tCURLFORMcode
-;
-
-1903 
-CURL_EXTERN
- 
-CURLFORMcode
- 
-	`cuæ_f‹madd
-(
-cuæ_hâµo°
- **
-hâµo°
-,
-
-1904 
-cuæ_hâµo°
- **
-œ°_po°
-,
-
-1915 
-	`size_t
- (*
-	tcuæ_f‹mgë_ˇŒback
-)(*
-	t¨g
-, c⁄° *
-	tbuf
-,
-
-1916 
-	tsize_t
- 
-	tÀn
-);
-
-1928 
-CURL_EXTERN
- 
-	`cuæ_f‹mgë
-(
-cuæ_hâµo°
- *
-f‹m
-, *
-¨g
-,
-
-1929 
-cuæ_f‹mgë_ˇŒback
- 
-≠≥nd
-);
-
-1937 
-CURL_EXTERN
- 
-	`cuæ_f‹m‰ì
-(
-cuæ_hâµo°
- *
-f‹m
-);
-
-1947 
-CURL_EXTERN
- *
-	`cuæ_gëív
-(c⁄° *
-v¨übÀ
-);
-
-1956 
-CURL_EXTERN
- *
-	`cuæ_vîsi⁄
-();
-
-1967 
-CURL_EXTERN
- *
-	`cuæ_ósy_esˇ≥
-(
-CURL
- *
-h™dÀ
-,
-
-1968 c⁄° *
-°rög
-,
-
-1969 
-Àngth
-);
-
-1972 
-CURL_EXTERN
- *
-	`cuæ_esˇ≥
-(c⁄° *
-°rög
-,
-
-1973 
-Àngth
-);
-
-1987 
-CURL_EXTERN
- *
-	`cuæ_ósy_u√sˇ≥
-(
-CURL
- *
-h™dÀ
-,
-
-1988 c⁄° *
-°rög
-,
-
-1989 
-Àngth
-,
-
-1990 *
-ouéígth
-);
-
-1993 
-CURL_EXTERN
- *
-	`cuæ_u√sˇ≥
-(c⁄° *
-°rög
-,
-
-1994 
-Àngth
-);
-
-2004 
-CURL_EXTERN
- 
-	`cuæ_‰ì
-(*
-p
-);
-
-2016 
-CURL_EXTERN
- 
-CURLcode
- 
-	`cuæ_globÆ_öô
-(
-Êags
-);
-
-2031 
-CURL_EXTERN
- 
-CURLcode
- 
-	`cuæ_globÆ_öô_mem
-(
-Êags
-,
-
-2032 
-cuæ_mÆloc_ˇŒback
- 
-m
-,
-
-2033 
-cuæ_‰ì_ˇŒback
- 
-f
-,
-
-2034 
-cuæ_ªÆloc_ˇŒback
- 
-r
-,
-
-2035 
-cuæ_°rdup_ˇŒback
- 
-s
-,
-
-2036 
-cuæ_ˇŒoc_ˇŒback
- 
-c
-);
-
-2046 
-CURL_EXTERN
- 
-	`cuæ_globÆ_˛ónup
-();
-
-2049 
-	scuæ_¶i°
- {
-
-2050 *
-d©a
-;
-
-2051 
-cuæ_¶i°
- *
-√xt
-;
-
-2062 
-CURL_EXTERN
- 
-cuæ_¶i°
- *
-	`cuæ_¶i°_≠≥nd
-(curl_slist *,
-
-2072 
-CURL_EXTERN
- 
-	`cuæ_¶i°_‰ì_Æl
-(
-cuæ_¶i°
- *);
-
-2083 
-CURL_EXTERN
- 
-time_t
- 
-	`cuæ_gëd©e
-(c⁄° *
-p
-, c⁄°Åime_à*
-unu£d
-);
-
-2087 
-	scuæ_˚πöfo
- {
-
-2088 
-num_of_˚πs
-;
-
-2089 
-cuæ_¶i°
- **
-˚πöfo
-;
-
-2096 
-CURLSSLBACKEND_NONE
- = 0,
-
-2097 
-CURLSSLBACKEND_OPENSSL
- = 1,
-
-2098 
-CURLSSLBACKEND_GNUTLS
- = 2,
-
-2099 
-CURLSSLBACKEND_NSS
- = 3,
-
-2100 
-CURLSSLBACKEND_OBSOLETE4
- = 4,
-
-2101 
-CURLSSLBACKEND_GSKIT
- = 5,
-
-2102 
-CURLSSLBACKEND_POLARSSL
- = 6,
-
-2103 
-CURLSSLBACKEND_CYASSL
- = 7,
-
-2104 
-CURLSSLBACKEND_SCHANNEL
- = 8,
-
-2105 
-CURLSSLBACKEND_DARWINSSL
- = 9,
-
-2106 
-CURLSSLBACKEND_AXTLS
- = 10,
-
-2107 
-CURLSSLBACKEND_MBEDTLS
- = 11
-
-2108 } 
-	tcuæ_s¶backíd
-;
-
-2113 
-	scuæ_és£ssi⁄öfo
- {
-
-2114 
-cuæ_s¶backíd
- 
-backíd
-;
-
-2115 *
-öã∫Æs
-;
-
-2118 
-	#CURLINFO_STRING
- 0x100000
-
-	)
-
-2119 
-	#CURLINFO_LONG
- 0x200000
-
-	)
-
-2120 
-	#CURLINFO_DOUBLE
- 0x300000
-
-	)
-
-2121 
-	#CURLINFO_SLIST
- 0x400000
-
-	)
-
-2122 
-	#CURLINFO_SOCKET
- 0x500000
-
-	)
-
-2123 
-	#CURLINFO_MASK
- 0x0fffff
-
-	)
-
-2124 
-	#CURLINFO_TYPEMASK
- 0xf00000
-
-	)
-
-2127 
-CURLINFO_NONE
-,
-
-2128 
-CURLINFO_EFFECTIVE_URL
- = 
-CURLINFO_STRING
- + 1,
-
-2129 
-CURLINFO_RESPONSE_CODE
- = 
-CURLINFO_LONG
- + 2,
-
-2130 
-CURLINFO_TOTAL_TIME
- = 
-CURLINFO_DOUBLE
- + 3,
-
-2131 
-CURLINFO_NAMELOOKUP_TIME
- = 
-CURLINFO_DOUBLE
- + 4,
-
-2132 
-CURLINFO_CONNECT_TIME
- = 
-CURLINFO_DOUBLE
- + 5,
-
-2133 
-CURLINFO_PRETRANSFER_TIME
- = 
-CURLINFO_DOUBLE
- + 6,
-
-2134 
-CURLINFO_SIZE_UPLOAD
- = 
-CURLINFO_DOUBLE
- + 7,
-
-2135 
-CURLINFO_SIZE_DOWNLOAD
- = 
-CURLINFO_DOUBLE
- + 8,
-
-2136 
-CURLINFO_SPEED_DOWNLOAD
- = 
-CURLINFO_DOUBLE
- + 9,
-
-2137 
-CURLINFO_SPEED_UPLOAD
- = 
-CURLINFO_DOUBLE
- + 10,
-
-2138 
-CURLINFO_HEADER_SIZE
- = 
-CURLINFO_LONG
- + 11,
-
-2139 
-CURLINFO_REQUEST_SIZE
- = 
-CURLINFO_LONG
- + 12,
-
-2140 
-CURLINFO_SSL_VERIFYRESULT
- = 
-CURLINFO_LONG
- + 13,
-
-2141 
-CURLINFO_FILETIME
- = 
-CURLINFO_LONG
- + 14,
-
-2142 
-CURLINFO_CONTENT_LENGTH_DOWNLOAD
- = 
-CURLINFO_DOUBLE
- + 15,
-
-2143 
-CURLINFO_CONTENT_LENGTH_UPLOAD
- = 
-CURLINFO_DOUBLE
- + 16,
-
-2144 
-CURLINFO_STARTTRANSFER_TIME
- = 
-CURLINFO_DOUBLE
- + 17,
-
-2145 
-CURLINFO_CONTENT_TYPE
- = 
-CURLINFO_STRING
- + 18,
-
-2146 
-CURLINFO_REDIRECT_TIME
- = 
-CURLINFO_DOUBLE
- + 19,
-
-2147 
-CURLINFO_REDIRECT_COUNT
- = 
-CURLINFO_LONG
- + 20,
-
-2148 
-CURLINFO_PRIVATE
- = 
-CURLINFO_STRING
- + 21,
-
-2149 
-CURLINFO_HTTP_CONNECTCODE
- = 
-CURLINFO_LONG
- + 22,
-
-2150 
-CURLINFO_HTTPAUTH_AVAIL
- = 
-CURLINFO_LONG
- + 23,
-
-2151 
-CURLINFO_PROXYAUTH_AVAIL
- = 
-CURLINFO_LONG
- + 24,
-
-2152 
-CURLINFO_OS_ERRNO
- = 
-CURLINFO_LONG
- + 25,
-
-2153 
-CURLINFO_NUM_CONNECTS
- = 
-CURLINFO_LONG
- + 26,
-
-2154 
-CURLINFO_SSL_ENGINES
- = 
-CURLINFO_SLIST
- + 27,
-
-2155 
-CURLINFO_COOKIELIST
- = 
-CURLINFO_SLIST
- + 28,
-
-2156 
-CURLINFO_LASTSOCKET
- = 
-CURLINFO_LONG
- + 29,
-
-2157 
-CURLINFO_FTP_ENTRY_PATH
- = 
-CURLINFO_STRING
- + 30,
-
-2158 
-CURLINFO_REDIRECT_URL
- = 
-CURLINFO_STRING
- + 31,
-
-2159 
-CURLINFO_PRIMARY_IP
- = 
-CURLINFO_STRING
- + 32,
-
-2160 
-CURLINFO_APPCONNECT_TIME
- = 
-CURLINFO_DOUBLE
- + 33,
-
-2161 
-CURLINFO_CERTINFO
- = 
-CURLINFO_SLIST
- + 34,
-
-2162 
-CURLINFO_CONDITION_UNMET
- = 
-CURLINFO_LONG
- + 35,
-
-2163 
-CURLINFO_RTSP_SESSION_ID
- = 
-CURLINFO_STRING
- + 36,
-
-2164 
-CURLINFO_RTSP_CLIENT_CSEQ
- = 
-CURLINFO_LONG
- + 37,
-
-2165 
-CURLINFO_RTSP_SERVER_CSEQ
- = 
-CURLINFO_LONG
- + 38,
-
-2166 
-CURLINFO_RTSP_CSEQ_RECV
- = 
-CURLINFO_LONG
- + 39,
-
-2167 
-CURLINFO_PRIMARY_PORT
- = 
-CURLINFO_LONG
- + 40,
-
-2168 
-CURLINFO_LOCAL_IP
- = 
-CURLINFO_STRING
- + 41,
-
-2169 
-CURLINFO_LOCAL_PORT
- = 
-CURLINFO_LONG
- + 42,
-
-2170 
-CURLINFO_TLS_SESSION
- = 
-CURLINFO_SLIST
- + 43,
-
-2171 
-CURLINFO_ACTIVESOCKET
- = 
-CURLINFO_SOCKET
- + 44,
-
-2174 
-CURLINFO_LASTONE
- = 44
-
-2175 } 
-	tCURLINFO
-;
-
-2179 
-	#CURLINFO_HTTP_CODE
- 
-CURLINFO_RESPONSE_CODE
-
-
-	)
-
-2182 
-CURLCLOSEPOLICY_NONE
-,
-
-2184 
-CURLCLOSEPOLICY_OLDEST
-,
-
-2185 
-CURLCLOSEPOLICY_LEAST_RECENTLY_USED
-,
-
-2186 
-CURLCLOSEPOLICY_LEAST_TRAFFIC
-,
-
-2187 
-CURLCLOSEPOLICY_SLOWEST
-,
-
-2188 
-CURLCLOSEPOLICY_CALLBACK
-,
-
-2190 
-CURLCLOSEPOLICY_LAST
-
-
-2191 } 
-	tcuæ_˛o£pﬁicy
-;
-
-2193 
-	#CURL_GLOBAL_SSL
- (1<<0)
-
-	)
-
-2194 
-	#CURL_GLOBAL_WIN32
- (1<<1)
-
-	)
-
-2195 
-	#CURL_GLOBAL_ALL
- (
-CURL_GLOBAL_SSL
-|
-CURL_GLOBAL_WIN32
-)
-
-	)
-
-2196 
-	#CURL_GLOBAL_NOTHING
- 0
-
-	)
-
-2197 
-	#CURL_GLOBAL_DEFAULT
- 
-CURL_GLOBAL_ALL
-
-
-	)
-
-2198 
-	#CURL_GLOBAL_ACK_EINTR
- (1<<2)
-
-	)
-
-2207 
-CURL_LOCK_DATA_NONE
- = 0,
-
-2212 
-CURL_LOCK_DATA_SHARE
-,
-
-2213 
-CURL_LOCK_DATA_COOKIE
-,
-
-2214 
-CURL_LOCK_DATA_DNS
-,
-
-2215 
-CURL_LOCK_DATA_SSL_SESSION
-,
-
-2216 
-CURL_LOCK_DATA_CONNECT
-,
-
-2217 
-CURL_LOCK_DATA_LAST
-
-
-2218 } 
-	tcuæ_lock_d©a
-;
-
-2222 
-CURL_LOCK_ACCESS_NONE
- = 0,
-
-2223 
-CURL_LOCK_ACCESS_SHARED
- = 1,
-
-2224 
-CURL_LOCK_ACCESS_SINGLE
- = 2,
-
-2225 
-CURL_LOCK_ACCESS_LAST
-
-
-2226 } 
-	tcuæ_lock_ac˚ss
-;
-
-2228 (*
-	tcuæ_lock_fun˘i⁄
-)(
-	tCURL
- *
-	th™dÀ
-,
-
-2229 
-	tcuæ_lock_d©a
- 
-	td©a
-,
-
-2230 
-	tcuæ_lock_ac˚ss
- 
-	tlockty≥
-,
-
-2231 *
-	tu£Ωå
-);
-
-2232 (*
-	tcuæ_u∆ock_fun˘i⁄
-)(
-	tCURL
- *
-	th™dÀ
-,
-
-2233 
-	tcuæ_lock_d©a
- 
-	td©a
-,
-
-2234 *
-	tu£Ωå
-);
-
-2236 
-	tCURLSH
-;
-
-2239 
-CURLSHE_OK
-,
-
-2240 
-CURLSHE_BAD_OPTION
-,
-
-2241 
-CURLSHE_IN_USE
-,
-
-2242 
-CURLSHE_INVALID
-,
-
-2243 
-CURLSHE_NOMEM
-,
-
-2244 
-CURLSHE_NOT_BUILT_IN
-,
-
-2245 
-CURLSHE_LAST
-
-
-2246 } 
-	tCURLSHcode
-;
-
-2249 
-CURLSHOPT_NONE
-,
-
-2250 
-CURLSHOPT_SHARE
-,
-
-2251 
-CURLSHOPT_UNSHARE
-,
-
-2252 
-CURLSHOPT_LOCKFUNC
-,
-
-2253 
-CURLSHOPT_UNLOCKFUNC
-,
-
-2254 
-CURLSHOPT_USERDATA
-,
-
-2256 
-CURLSHOPT_LAST
-
-
-2257 } 
-	tCURLSH›ti⁄
-;
-
-2259 
-CURL_EXTERN
- 
-CURLSH
- *
-	`cuæ_sh¨e_öô
-();
-
-2260 
-CURL_EXTERN
- 
-CURLSHcode
- 
-	`cuæ_sh¨e_£t›t
-(
-CURLSH
- *, 
-CURLSH›ti⁄
- 
-›ti⁄
-, ...);
-
-2261 
-CURL_EXTERN
- 
-CURLSHcode
- 
-	`cuæ_sh¨e_˛ónup
-(
-CURLSH
- *);
-
-2268 
-CURLVERSION_FIRST
-,
-
-2269 
-CURLVERSION_SECOND
-,
-
-2270 
-CURLVERSION_THIRD
-,
-
-2271 
-CURLVERSION_FOURTH
-,
-
-2272 
-CURLVERSION_LAST
-
-
-2273 } 
-	tCURLvîsi⁄
-;
-
-2280 
-	#CURLVERSION_NOW
- 
-CURLVERSION_FOURTH
-
-
-	)
-
-2283 
-CURLvîsi⁄
- 
-age
-;
-
-2284 c⁄° *
-vîsi⁄
-;
-
-2285 
-vîsi⁄_num
-;
-
-2286 c⁄° *
-ho°
-;
-
-2287 
-„©uªs
-;
-
-2288 c⁄° *
-s¶_vîsi⁄
-;
-
-2289 
-s¶_vîsi⁄_num
-;
-
-2290 c⁄° *
-libz_vîsi⁄
-;
-
-2292 c⁄° * c⁄° *
-¥Ÿocﬁs
-;
-
-2295 c⁄° *
-¨es
-;
-
-2296 
-¨es_num
-;
-
-2299 c⁄° *
-libidn
-;
-
-2304 
-ic⁄v_vî_num
-;
-
-2306 c⁄° *
-libssh_vîsi⁄
-;
-
-2308 } 
-	tcuæ_vîsi⁄_öfo_d©a
-;
-
-2310 
-	#CURL_VERSION_IPV6
- (1<<0Ë
-
-	)
-
-2311 
-	#CURL_VERSION_KERBEROS4
- (1<<1Ë
-
-	)
-
-2313 
-	#CURL_VERSION_SSL
- (1<<2Ë
-
-	)
-
-2314 
-	#CURL_VERSION_LIBZ
- (1<<3Ë
-
-	)
-
-2315 
-	#CURL_VERSION_NTLM
- (1<<4Ë
-
-	)
-
-2316 
-	#CURL_VERSION_GSSNEGOTIATE
- (1<<5Ë
-
-	)
-
-2318 
-	#CURL_VERSION_DEBUG
- (1<<6Ë
-
-	)
-
-2319 
-	#CURL_VERSION_ASYNCHDNS
- (1<<7Ë
-
-	)
-
-2320 
-	#CURL_VERSION_SPNEGO
- (1<<8Ë
-
-	)
-
-2321 
-	#CURL_VERSION_LARGEFILE
- (1<<9Ë
-
-	)
-
-2322 
-	#CURL_VERSION_IDN
- (1<<10Ë
-
-	)
-
-2324 
-	#CURL_VERSION_SSPI
- (1<<11Ë
-
-	)
-
-2325 
-	#CURL_VERSION_CONV
- (1<<12Ë
-
-	)
-
-2326 
-	#CURL_VERSION_CURLDEBUG
- (1<<13Ë
-
-	)
-
-2327 
-	#CURL_VERSION_TLSAUTH_SRP
- (1<<14Ë
-
-	)
-
-2328 
-	#CURL_VERSION_NTLM_WB
- (1<<15Ë
-
-	)
-
-2330 
-	#CURL_VERSION_HTTP2
- (1<<16Ë
-
-	)
-
-2331 
-	#CURL_VERSION_GSSAPI
- (1<<17Ë
-
-	)
-
-2332 
-	#CURL_VERSION_KERBEROS5
- (1<<18Ë
-
-	)
-
-2333 
-	#CURL_VERSION_UNIX_SOCKETS
- (1<<19Ë
-
-	)
-
-2334 
-	#CURL_VERSION_PSL
- (1<<20Ë
-
-	)
-
-2345 
-CURL_EXTERN
- 
-cuæ_vîsi⁄_öfo_d©a
- *
-	`cuæ_vîsi⁄_öfo
-(
-CURLvîsi⁄
-);
-
-2356 
-CURL_EXTERN
- c⁄° *
-	`cuæ_ósy_°ªº‹
-(
-CURLcode
-);
-
-2367 
-CURL_EXTERN
- c⁄° *
-	`cuæ_sh¨e_°ªº‹
-(
-CURLSHcode
-);
-
-2378 
-CURL_EXTERN
- 
-CURLcode
- 
-	`cuæ_ósy_∑u£
-(
-CURL
- *
-h™dÀ
-, 
-bômask
-);
-
-2380 
-	#CURLPAUSE_RECV
- (1<<0)
-
-	)
-
-2381 
-	#CURLPAUSE_RECV_CONT
- (0)
-
-	)
-
-2383 
-	#CURLPAUSE_SEND
- (1<<2)
-
-	)
-
-2384 
-	#CURLPAUSE_SEND_CONT
- (0)
-
-	)
-
-2386 
-	#CURLPAUSE_ALL
- (
-CURLPAUSE_RECV
-|
-CURLPAUSE_SEND
-)
-
-	)
-
-2387 
-	#CURLPAUSE_CONT
- (
-CURLPAUSE_RECV_CONT
-|
-CURLPAUSE_SEND_CONT
-)
-
-	)
-
-2389 #ifde‡ 
-__˝lu•lus
-
-
-2390 
-	}
-}
-
-2395 
-	~"ósy.h
-"
-
-2396 
-	~"mu…i.h
-"
-
-2399 #i‡
-deföed
-(
-__GNUC__
-Ë&& deföed(
-__GNUC_MINOR__
-) && \
-
-2400 ((
-__GNUC__
- > 4Ë|| (__GNUC__ =4 && 
-__GNUC_MINOR__
- >= 3)) && \
-
-2401 !
-deföed
-(
-__˝lu•lus
-Ë&& !
-	$deföed
-(
-CURL_DISABLE_TYPECHECK
-)
-
-2402 
-	~"ty≥check-gcc.h
-"
-
-2404 #i‡
-	`deföed
-(
-__STDC__
-) && (__STDC__ >= 1)
-
-2408 
-	#cuæ_ósy_£t›t
-(
-h™dÀ
-,
-›t
-,
-∑øm
-Ë
-	`cuæ_ósy_£t›t
-(h™dÀ,›t,∑øm)
-
-	)
-
-2409 
-	#cuæ_ósy_gëöfo
-(
-h™dÀ
-,
-öfo
-,
-¨g
-Ë
-	`cuæ_ósy_gëöfo
-(h™dÀ,öfo,¨g)
-
-	)
-
-2410 
-	#cuæ_sh¨e_£t›t
-(
-sh¨e
-,
-›t
-,
-∑øm
-Ë
-	`cuæ_sh¨e_£t›t
-(sh¨e,›t,∑øm)
-
-	)
-
-2411 
-	#cuæ_mu…i_£t›t
-(
-h™dÀ
-,
-›t
-,
-∑øm
-Ë
-	`cuæ_mu…i_£t›t
-(h™dÀ,›t,∑øm)
-
-	)
-
 	@/usr/include/dirent.h
 
 22 #i‚def 
@@ -182886,8 +176658,8 @@ __END_DECLS
 .
 1
 /usr/include
-84
-1529
+83
+1504
 A1-board-selector.h
 A1-common.h
 A1-trimpot-mcp4x.h
@@ -182929,7 +176701,6 @@ warn-on-use.h
 /usr/include/assert.h
 /usr/include/byteswap.h
 /usr/include/ctype.h
-/usr/include/curl/curl.h
 /usr/include/dirent.h
 /usr/include/errno.h
 /usr/include/fcntl.h

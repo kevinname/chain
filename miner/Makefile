@@ -56,22 +56,23 @@
 
 #BASE = /home/fazio/bin/gcc-linaro-arm-linux-gnueabihf-4.7-2012.11-20121123_linux/arm-linux-gnueabihf/libc/usr
 #USR = /home/fazio/bin/gcc-linaro-arm-linux-gnueabihf-4.7-2012.11-20121123_linux
-BASE= /home/pingpingwu/work/git/btm/docs/hosttools/gcc-linaro-7.2.1-2017.11-i686_arm-linux-gnueabihf/arm-linux-gnueabihf/libc/usr
-USR = /home/pingpingwu/work/git/btm/docs/hosttools/gcc-linaro-7.2.1-2017.11-i686_arm-linux-gnueabihf
-XILINX_INC = $(BASE)/include
-OTHER_XILINX_INC = $(USR)/include
-XILINX_LIBDIR = $(BASE)/lib
-OTHER_XILINX_LIBDIR = $(USR)/lib
+#BASE= /home/pingpingwu/work/git/btm/docs/hosttools/gcc-linaro-7.2.1-2017.11-i686_arm-linux-gnueabihf/arm-linux-gnueabihf/libc/usr
+#USR = /home/pingpingwu/work/git/btm/docs/hosttools/gcc-linaro-7.2.1-2017.11-i686_arm-linux-gnueabihf
+#XILINX_INC = $(BASE)/include
+#OTHER_XILINX_INC = $(USR)/include
+#XILINX_LIBDIR = $(BASE)/lib
+#OTHER_XILINX_LIBDIR = $(USR)/lib
 
 # The pre-processor and compiler options.
 # MY_CFLAGS = -ggdb3 -pipe -O2 -Wall -Wextra -fopenmp -march=native -mfpmath=sse -DLINUX -m64 -std=c++0x
 #MY_CFLAGS = -g -O2 -Wall -pthread -I$(XILINX_INC) -L$(XILINX_LIBDIR) -I./ -I./ccan/opt -I./compat/jansson-2.6/src -I./lib
-MY_CFLAGS = -ggdb -pthread -I$(XILINX_INC) -L$(XILINX_LIBDIR) -I./ -I./ccan/opt -I./compat/jansson-2.9/src -I./lib
+# MY_CFLAGS = -ggdb -pthread -I$(XILINX_INC) -L$(XILINX_LIBDIR) -I./ -I./ccan/opt -I./compat/jansson-2.9/src -I./lib
+MY_CFLAGS = -g -pthread -I./ -I./ccan/opt -I./compat/jansson-2.9/src -I./lib
 #-Itest1/include -Itest2/include -Itest1/include/test1 -Itest2/include/test2
 
 # The linker options.
 # MY_LIBS   = -lGLEW -lglut -lGLU -lGL -lX11 -lXmu -lXi -lm -L/usr/X11R6/lib -lgomp -lOpenThreads -lpthread
-MY_LIBS   = -lm -lrt $(OTHER_XILINX_LIBDIR)/libz.a
+MY_LIBS   = -lm -lrt -lz
 
 # The pre-processor options used by the cpp (man cpp for more).
 CPPFLAGS  =
@@ -86,7 +87,7 @@ SRCDIRS   = . ccan/opt compat/jansson-2.9/src lib
 
 # The executable file name.
 # If not specified, current directory name or `a.out' will be used.
-PROGRAM   = bmminer
+PROGRAM   = miner
 
 ## Implicit Section: change the following only when necessary.
 ##==========================================================================
@@ -104,10 +105,10 @@ CFLAGS  =
 # CXXFLAGS= -std=c++0x
 CXXFLAGS=
 # The C program compiler.
-CC     = arm-linux-gnueabihf-gcc
+CC     = gcc
 
 # The C++ program compiler.
-CXX    = arm-linux-gnueabihf-g++
+CXX    = g++
 
 # Un-comment the following line to compile C programs as C++ ones.
 #CC     = $(CXX)

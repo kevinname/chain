@@ -1342,13 +1342,7 @@ int bitmain_B3_init(struct bitmain_B3_info *info)
     int i = 0,check_asic_times = 0, ret = 0;
     bool check_asic_fail = false;
 
-    bitmain_axi_init();
-    init_fpga();
-    write_axi_fpga(HARDWARE_VERSION, read_axi_fpga(HARDWARE_VERSION) | DHASH_ENGINE_BYPASS | HW_TYPE_T9_PLUS);
-    set_fpga_baud(1);
-
     applog(LOG_WARNING, "%s", __FUNCTION__);
-
 
     sprintf(g_miner_version, "A.0.0.1");
     dev.addrInterval = 1;
@@ -1358,17 +1352,6 @@ int bitmain_B3_init(struct bitmain_B3_info *info)
     {
         info->work_queue[i] = NULL;
     }
-
-    // check chain
-    check_chain();
-
-    write_axi_fpga(SOCKET_ID, 0);
-    reset_all_hash_board_low();
-    cgsleep_ms(500);
-    write_axi_fpga(SOCKET_ID, 7);
-    cgsleep_ms(500);
-    reset_all_hash_board_high();
-    cgsleep_ms(100);
 
     tty_init(info);
 
@@ -1525,7 +1508,7 @@ void* bitmain_B3_reinit_chain(void * usrdata)
     BM1680_send_init(chain,1);
 
 	sleep(10);
-	
+
     BM1680_set_nonce_diff(chain, 0, TM);
     BM1680_set_nonce_diff(chain, 1, TM);
 
@@ -3069,4 +3052,3 @@ struct device_drv bitmain_B3_drv =
 };
 
 /****************** about cgminer driver end ******************/
-
