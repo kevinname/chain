@@ -67,12 +67,12 @@
 # MY_CFLAGS = -ggdb3 -pipe -O2 -Wall -Wextra -fopenmp -march=native -mfpmath=sse -DLINUX -m64 -std=c++0x
 #MY_CFLAGS = -g -O2 -Wall -pthread -I$(XILINX_INC) -L$(XILINX_LIBDIR) -I./ -I./ccan/opt -I./compat/jansson-2.6/src -I./lib
 # MY_CFLAGS = -ggdb -pthread -I$(XILINX_INC) -L$(XILINX_LIBDIR) -I./ -I./ccan/opt -I./compat/jansson-2.9/src -I./lib
-MY_CFLAGS = -g -pthread -I./ -I./ccan/opt -I./compat/jansson-2.9/src -I./lib
+MY_CFLAGS = -g -lpthread -I./ -I./ccan/opt -I./compat/jansson-2.9/src -I./lib
 #-Itest1/include -Itest2/include -Itest1/include/test1 -Itest2/include/test2
 
 # The linker options.
 # MY_LIBS   = -lGLEW -lglut -lGLU -lGL -lX11 -lXmu -lXi -lm -L/usr/X11R6/lib -lgomp -lOpenThreads -lpthread
-MY_LIBS   = -lm -lrt -lz
+MY_LIBS   = -lm -lrt -lz -I /usr/local/cuda/include -L /usr/local/cuda/lib64 -lcudart -lcublas
 
 # The pre-processor options used by the cpp (man cpp for more).
 CPPFLAGS  =
@@ -94,7 +94,7 @@ PROGRAM   = miner
 
 # The source file types (headers excluded).
 # .c indicates C source files, and others C++ ones.
-SRCEXTS = .c .C .cc .cpp .CPP .c++ .cxx .cp
+SRCEXTS = .c .C .cc .cpp .CPP .c++ .cxx .cp .cu
 
 # The header file types.
 HDREXTS = .h .H .hh .hpp .HPP .h++ .hxx .hp
@@ -103,12 +103,12 @@ HDREXTS = .h .H .hh .hpp .HPP .h++ .hxx .hp
 # Users can override those variables from the command line.
 CFLAGS  =
 # CXXFLAGS= -std=c++0x
-CXXFLAGS=
+CXXFLAGS= -std=c++11 -O2 -g
 # The C program compiler.
-CC     = gcc
+CC     = nvcc
 
 # The C++ program compiler.
-CXX    = g++
+CXX    = nvcc
 
 # Un-comment the following line to compile C programs as C++ ones.
 #CC     = $(CXX)
@@ -167,6 +167,10 @@ all: $(PROGRAM)
 	@echo -n $(dir $<) > $@
 	@$(DEPEND.d) $< >> $@
 
+%.d:%.cu
+	@echo -n $(dir $<) > $@
+	@$(DEPEND.d) $< >> $@
+
 %.d:%.C
 	@echo -n $(dir $<) > $@
 	@$(DEPEND.d) $< >> $@
@@ -200,6 +204,9 @@ all: $(PROGRAM)
 objs:$(OBJS)
 
 %.o:%.c
+	$(COMPILE.c) $< -o $@
+
+%.o:%.cu
 	$(COMPILE.c) $< -o $@
 
 %.o:%.C
@@ -239,6 +246,7 @@ ifeq ($(SRC_CXX),)              # C program
 	@echo Type ./$@ to execute the program.
 else                            # C++ program
 	$(LINK.cxx) $(OBJS) $(MY_LIBS) -o $@
+	@rm *.o
 	@echo Type ./$@ to execute the program.
 endif
 

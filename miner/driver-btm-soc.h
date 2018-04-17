@@ -376,8 +376,8 @@ struct bitmain_B3_info
     uint32_t    i2c_fd;
     struct work *work_queue[BITMAIN_MAX_QUEUE_NUM];     // store the latest works that sent to Hash boards
     struct thr_info *thr;
-    struct thr_info uart_tx_t[BITMAIN_MAX_CHAIN_NUM];
-    struct thr_info uart_rx_t[BITMAIN_MAX_CHAIN_NUM];
+    struct thr_info uart_tx_t;
+    struct thr_info uart_rx_t;
     pthread_mutex_t lock;
     uint16_t    crc;
 } __attribute__((packed, aligned(4)));

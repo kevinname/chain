@@ -43,6 +43,18 @@
 //#include "usbutils.h"
 #include "driver-btm-soc.h"
 #include "util.h"
+#include "calculate.h"
+
+
+typedef union {
+  uint64_t  u64Val;
+  uint8_t   u8Val[8];
+} u64tou8_t;
+
+typedef union {
+  uint32_t  u32Val;
+  uint8_t   u8Val[4];
+} u32tou8_t;
 
 
 /****************** checked ***************************/
@@ -78,7 +90,7 @@ struct thr_info *check_miner_status_id;                  // thread id for check 
 struct thr_info *read_hash_rate;
 struct thr_info *restore_voltage;
 struct thr_info *check_fan_id;
-struct dev_info dev_info[BITMAIN_MAX_CHAIN_NUM];
+struct dev_info dev_info;
 bool is_rt = true;
 enum I2C_TYPE { LOCAL, REMOTE, OFFSET, ID};
 int32_t global_workid = 0;
@@ -134,7 +146,7 @@ static bool need_recheck[BITMAIN_MAX_CHAIN_NUM] = {false};
 bool check_rate = false;
 bool gBegin_get_nonce[BITMAIN_MAX_CHAIN_NUM] = {false};
 bool send_heart = true;
-bool new_block[BITMAIN_MAX_CHAIN_NUM] = {false};
+bool new_block = {false};
 bool update_seed[BITMAIN_MAX_CHAIN_NUM] = {false};
 
 uint64_t hashboard_average_hash_rate[BITMAIN_MAX_CHAIN_NUM] = {0};
@@ -1020,64 +1032,40 @@ void init_asic_display_status()
 }
 
 
-void tty_init_chain(uint8_t which_chain, struct bitmain_B3_info *info)
+void init_mine_working(struct bitmain_B3_info *info)
 {
-    if(dev.chain_exist[which_chain])
-    {
-        int ret;
-        applog(LOG_NOTICE, "%s",__FUNCTION__);
-
-        dev_info[which_chain].chainid = which_chain;
-        applog(LOG_NOTICE, "%s chainid = %d",__FUNCTION__,dev_info[which_chain].chainid);
-
-        start_recv[which_chain] = true;
-        ret = thr_info_create(&info->uart_rx_t[which_chain], NULL, get_asic_response, (void *)&dev_info[which_chain]);
-        if(unlikely(ret != 0))
-        {
-            applog(LOG_ERR,"create rx read thread for chain %d failed", which_chain);
-        }
-        else
-        {
-            applog(LOG_ERR,"create rx read thread for chain %d ok", which_chain);
-        }
-
-        cgsleep_ms(50);
-        struct bitmian_B3_info_with_index info_with_index;
-        info_with_index.info = info;
-        info_with_index.chain_index = which_chain;
-        ret = thr_info_create(&info->uart_tx_t[which_chain], NULL, B3_fill_work, (void *)(&info_with_index));
-        cgsleep_ms(200);
-        if(unlikely(ret != 0))
-        {
-            applog(LOG_ERR,"create tx read thread for chain %d failed",which_chain);
-        }
-        else
-        {
-            applog(LOG_ERR,"create tx read thread for chain %d ok",which_chain);
-        }
-
-        applog(LOG_NOTICE,"open device over");
-
-
-        cgsleep_ms(10);
-    }
-}
-
-
-void tty_init(struct bitmain_B3_info *info)
-{
-    uint8_t which_chain = 0,ret;
-
+    int ret;
     applog(LOG_NOTICE, "%s",__FUNCTION__);
 
-    for(which_chain = 0; which_chain < BITMAIN_MAX_CHAIN_NUM; which_chain++)
+    dev_info.chainid = 0;
+    applog(LOG_NOTICE, "%s chainid = %d",__FUNCTION__,dev_info.chainid);
+
+    start_recv[0] = true;
+    ret = thr_info_create(&info->uart_rx_t, NULL, get_asic_response, (void *)&dev_info);
+    if(unlikely(ret != 0))
     {
-        tty_init_chain(which_chain, info);
+        applog(LOG_ERR,"create mine failed:%d ***********", ret);
     }
-    cgsleep_ms(10);
+    else
+    {
+        applog(LOG_ERR,"create mine ok");
+    }
+
+    cgsleep_ms(50);
+    static struct bitmian_B3_info_with_index info_with_index;
+    info_with_index.info = info;
+    info_with_index.chain_index = 0;
+    ret = thr_info_create(&info->uart_tx_t, NULL, B3_fill_work, (void *)(&info_with_index));
+    cgsleep_ms(200);
+    if(unlikely(ret != 0))
+    {
+        applog(LOG_ERR,"create work failed");
+    }
+    else
+    {
+        applog(LOG_ERR,"create work ok");
+    }
 }
-
-
 
 int B3_write(int fd, uint8_t *buf, size_t bufLen)
 {
@@ -1335,6 +1323,7 @@ void recheck_asic_num(struct bitmain_B3_info *info, uint8_t chain)
     cgsleep_ms(200);
     applog(LOG_NOTICE,"%s DONE!", __FUNCTION__);
 }
+
 int bitmain_B3_init(struct bitmain_B3_info *info)
 {
     uint16_t crc = 0, freq = 0;
@@ -1353,97 +1342,9 @@ int bitmain_B3_init(struct bitmain_B3_info *info)
         info->work_queue[i] = NULL;
     }
 
-    tty_init(info);
+    BM1680_set_nonce_diff(which_chain, 0, TM);
 
-    cgsleep_ms(100);
-    clear_register_value_buf();
-    cgsleep_ms(100);
-    sleep(10);
-
-    for(which_chain=0; which_chain<BITMAIN_MAX_CHAIN_NUM; which_chain++)
-    {
-        if(dev.chain_exist[which_chain] && send_heart)
-        {
-            BM1680_send_init(which_chain,0);
-            BM1680_send_init(which_chain,1);
-        }
-    }
-    sleep(10);
-
-#ifdef UPGRADE
-    applog(LOG_WARNING, "%s %d: burning flash", __FUNCTION__, __LINE__);
-    for(which_chain=0; which_chain<BITMAIN_MAX_CHAIN_NUM; which_chain++)
-    {
-        if(dev.chain_exist[which_chain] && send_heart)
-        {
-            BM1680_upgrade(which_chain,0);
-            cgsleep_ms(10);
-            BM1680_upgrade(which_chain,1);
-            cgsleep_ms(10);
-        }
-    }
-    cgsleep_ms(500);
-    write_axi_fpga(SOCKET_ID, 0);
-    reset_all_hash_board_low();
-    cgsleep_ms(500);
-    write_axi_fpga(SOCKET_ID, 7);
-    cgsleep_ms(500);
-    reset_all_hash_board_high();
-    cgsleep_ms(100);
-
-    cgsleep_ms(100);
-    clear_register_value_buf();
-    cgsleep_ms(100);
-
-
-    for(which_chain=0; which_chain<BITMAIN_MAX_CHAIN_NUM; which_chain++)
-    {
-        if(dev.chain_exist[which_chain] && send_heart)
-        {
-            BM1680_send_init(which_chain,0);
-            BM1680_send_init(which_chain,1);
-        }
-    }
-    sleep(10);
-
-#endif
-
-    for(which_chain=0; which_chain<BITMAIN_MAX_CHAIN_NUM; which_chain++)
-    {
-        if(dev.chain_exist[which_chain] && send_heart)
-        {
-            BM1680_set_nonce_diff(which_chain, 0, TM);
-            BM1680_set_nonce_diff(which_chain, 1, TM);
-        }
-    }
-
-    for(which_chain=0; which_chain<BITMAIN_MAX_CHAIN_NUM; which_chain++)
-    {
-        if(dev.chain_exist[which_chain] && send_heart)
-        {
-            BM1680_set_nonce_interval(which_chain, 0, 0, 0xffffffff);
-            BM1680_set_nonce_interval(which_chain, 1, 0, 0xffffffff);
-        }
-    }
-
-    dev.fan_eft = opt_bitmain_fan_ctrl;
-    dev.fan_pwm = opt_bitmain_fan_pwm;
-    applog(LOG_NOTICE,"%s: fan_eft : %d  fan_pwm : %d", __FUNCTION__, dev.fan_eft, dev.fan_pwm);
-    if(dev.fan_eft)
-    {
-        if((dev.fan_pwm >= 0) && (dev.fan_pwm <= 100))
-        {
-            set_PWM(dev.fan_pwm);
-        }
-        else
-        {
-            set_PWM_according_to_temperature();
-        }
-    }
-    else
-    {
-        set_PWM_according_to_temperature();
-    }
+    init_mine_working(info);
 
     // create some pthread
     ret = create_bitmain_check_miner_status_pthread(info);
@@ -1452,29 +1353,8 @@ int bitmain_B3_init(struct bitmain_B3_info *info)
         return ret;
     }
 
-    ret = create_bitmain_get_hash_rate_pthread();
-    if(ret == -6)
-    {
-        return ret;
-    }
+    //ret = create_bitmain_get_hash_rate_pthread();
 
-    ret = create_bitmain_read_temp_pthread();
-    if(ret == -7)
-    {
-        return ret;
-    }
-
-    ret = create_bitmain_check_fan_pthread();
-    if(ret == -8)
-    {
-        return ret;
-    }
-
-    ret = create_bitmain_check_status_pthread();
-    if(ret == -9)
-    {
-        return ret;
-    }
     cgsleep_ms(FANINT * 1000);
     applog(LOG_NOTICE,"INIT DONE!");
     // init ASIC status which will be display on the web
@@ -1497,12 +1377,12 @@ void* bitmain_B3_reinit_chain(void * usrdata)
     start_recv[chain] = false;
     reiniting[chain] = true;
 
-    thr_info_join(&info->uart_tx_t[chain]);
-    thr_info_join(&info->uart_rx_t[chain]);
+    thr_info_join(&info->uart_tx_t);
+    thr_info_join(&info->uart_rx_t);
     reset_hash_board_low(chain);
     cgsleep_ms(100);
     reset_hash_board_high(chain);
-    tty_init_chain(chain, info);
+    init_mine_working(info);
 
     BM1680_send_init(chain,0);
     BM1680_send_init(chain,1);
@@ -1637,186 +1517,37 @@ static inline void my_be32enc(void *pp, uint32_t x)
 
 void BM1680_send_init(uint8_t which_uart, uint8_t which_BM1680)
 {
-    uint8_t send_buf[BM1680_INIT_CMD_CMD_LEN] = {BM1680_SEND_CMD_HEADER1, BM1680_SEND_CMD_HEADER2, 0, BM1680_INIT_CMD, 0x0};
-    uint32_t crc = 0, i = 0;
-
-    send_buf[BM1680_CHIP_ADDRESS_ADDR] = which_BM1680;
-
-    for(i=0; i<BM1680_INIT_CMD_CMD_LEN - 1; i++)
-    {
-        crc += send_buf[i];
-    }
-    send_buf[BM1680_INIT_CMD_CMD_LEN - 1] = (uint8_t)crc;
-#if 0
-    char * seed_hex = NULL;
-    seed_hex = bin2hex(send_buf,sizeof(send_buf));
-    applog(LOG_NOTICE,"Send init to chain %d asic %d  %s",which_uart,which_BM1680,seed_hex);
-    free(seed_hex);
-#endif
-    uart_send(which_uart, send_buf, BM1680_INIT_CMD_CMD_LEN);
 }
 
 void BM1680_set_nonce_diff(uint8_t which_uart, uint8_t which_BM1680, uint8_t nonce_diff)
 {
-    uint8_t send_buf[BM1680_SET_NONCE_DIFF_CMD_LEN] = {BM1680_SEND_CMD_HEADER1, BM1680_SEND_CMD_HEADER2, 0, BM1680_SET_NONCE_DIFF, 0x0, 0x0};
-    uint32_t crc = 0, i = 0;
-
-    send_buf[BM1680_CHIP_ADDRESS_ADDR] = which_BM1680;
-    send_buf[4] = nonce_diff;
-
-    for(i=0; i<BM1680_SET_NONCE_DIFF_CMD_LEN - 1; i++)
-    {
-        crc += send_buf[i];
-    }
-    send_buf[BM1680_SET_NONCE_DIFF_CMD_LEN - 1] = (uint8_t)crc;
-
-    uart_send(which_uart, send_buf, BM1680_SET_NONCE_DIFF_CMD_LEN);
-}
-
-void BM1680_set_seed(uint8_t which_uart, uint8_t which_BM1680, uint8_t *seed)
-{
-#if 1
-    char * seed_hex = NULL;
-    seed_hex = bin2hex(seed,32);
-    applog(LOG_NOTICE,"Send seed to chain %d asic %d  %s",which_uart,which_BM1680,seed_hex);
-    free(seed_hex);
-#endif
-    uint8_t send_buf[BM1680_SET_SEED_CMD_LEN] = {BM1680_SEND_CMD_HEADER1, BM1680_SEND_CMD_HEADER2, 0, BM1680_SET_SEED};
-    uint32_t crc = 0, i = 0;
-
-    send_buf[2] = which_BM1680;
-    send_buf[BM1680_SET_SEED_CMD_LEN - 1] = 0;
-
-    memcpy(send_buf + 4, seed, BM1680_SET_SEED_DATA_LEN);
-
-    for(i=0; i<BM1680_SET_SEED_CMD_LEN - 1; i++)
-    {
-        crc += send_buf[i];
-    }
-    send_buf[BM1680_SET_SEED_CMD_LEN - 1] = (uint8_t)crc;
-
-    uart_send(which_uart, send_buf, BM1680_SET_SEED_CMD_LEN);
+    btm_setDiff(nonce_diff);
 }
 
 void update_seed_and_wait_ok(uint8_t which_uart, uint8_t *seed)
 {
-    BM1680_set_seed(which_uart, 0, seed);
-    BM1680_set_seed(which_uart, 1, seed);
-    sleep(15);
+    btm_generateMatrix(seed);
 }
 
 void BM1680_set_message(uint8_t which_uart, uint8_t which_BM1680, uint8_t *message)
 {
-#if 1
-    char * message_hex = NULL;
-    message_hex = bin2hex(message,137);
-    applog(LOG_NOTICE,"Send message to chain %d asic %d  %s",which_uart,which_BM1680,message_hex);
-    free(message_hex);
-#endif
-
-    uint8_t send_buf[BM1680_SET_MESSAGE_CMD_LEN] = {BM1680_SEND_CMD_HEADER1, BM1680_SEND_CMD_HEADER2, 0, BM1680_SET_MESSAGE};
-    uint32_t crc = 0, i = 0;
-
-    send_buf[2] = which_BM1680;
-    send_buf[BM1680_SET_MESSAGE_CMD_LEN - 1] = 0;
-
-    memcpy(send_buf + 4, message, BM1680_SET_MESSAGE_DATA_LEN);
-
-    for(i=0; i<BM1680_SET_MESSAGE_CMD_LEN - 1; i++)
-    {
-        crc += send_buf[i];
-    }
-    send_buf[BM1680_SET_MESSAGE_CMD_LEN - 1] = (uint8_t)crc;
-
-    uart_send(which_uart, send_buf, BM1680_SET_MESSAGE_CMD_LEN);
+    btm_setMsg(message);
 }
 
 void BM1680_check_status(uint8_t which_uart, uint8_t which_BM1680)
 {
-    uint8_t send_buf[BM1680_CHECK_STATUS_CMD_LEN] = {BM1680_SEND_CMD_HEADER1, BM1680_SEND_CMD_HEADER2, 0, BM1680_CHECK_STATUS, 0x0};
-    uint32_t crc = 0, i = 0;
-
-    send_buf[2] = which_BM1680;
-    for(i=0; i<BM1680_CHECK_STATUS_CMD_LEN - 1; i++)
-    {
-        crc += send_buf[i];
-    }
-    send_buf[BM1680_CHECK_STATUS_CMD_LEN - 1] = (uint8_t)crc;
-
-    uart_send(which_uart, send_buf, BM1680_CHECK_STATUS_CMD_LEN);
-
-    #if 1
-    char * status_hex = NULL;
-    status_hex = bin2hex(send_buf, BM1680_CHECK_STATUS_CMD_LEN);
-    applog(LOG_NOTICE, "Send status to chain %d asic %d  %s",which_uart, which_BM1680, status_hex);
-    free(status_hex);
-    #endif
 }
 
 void BM1680_set_nonce_interval(uint8_t which_uart, uint8_t which_BM1680, uint64_t start_nonce, uint64_t end_nonce)
 {
-    uint8_t send_buf[BM1680_SET_NONCE_INTERVAL_CMD_LEN] = {BM1680_SEND_CMD_HEADER1, BM1680_SEND_CMD_HEADER2, 0, BM1680_SET_NONCE_INTERVAL};
-    uint32_t crc = 0, i = 0;
-
-    send_buf[2] = which_BM1680;
-    send_buf[BM1680_SET_NONCE_INTERVAL_CMD_LEN - 1] = 0;
-
-    memcpy(send_buf + 4, &start_nonce, sizeof(uint64_t));
-    memcpy(send_buf + 4 + sizeof(uint64_t), &end_nonce, sizeof(uint64_t));
-
-    for(i=0; i<BM1680_SET_NONCE_INTERVAL_CMD_LEN - 1; i++)
-    {
-        crc += send_buf[i];
-    }
-    send_buf[BM1680_SET_NONCE_INTERVAL_CMD_LEN - 1] = (uint8_t)crc;
-
-    uart_send(which_uart, send_buf, BM1680_SET_NONCE_INTERVAL_CMD_LEN);
 }
 
 void BM1680_get_board_temperature(uint8_t which_uart, uint8_t which_BM1680)
 {
-    uint8_t send_buf[BM1680_GET_BOARD_TEMPERATURE_CMD_LEN] = {BM1680_SEND_CMD_HEADER1, BM1680_SEND_CMD_HEADER2, 0, BM1680_GET_BOARD_TEMPERATURE, 0x0};
-    uint32_t crc = 0, i = 0;
-
-    send_buf[2] = which_BM1680;
-
-    for(i=0; i<BM1680_GET_BOARD_TEMPERATURE_CMD_LEN - 1; i++)
-    {
-        crc += send_buf[i];
-    }
-    send_buf[BM1680_GET_BOARD_TEMPERATURE_CMD_LEN - 1] = (uint8_t)crc;
-
-#if 1
-    char * message_hex = NULL;
-    message_hex = bin2hex(send_buf,sizeof(send_buf));
-    applog(LOG_NOTICE,"Get PCB temp from chain %d asic %d  %s",which_uart,which_BM1680,message_hex);
-    free(message_hex);
-#endif
-
-    uart_send(which_uart, send_buf, BM1680_GET_BOARD_TEMPERATURE_CMD_LEN);
 }
 
 void BM1680_get_asic_temperature(uint8_t which_uart, uint8_t which_BM1680)
 {
-    uint8_t send_buf[BM1680_GET_ASIC_TEMPERATURE_CMD_LEN] = {BM1680_SEND_CMD_HEADER1, BM1680_SEND_CMD_HEADER2, 0, BM1680_GET_ASIC_TEMPERATURE, 0x0};
-    uint32_t crc = 0, i = 0;
-
-    send_buf[2] = which_BM1680;
-
-    for(i=0; i<BM1680_GET_ASIC_TEMPERATURE_CMD_LEN - 1; i++)
-    {
-        crc += send_buf[i];
-    }
-    send_buf[BM1680_GET_ASIC_TEMPERATURE_CMD_LEN - 1] = (uint8_t)crc;
-#if 1
-    char * message_hex = NULL;
-    message_hex = bin2hex(send_buf,sizeof(send_buf));
-    applog(LOG_NOTICE,"Get CHIP temp from chain %d asic %d  %s",which_uart,which_BM1680,message_hex);
-    free(message_hex);
-#endif
-
-
-    uart_send(which_uart, send_buf, BM1680_GET_ASIC_TEMPERATURE_CMD_LEN);
 }
 
 void BM1680_upgrade_bin_file_without_ending(unsigned char which_uart, unsigned char which_BM1680, unsigned char *data)
@@ -2141,6 +1872,9 @@ void *check_miner_status(void *arg)
     struct timeval tv_start = {0, 0}, diff = {0, 0}, tv_end,tv_send;
     double ghs = 0;
     int i = 0, j = 0;
+
+    applog(LOG_WARNING, "%s", __FUNCTION__);
+
     cgtime(&tv_end);
     cgtime(&tv_send);
     copy_time(&tv_start, &tv_end);
@@ -2309,7 +2043,6 @@ void *check_miner_status(void *arg)
                 status_error = true;
             }
         }
-        set_led(stop);
         cgsleep_ms(1000);
     }
 }
@@ -2317,6 +2050,7 @@ void *check_miner_status(void *arg)
 
 int create_bitmain_check_miner_status_pthread(struct bitmain_B3_info *info)
 {
+    applog(LOG_WARNING, "%s", __FUNCTION__);
     check_miner_status_id = calloc(1,sizeof(struct thr_info));
     if(thr_info_create(check_miner_status_id, NULL, check_miner_status, info))
     {
@@ -2478,6 +2212,7 @@ int create_bitmain_read_temp_pthread(void)
 void *B3_fill_work(void *usrdata)
 {
     pthread_detach(pthread_self());
+    applog(LOG_WARNING, "%s", __FUNCTION__);
     applog(LOG_DEBUG, "Start To Fill Work!");
     struct bitmian_B3_info_with_index *info_with_chain = (struct bitmian_B3_info_with_index *)usrdata;
     struct bitmain_B3_info *info = info_with_chain->info;
@@ -2494,15 +2229,8 @@ void *B3_fill_work(void *usrdata)
 
     applog(LOG_DEBUG, "Start To Fill Work!ChainIndex:[%d]", chainid);
 
-    while(1 && !reiniting[chainid])
+    while(1)
     {
-
-        if(!start_send[chainid])
-        {
-            cgsleep_ms(10);
-            continue;
-        }
-
         pool = current_pool();
         if(pool == NULL)
         {
@@ -2516,7 +2244,7 @@ void *B3_fill_work(void *usrdata)
             if(pool->swork.job_id != NULL)
             {
                 current_job_id = strdup(pool->swork.job_id);
-                new_block[chainid] = true;
+                new_block = true;
             }
             else
             {
@@ -2531,7 +2259,7 @@ void *B3_fill_work(void *usrdata)
             {
                 free(current_job_id);
                 current_job_id = strdup(pool->swork.job_id);
-                new_block[chainid] = true;
+                new_block = true;
             }
             else
             {
@@ -2554,14 +2282,14 @@ void *B3_fill_work(void *usrdata)
             update_seed[chainid] = false;
         }
 
-        if(new_block[chainid])
+        if(new_block)
         {
             cgtime(&last_send);
             work = make_work();
             gen_stratum_work(pool,work);
 
             workid = (global_workid++) & 0x7f;
-            new_block[chainid] = false;
+            new_block = false;
             memset(workdata0, 0, sizeof(workdata0));
             workdata0[0] = workid;
             memcpy(workdata0+1, work->data, 136);
@@ -2577,25 +2305,6 @@ void *B3_fill_work(void *usrdata)
             pthread_mutex_unlock(&work_queue_mutex);
             applog(LOG_DEBUG, "ChainID[%d] Wirte Work. workid=%d", chainid, workid);
             BM1680_set_message(chainid,0,workdata0);
-
-
-            workid = (global_workid++) & 0x7f;
-            memset(workdata1, 0, sizeof(workdata1));
-            workdata1[0] = workid;
-            memcpy(workdata1+1, work->data, 136);
-            workdata1[129] = chainid << 4;
-            workdata1[132] = chainid << 4;
-            pthread_mutex_lock(&work_queue_mutex);
-            if(info->work_queue[workid])
-            {
-                free_work(info->work_queue[workid]);
-                info->work_queue[workid] = NULL;
-            }
-            info->work_queue[workid] = copy_work(work);
-            pthread_mutex_unlock(&work_queue_mutex);
-            applog(LOG_DEBUG, "ChainID[%d] Wirte Work. workid=%d", chainid, workid);
-            BM1680_set_message(chainid,1,workdata1);
-            gBegin_get_nonce[chainid] = true;
         }
 
         cgsleep_us(500);
@@ -2662,221 +2371,40 @@ bool is_nonce_or_reg_value(uint8_t ack)
     return ((ack >> 7) > 0) ? true : false;
 }
 
-void process_ack(uint8_t * data, int len, int chain_id)
-{
-    int8_t asic = data[BM1680_CHIP_ADDRESS_ADDR];
-    int8_t ack = data[BM1680_ACK_ADDR];
-    int8_t cmd = data[BM1680_CMD_ADDR];
-    int8_t ret = 0;
-    if((ack & 0x80) == 0x0)
-    {
-        switch(ack)
-        {
-            case BM1680_EXECUTE_OK:
-                ret = BM1680_EXECUTE_OK;
-                break;
-
-            case BM1680_RECEIVED_DATA_CRC_ERROR:
-                ret = BM1680_RECEIVED_DATA_CRC_ERROR;
-                break;
-
-            case BM1680_NOT_ENOUGH_MEMORY:
-                ret = BM1680_NOT_ENOUGH_MEMORY;
-                break;
-
-            case BM1680_LOCAL_MEMORY_NOT_ENOUGH:
-                ret = BM1680_LOCAL_MEMORY_NOT_ENOUGH;
-                break;
-
-            case BM1680_CMD_PARAMETER_ERROR:
-                ret = BM1680_CMD_PARAMETER_ERROR;
-                break;
-
-            case BM1680_CMD_INDEX_ERROR:
-                ret = BM1680_CMD_INDEX_ERROR;
-                break;
-
-            case BM1680_CHECK_STATUS_ERROR:
-                ret = BM1680_CHECK_STATUS_ERROR;
-                break;
-            default:
-                ret = BM1680_NOT_SUPPORT_THIS_CMD;
-                break;
-        }
-    }
-    BM1680_ack_record[chain_id][asic][cmd] = ret;
-    if(ret == BM1680_EXECUTE_OK)
-    {
-        switch(cmd)
-        {
-            case BM1680_INIT_CMD:
-                applog(LOG_NOTICE,"Chain %d Asic %d version is %d",chain_id, asic, data[BM1680_ACK_DATA_BEGIN_ADDR]);
-                break;
-            case BM1680_SET_MESSAGE:
-                applog(LOG_NOTICE,"Chain %d Asic %d set message ok",chain_id, asic);
-                break;
-            case BM1680_GET_BOARD_TEMPERATURE:
-                dev.temp[chain_id][asic][0] = data[BM1680_ACK_DATA_BEGIN_ADDR];
-                applog(LOG_NOTICE,"Chain %d Asic %d local temp %d",chain_id, asic,dev.temp[chain_id][asic][0]);
-                break;
-            case BM1680_GET_ASIC_TEMPERATURE:
-                dev.temp[chain_id][asic][1] = data[BM1680_ACK_DATA_BEGIN_ADDR];
-                applog(LOG_NOTICE,"Chain %d Asic %d remote temp %d",chain_id, asic,dev.temp[chain_id][asic][1]);
-                break;
-        }
-        dev.chain_asic_temp[chain_id][0][0] = dev.temp[chain_id][asic][0];
-        dev.chain_asic_temp[chain_id][0][1] = dev.temp[chain_id][asic][1];
-    }
-    else
-    {
-        applog(LOG_NOTICE,"Chain %d Asic %d cmd %x ret is %d",chain_id, asic, cmd, ret);
-		if(cmd == BM1680_CHECK_STATUS || ret == BM1680_CHECK_STATUS_ERROR) need_reinit[chain_id] = true;
-    }
-}
 void *get_asic_response(void* arg)
 {
     pthread_detach(pthread_self());
-
-    uint32_t  nonce_number, read_loop;
-    unsigned char nonce_bin[7],chainid;
-
     struct dev_info *dev_i = (struct dev_info*)arg;
-    chainid = dev_i->chainid;
 
-    unsigned char receive_buf[10 * 100] = {0};    // used to receive data
-    unsigned char tmp[10 * MAX_NONCE_NUMBER + BM1680_RECEIVE_CMD_LEN_EXCLUDE_DATA] = {0};          // store 9 bytes data that from data_buf
-    unsigned char data_buf[10 * 512] = {0};
-    int data_buf_rp = 0, data_buf_wp = 0;
-    ssize_t len = 0;
-    ssize_t data_len = 0;
-    int i = 0;
-    int max = 10 * 512;
-    char * hex_buff = NULL;
+    applog(LOG_DEBUG, "%s %d",__FUNCTION__, __LINE__);
 
-    applog(LOG_NOTICE, "Start A New Asic Response.Chain Id:[%d]", chainid);
-    applog(LOG_DEBUG, "%s %d",__FUNCTION__,chainid);
-
-    clear_uart_rx_fifo(chainid);
-    clear_uart_rx_fifo(chainid);
-    clear_uart_rx_fifo(chainid);
-
-    while(start_recv[chainid])
+    u64tou8_t nonce;
+    int msg_id;
+    while(1)
     {
-        cgsleep_ms(100);
-        len = B3_read(chainid, receive_buf, sizeof(receive_buf));
-#if 0
-        if(len != 0)
-        {
-            char *receive_hex = NULL;
-            receive_hex = bin2hex(receive_buf,len);
-            applog(LOG_NOTICE,"chain %d read out : %d  %s", chainid, len, receive_hex);
-            free(receive_hex);
-        }
-#endif
-        for(i = 0; i < len; i++)
-        {
-            data_buf[data_buf_wp] = receive_buf[i];
-            add_point(&data_buf_wp,max);
-        }
+        msg_id = btm_mine(nonce.u8Val);
+        if(msg_id < 0)
+            continue;
 
-        if(data_buf_rp != data_buf_wp)
-        {
-            len = (data_buf_wp > data_buf_rp) ? (data_buf_wp - data_buf_rp):( sizeof(data_buf) - data_buf_rp + data_buf_wp);
-        }
+        pthread_mutex_lock(&nonce_mutex);
+        memcpy((unsigned char *)(&nonce_fifo.nonce_buffer[nonce_fifo.p_wr].nonce), nonce.u8Val, 8);
+        nonce_fifo.nonce_buffer[nonce_fifo.p_wr].wc             = msg_id; // message id
+        nonce_fifo.nonce_buffer[nonce_fifo.p_wr].chainid        = 0;
+        nonce_fifo.nonce_buffer[nonce_fifo.p_wr].tm             = TM;//diff;
+        nonce_fifo.nonce_buffer[nonce_fifo.p_wr].which_asic     = 0;
+        if(nonce_fifo.p_wr < MAX_NONCE_NUMBER_IN_FIFO) nonce_fifo.p_wr++;
+        else nonce_fifo.p_wr = 0;
+
+        if(nonce_fifo.nonce_num < MAX_NONCE_NUMBER_IN_FIFO) nonce_fifo.nonce_num++;
         else
         {
-            continue;
-        }
-        while(len >= BM1680_RECEIVE_CMD_LEN_EXCLUDE_DATA)
-        {
-            if(data_buf[data_buf_rp] == BM1680_RECV_CMD_HEADER1 && data_buf[use_point_add_1(data_buf_rp,max)] == BM1680_RECV_CMD_HEADER2)
-            {
-                break;
-            }
-            else
-            {
-                add_point(&data_buf_rp,max);
-                len--;
-            }
+            nonce_fifo.nonce_num = MAX_NONCE_NUMBER_IN_FIFO;
+            applog(LOG_WARNING, "%s: nonce fifo full!!!", __FUNCTION__);
         }
 
-        if(len >= BM1680_RECEIVE_CMD_LEN_EXCLUDE_DATA)
-            data_len = get_data_len(data_buf[data_buf_rp + 3], data_buf[data_buf_rp + 4]);
-
-        while(len >= (BM1680_RECEIVE_CMD_LEN_EXCLUDE_DATA + data_len))
-        {
-            for(i = 0; i < BM1680_RECEIVE_CMD_LEN_EXCLUDE_DATA + data_len; i++)
-            {
-                tmp[i] = data_buf[data_buf_rp];
-                add_point(&data_buf_rp,max);
-            }
-
-            len = len - (BM1680_RECEIVE_CMD_LEN_EXCLUDE_DATA + data_len);
-#if 0
-            char* return_data = NULL;
-            return_data = bin2hex(tmp,BM1680_RECEIVE_CMD_LEN_EXCLUDE_DATA + data_len);
-            applog(LOG_NOTICE,"return_data : %s",return_data);
-            free(return_data);
-#endif
-            if(is_nonce_or_reg_value(tmp[BM1680_ACK_ADDR])) // get a nonce
-            {
-                applog(LOG_NOTICE,"Chain %d Asic %d get nonce count %d", chainid, tmp[2], tmp[4] & 0x7f);
-                if(gBegin_get_nonce[chainid])
-                {
-                    pthread_mutex_lock(&nonce_mutex);
-                    for (i = 0; i < (data_len -1) / BM1680_NONCE_DATA_LEN; i++)
-                    {
-                        memcpy((unsigned char *)(&nonce_fifo.nonce_buffer[nonce_fifo.p_wr].nonce), &tmp[7 + i*BM1680_NONCE_DATA_LEN], 8);    // we do not swap32 here, but swap it when we analyse nonce
-                        nonce_fifo.nonce_buffer[nonce_fifo.p_wr].wc             = tmp[5] & 0x7f;
-                        nonce_fifo.nonce_buffer[nonce_fifo.p_wr].chainid        = chainid;
-                        nonce_fifo.nonce_buffer[nonce_fifo.p_wr].tm             = tmp[6 + i*BM1680_NONCE_DATA_LEN];
-                        nonce_fifo.nonce_buffer[nonce_fifo.p_wr].which_asic     = tmp[BM1680_CHIP_ADDRESS_ADDR];
-#if 0
-                        applog(LOG_NOTICE,"%llx, %x, %x, %x, %x",nonce_fifo.nonce_buffer[nonce_fifo.p_wr].nonce,nonce_fifo.nonce_buffer[nonce_fifo.p_wr].wc,
-                               nonce_fifo.nonce_buffer[nonce_fifo.p_wr].chainid,nonce_fifo.nonce_buffer[nonce_fifo.p_wr].tm,nonce_fifo.nonce_buffer[nonce_fifo.p_wr].which_asic);
-#endif
-                        if(nonce_fifo.p_wr < MAX_NONCE_NUMBER_IN_FIFO)
-                        {
-                            nonce_fifo.p_wr++;
-                        }
-                        else
-                        {
-                            nonce_fifo.p_wr = 0;
-                        }
-
-                        if(nonce_fifo.nonce_num < MAX_NONCE_NUMBER_IN_FIFO)
-                        {
-                            nonce_fifo.nonce_num++;
-                        }
-                        else
-                        {
-                            nonce_fifo.nonce_num = MAX_NONCE_NUMBER_IN_FIFO;
-                            applog(LOG_WARNING, "%s: nonce fifo full!!!", __FUNCTION__);
-                        }
-                    }
-                    pthread_mutex_unlock(&nonce_mutex);
-                }
-            }
-            else    // get a register value
-            {
-                process_ack(tmp,BM1680_RECEIVE_CMD_LEN_EXCLUDE_DATA + data_len,chainid);
-            }
-
-            while(len >= BM1680_RECEIVE_CMD_LEN_EXCLUDE_DATA)
-            {
-                if(data_buf[data_buf_rp] == BM1680_RECV_CMD_HEADER1 && data_buf[use_point_add_1(data_buf_rp,max)] == BM1680_RECV_CMD_HEADER2)
-                {
-                    break;
-                }
-                else
-                {
-                    add_point(&data_buf_rp,max);
-                    len--;
-                }
-            }
-            data_len = get_data_len(data_buf[data_buf_rp + 3], data_buf[data_buf_rp + 4]);
-        }
+        pthread_mutex_unlock(&nonce_mutex);
     }
+
 }
 
 /****************** about cgminer pthread end ******************/
@@ -2930,10 +2458,7 @@ static void bitmain_B3_update(struct cgpu_info *bitmain)
 {
     int i = 0;
     applog(LOG_DEBUG, "Updated Work!");
-    for ( ; i < BITMAIN_MAX_CHAIN_NUM; ++i )
-    {
-        new_block[i] = true;
-    }
+    new_block = true;
 }
 
 static double hwp = 0;
