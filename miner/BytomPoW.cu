@@ -136,6 +136,11 @@ void core_mineBytom_gpu(
   Arr256x64i32 arr(*mat);
   arr.reduceFNV();           //HKKUO: D). Reduction
   arr.fillWithD0(data);      //HKKUO: E). Memory Set
+
+  cudaFree(devIdt_i8);
+  cudaFree(devTmp_i8);
+  cudaFree(devTmp_i32);
+  delete idt;
   delete mat;
   delete tmp;
   delete[] res;

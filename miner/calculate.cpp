@@ -103,7 +103,7 @@ extern "C" void btm_generateMatrix(uint8_t *u8Seed) {
 }
 
 extern "C" void btm_setMsg(uint8_t *u8Header) {
-  printf("%s\n", __FUNCTION__);
+  //printf("%s\n", __FUNCTION__);
   g_u32MsgId = u8Header[0];
   memcpy(g_u8Msg, &u8Header[1], 136);
   memcpy(g_nonce.u8Val, u8Header+128, 8);
@@ -115,7 +115,7 @@ extern "C" void btm_setDiff(uint32_t diff) {
   g_u32Diff = diff;
 }
 
-extern "C" int btm_mine(uint8_t *u8Nonce) {
+extern "C" int btm_mine(uint8_t *u8Nonce, uint8_t *pDiff) {
   sha3_ctx ctx;
   uint8_t u8MsgTmp[52] = {
     0x65, 0x6e, 0x74, 0x72, 0x79, 0x69, 0x64, 0x3a,
@@ -143,25 +143,25 @@ extern "C" int btm_mine(uint8_t *u8Nonce) {
     rhash_sha3_update(&ctx, g_u8Msg, 136);
     rhash_sha3_final(&ctx, u8MsgTmp + 20);
 
-    print_u8s("first hash result", u8MsgTmp, 52);
+    //print_u8s("first hash result", u8MsgTmp, 52);
 
     rhash_sha3_256_init(&ctx);
     rhash_sha3_update(&ctx, u8MsgTmp, 52);
     rhash_sha3_final(&ctx, u8Msg);
 
-    iter_mineBytom(u8Msg, 32, u8Nonce, u8Res, true, handle);
+    iter_mineBytom(u8Msg, 32, g_nonce.u8Val, u8Res, true, handle);
+    g_nonce.u64Val += 1;
     int diff = _get_leadingZeroCnt(u8Res);
     if (diff >= g_u32Diff) {
+      //print_u8s("hash result", u8Res, 32);
+      //print_u8s("hash nonce", g_nonce.u8Val, 8);
       memcpy(u8Nonce, g_nonce.u8Val, 8);
+      *pDiff = diff;
       cublasDestroy(handle);
       return msg_id;
     }
-
-    g_nonce.u64Val += 1;
   } while(1);
 
   cublasDestroy(handle);
   return msg_id;
 }
-
-

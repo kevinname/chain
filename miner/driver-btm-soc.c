@@ -1710,12 +1710,14 @@ void *bitmain_scanhash(void *arg)
         pthread_mutex_lock(&work_queue_mutex);
         if(info->work_queue[work_id] != NULL)
             work = copy_work(info->work_queue[work_id]);
+
+        //applog(LOG_NOTICE,"%s, nonce: %llx, tm:%d, work diff:%d", __FUNCTION__, nonce, tm, work->btm_dff);
         pthread_mutex_unlock(&work_queue_mutex);
         if(work)
         {
             if(tm >= work->btm_dff)
             {
-                applog(LOG_NOTICE,"diff:%d %d",work->btm_dff,tm);
+              //applog(LOG_NOTICE,"diff:%d %d",work->btm_dff,tm);
                 submit_nonce_direct(thr, work, nonce);
             }
             h++;
@@ -1724,7 +1726,7 @@ void *bitmain_scanhash(void *arg)
 
             applog(LOG_DEBUG,"%s: chain %d which_asic_nonce %d ", __FUNCTION__, chain_id, which_asic_nonce);
 
-            if (( chain_id > BITMAIN_MAX_CHAIN_NUM ) || (!dev.chain_exist[chain_id]))
+            if (chain_id > BITMAIN_MAX_CHAIN_NUM)
             {
                 applog(LOG_ERR, "ChainID Cause Error! ChainID:[%d]", chain_id);
                 goto crc_error;
@@ -2380,9 +2382,10 @@ void *get_asic_response(void* arg)
 
     u64tou8_t nonce;
     int msg_id;
+    uint8_t diff;
     while(1)
     {
-        msg_id = btm_mine(nonce.u8Val);
+      msg_id = btm_mine(nonce.u8Val, &diff);
         if(msg_id < 0)
             continue;
 
@@ -2390,7 +2393,7 @@ void *get_asic_response(void* arg)
         memcpy((unsigned char *)(&nonce_fifo.nonce_buffer[nonce_fifo.p_wr].nonce), nonce.u8Val, 8);
         nonce_fifo.nonce_buffer[nonce_fifo.p_wr].wc             = msg_id; // message id
         nonce_fifo.nonce_buffer[nonce_fifo.p_wr].chainid        = 0;
-        nonce_fifo.nonce_buffer[nonce_fifo.p_wr].tm             = TM;//diff;
+        nonce_fifo.nonce_buffer[nonce_fifo.p_wr].tm             = diff;
         nonce_fifo.nonce_buffer[nonce_fifo.p_wr].which_asic     = 0;
         if(nonce_fifo.p_wr < MAX_NONCE_NUMBER_IN_FIFO) nonce_fifo.p_wr++;
         else nonce_fifo.p_wr = 0;

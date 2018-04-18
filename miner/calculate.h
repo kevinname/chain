@@ -8,7 +8,7 @@ extern "c" {
 void btm_generateMatrix(uint8_t *u8Seed);
 void btm_setMsg(uint8_t *u8Header);
 void btm_setDiff(uint32_t diff);
-int btm_mine(uint8_t *u8Nonce);
+  int btm_mine(uint8_t *u8Nonce, uint8_t *pDiff);
 
 #ifdef __cplusplus
 }

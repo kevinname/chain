@@ -7218,13 +7218,14 @@ static void hashmeter(int thr_id, uint64_t hashes_done)
 
         snprintf(statusline,
                  sizeof(statusline),
-                 "(%ds):%s (1m):%s (5m):%s (15m):%s (avg):%sh/s",
+                 "(%ds):%s (1m):%s (5m):%s (15m):%s (avg):%sh/s - getworks(%lld):accept(%lld):reject(%lld):discard(%lld):diff(%lld) ",
                  opt_log_interval,
                  displayed_rolling,
                  displayed_r1,
                  displayed_r5,
                  displayed_r15,
-                 displayed_hashes);
+                 displayed_hashes,
+                 total_getworks, total_accepted, total_rejected, total_discarded, total_diff1);
     }
 
     mutex_unlock(&hash_lock);
@@ -7693,7 +7694,7 @@ static void *stratum_sthread(void *userdata)
 
             free(ASCIINonce);
         }
-        
+
         /* Try resubmitting for up to 2 minutes if we fail to submit
          * once and the stratum pool nonce1 still matches suggesting
          * we may be able to resume. */
@@ -8426,7 +8427,7 @@ static void gen_stratum_work(struct pool *pool, struct work *work)
 void gen_stratum_work(struct pool *pool, struct work *work)
 {
 	uint32_t target_tmp, n = 0;
-	
+
     cg_rlock(&pool->data_lock);
     work->job_id = strdup(pool->swork.job_id);
     memcpy(work->data, pool->header_bin, 136);

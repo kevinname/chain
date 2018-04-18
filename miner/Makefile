@@ -87,7 +87,7 @@ SRCDIRS   = . ccan/opt compat/jansson-2.9/src lib
 
 # The executable file name.
 # If not specified, current directory name or `a.out' will be used.
-PROGRAM   = miner
+PROGRAM   = test
 
 ## Implicit Section: change the following only when necessary.
 ##==========================================================================

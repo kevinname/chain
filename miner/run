@@ -1,1 +1,1 @@
-./miner --version-file ./config/compile_time --default-config ./config/bmminer.conf -T
+./test --version-file ./config/compile_time --default-config ./config/bmminer.conf -T
